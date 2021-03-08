@@ -166,7 +166,7 @@ jsPsych.plugins['eye-track-image-sort'] = (function() {
       'style="position: relative; width:'+trial.sort_area_width*.94+'px; height:'+trial.sort_area_height*.94+'px; '+
       'border:'+trial.border_width+'px solid '+trial.border_color_out+'; margin: auto; line-height: 0em; ';
 
-    if ( trial.sort_area_shape == "ellipse") {
+    if ( trial.sort_area_shape == "rectangle") {
       html += 'webkit-border-radius: 50%; moz-border-radius: 50%; border-radius: 50%"></div>'
     } else {
       html += 'webkit-border-radius: 0%; moz-border-radius: 0%; border-radius: 0%"></div>'
