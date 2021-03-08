@@ -163,7 +163,7 @@ jsPsych.plugins['eye-track-image-sort'] = (function() {
     html += '<div '+
       'id="jspsych-free-sort-border" '+
       'class="jspsych-free-sort-border" '+
-      'style="position: relative; width:'+trial.sort_area_width*.94+'px; height:'+trial.sort_area_height*.94+'px; '+
+      'style="position: relative; width:'+trial.sort_area_width*.99+'px; height:'+trial.sort_area_height*.50+'px; '+
       'border:'+trial.border_width+'px solid '+trial.border_color_out+'; margin: auto; line-height: 0em; ';
 
     if ( trial.sort_area_shape == "rectangle") {
