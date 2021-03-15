@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tessa's demo</title>
+    <script src="jspsych-6.3.0/jspsych.js"></script>
+    <script src="jspsych-6.3.0/plugins/jspsych-free-sort.js"></script>
+    <script src="jspsych-6.3.0/plugins/jspsych-html-button-response.js"></script>
+    <script src="eye-track-image-sort.js"></script>
+    <script src="jspsych-6.3.0/plugins/jspsych-preload.js"></script>
+    <link href="jspsych-6.3.0/css/jspsych.css" rel="stylesheet" type="text/css"></link>
+  </head>
+  <body></body>
+  <script>
+
+    /* create timeline */
+    var timeline = [];
+
+    var welcome = {
+      type: "html-button-response",
+      stimulus: '<p>Welcome to the experiment.</p>' +
+      '<p>You will be presented with words colored in red or blue.</p>' +
+      '<p>If the word is red, press the red button. If the word is blue, press the blue button.</p>',
+      choices: ['Continue'],
+      margin_vertical: '20px'
+    };
+    timeline.push(welcome);
+
+  var preload ={
+    type: 'preload',
+    audio: ['1_sentence1.wav'],
+    on_success: function(file) {
+        console.log('File loaded: ',file);
+    },
+    on_error: function(file) {
+        console.log('Error loading file: ',file);
+    }
+};
+
+
+    var sorting_stimuli = [];
+for (var i = 1; i <= 1; i++) {
+    sorting_stimuli.push("umbrella" + ".png");
+    sorting_stimuli.push("bear_necklace" + ".png");
+    sorting_stimuli.push("elephant_umbrella" + ".png");
+    sorting_stimuli.push("necklace" + ".png");
+
+  }
+    var sort_trial = {
+    type: 'eye-track-image-sort',
+    stimuli: sorting_stimuli,
+    prompt: "1_sentence1.wav"
+};
+timeline.push(sort_trial);
+
+jsPsych.init({
+  timeline: timeline,
+});
+
+  </script>
+</html>
