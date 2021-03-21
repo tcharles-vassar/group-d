@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ryskin demo</title>
+    <script src="jspsych-6.3.0/jspsych.js"></script>
+    <script src="jspsych-6.3.0/plugins/jspsych-free-sort.js"></script>
+    <script src="jspsych-6.3.0/plugins/jspsych-html-button-response.js"></script>
+    <script src="eye-track-image-sort.js"></script>
+    <script src="jspsych-6.3.0/plugins/jspsych-preload.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-webgazer-init-camera.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-webgazer-calibrate.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-webgazer-validate.js"></script>
+    <script src="js/webgazer.js"></script>
+    <script src="jspsych-6.3.1/extensions/jspsych-ext-webgazer.js"></script>
+    <link href="jspsych-6.3.0/css/jspsych.css" rel="stylesheet" type="text/css"></link>
+  </head>
+  <body></body>
+  <script>
+
+    /* create timeline */
+    var timeline = [];
+
+    var welcome = {
+      type: "html-button-response",
+      stimulus: '<p>Welcome to the experiment.</p>' +
+      '<p>You will be presented with four objects</p>' +
+      '<p>Listen to the audio prompt and use your mouse to click and drag the objects</p>',
+      choices: ['Continue'],
+      margin_vertical: '20px'
+    };
+    timeline.push(welcome);
+
+  var preload ={
+    type: 'preload',
+    audio: ['1_sentence1.wav'],
+    on_success: function(file) {
+        console.log('File loaded: ',file);
+    },
+    on_error: function(file) {
+        console.log('Error loading file: ',file);
+    }
+};
+
+    var sorting_stimuli = [];
+for (var i = 1; i <= 1; i++) {
+    sorting_stimuli.push('img/umbrella' + '.png');
+    sorting_stimuli.push("img/bear_necklace" + ".png");
+    sorting_stimuli.push("img/elephant_umbrella" + ".png");
+    sorting_stimuli.push("img/necklace" + ".png");
+  };
+
+    var sort_trial = {
+    type: 'eye-track-image-sort',
+    stimuli: sorting_stimuli,
+    stimulus: 'Audio/Audio/Critical_trials/strike_the_elephant_with_the_umbrella.mp3'
+};
+
+timeline.push(sort_trial);
+
+var sorting_stimuli2 = [];
+for (var i = 1; i <= 1; i++) {
+    sorting_stimuli2.push("img/pencil" + ".png");
+    sorting_stimuli2.push("img/cow_pencil" + ".png");
+    sorting_stimuli2.push("img/ladybug_fan" + ".png");
+    sorting_stimuli2.push("img/fan" + ".png");
+  };
+
+    var sort_trial2 = {
+    type: 'eye-track-image-sort',
+    stimuli: sorting_stimuli2,
+    stimulus: 'Audio/Audio/Critical_trials/wack_the_ladybug_with_the_fan.mp3'
+};
+
+timeline.push(sort_trial2);
+ 
+jsPsych.init({
+  timeline: timeline,
+});
+
+  </script>
+</html>
