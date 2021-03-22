@@ -2,82 +2,33 @@
 <html>
   <head>
     <title>Ryskin demo</title>
-    <script src="jspsych-6.3.0/jspsych.js"></script>
-    <script src="jspsych-6.3.0/plugins/jspsych-free-sort.js"></script>
-    <script src="jspsych-6.3.0/plugins/jspsych-html-button-response.js"></script>
+    <script src="jspsych-6.3.1/jspsych.js"></script>
     <script src="eye-track-image-sort.js"></script>
-    <script src="jspsych-6.3.0/plugins/jspsych-preload.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-preload.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-fullscreen.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-html-button-response.js"></script>
     <script src="jspsych-6.3.1/plugins/jspsych-webgazer-init-camera.js"></script>
     <script src="jspsych-6.3.1/plugins/jspsych-webgazer-calibrate.js"></script>
     <script src="jspsych-6.3.1/plugins/jspsych-webgazer-validate.js"></script>
     <script src="js/webgazer.js"></script>
     <script src="jspsych-6.3.1/extensions/jspsych-ext-webgazer.js"></script>
-    <link href="jspsych-6.3.0/css/jspsych.css" rel="stylesheet" type="text/css"></link>
-  </head>
+    <script src="calibration-config.js"></script>
+    <script src="initial-calibration-timeline.js"></script>
+    <script src="calibration-booster-timeline.js"></script>
+    <link rel="stylesheet" href="jspsych-6.3.1/css/jspsych.css">
+  <style>
+    .jspsych-content {
+      max-width: 100%;
+    }
+  </style>
+</head>
   <body></body>
   <script>
 
-    /* create timeline */
-    var timeline = [];
+var timeline = [];
 
-    var camera_instructions = {
-    type: 'html-button-response',
-    stimulus: `
-      <p>This experiment uses your camera for eye tracking.</p>
-      <p>In order to participate you must allow the experiment to use your camera.</p>
-      <p>You will be prompted to do this on the next screen.</p>
-      <p>If you do not want to permit the experiment to use your camera, please close the page.</p>
-    `,
-    choices: ['Click to begin'],
-    post_trial_gap: 1000
-  }
-
-  var init_camera = {
-    type: 'webgazer-init-camera'
-  }
-
-  var calibration_instructions = {
-    type: 'html-button-response',
-    stimulus: `
-      <p>Great! Now the eye tracker will be calibrated to translate the image of your eyes from the webcam to a location on your screen.</p>
-      <p>To do this, you need to click a series of dots.</p>
-      <p>Keep your head still, and click on each dot as it appears. Look at the dot as you click it.</p>
-    `,
-    choices: ['Click to begin'],
-    post_trial_gap: 1000
-  }
-
-  var calibration = {
-    type: 'webgazer-calibrate',
-    calibration_points: [
-      [5,5], [50,5], [95,5], 
-        [25,25],[75,25],
-      [5,50], [50,50], [95,50],
-        [25,75], [75,75],
-      [5,95], [50,95], [95,95]
-    ],
-    repetitions_per_point: 1,
-    randomize_calibration_order: true,
-  }
-
-  var validation_instructions = {
-    type: 'html-button-response',
-    stimulus: `
-      <p>Let's see how accurate the eye tracking is. </p>
-      <p>Keep your head still, and move your eyes to focus on each dot as it appears.</p>
-      <p>You do not need to click on the dots. Just move your eyes to look at the dots.</p>
-    `,
-    choices: ['Click to begin'],
-    post_trial_gap: 1000
-  }
-
-  var validation = {
-    type: 'webgazer-validate',
-    validation_points: [[-200,-200], [-200,200], [200,-200], [200,200]],
-    validation_point_coordinates: 'center-offset-pixels',
-    roi_radius: 175,
-    show_validation_data: true
-  }
+timeline.push(initial_calibration_timeline);
+timeline.push(calibration_booster_timeline);
 
     var welcome = {
       type: "html-button-response",
@@ -88,7 +39,8 @@
       margin_vertical: '20px'
     };
     
-    
+    timeline.push(welcome);
+
   var preload ={
     type: 'preload',
     audio: ['1_sentence1.wav'],
@@ -99,6 +51,8 @@
         console.log('Error loading file: ',file);
     }
 };
+
+timeline.push(preload);
 
 var critical_trials =('CriticalTrials');
 var triallist = jsPsych.randomization.sampleWithoutReplacement(critical_trials, 1)
@@ -117,6 +71,7 @@ for (var i = 1; i <= 1; i++) {
     stimulus: 'Audio/Audio/Critical_trials/strike_the_elephant_with_the_umbrella.mp3'
 };
 
+timeline.push(sort_trial);
 
 var sorting_stimuli2 = [];
 for (var i = 1; i <= 1; i++) {
@@ -132,8 +87,9 @@ for (var i = 1; i <= 1; i++) {
     stimulus: 'Audio/Audio/Critical_trials/wack_the_ladybug_with_the_fan.mp3'
 };
 
-timeline.push(camera_instructions);
-  timeline.push(init_camera);
+timeline.push(sort_trial2);
+/* timeline.push(camera_instructions); 
+
   timeline.push(calibration_instructions);
   timeline.push(calibration);
   timeline.push(validation_instructions);
@@ -142,11 +98,15 @@ timeline.push(camera_instructions);
   timeline.push(welcome);
   timeline.push(preload);
   timeline.push(sort_trial);
-  timeline.push(sort_trial2);
+  timeline.push(sort_trial2); */
  
-jsPsych.init({
-  timeline: timeline,
-});
+
+  jsPsych.init({
+    timeline: timeline,
+    extensions: [
+      { type: 'webgazer' }
+    ]
+  })
 
   </script>
 </html>
