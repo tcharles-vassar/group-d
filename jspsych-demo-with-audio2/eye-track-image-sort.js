@@ -525,6 +525,14 @@
     }
   }
 
+  var mouseCoords = [];
+function trackMouse(e) {
+  var x = e.clientX;
+  var y = e.clientY;
+  var t = performance.now();
+  mouseCoords.push({x,y,t});
+}
+trackMouse();
 
 
 return plugin;

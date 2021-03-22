@@ -116,7 +116,11 @@ for (var i = 1; i <= 1; i++) {
     sort_area_height: 600,
     sort_area_width: 1400,
     stimuli: sorting_stimuli,
-    stimulus: 'Audio/Audio/Critical_trials/strike_the_elephant_with_the_umbrella.mp3'
+    stimulus: 'Audio/Audio/Critical_trials/strike_the_elephant_with_the_umbrella.mp3',
+
+on_trial_start: function(){
+    document.querySelector("#jspsych-free-sort-arena").addEventListener('mousemove', trackMouse);
+},
 };
 
 
