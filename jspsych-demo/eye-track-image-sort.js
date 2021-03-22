@@ -282,7 +282,7 @@ jsPsych.plugins['eye-track-image-sort'] = (function() {
         border.style.background = trial.border_color_in;
       }
       button.style.visibility = "visible";
-      display_element.querySelector("#jspsych-free-sort-counter").innerHTML = trial.counter_text_finished;
+      //display_element.querySelector("#jspsych-free-sort-counter").innerHTML = trial.counter_text_finished;
     }
 
     let start_event_name = 'mousedown';
@@ -347,11 +347,11 @@ jsPsych.plugins['eye-track-image-sort'] = (function() {
               border.style.background = trial.border_color_in;
             }
             button.style.visibility = "visible";
-            display_element.querySelector("#jspsych-free-sort-counter").innerHTML = trial.counter_text_finished;
+            //display_element.querySelector("#jspsych-free-sort-counter").innerHTML = trial.counter_text_finished;
           } else {
             border.style.background = "none";
             button.style.visibility = "hidden";
-            display_element.querySelector("#jspsych-free-sort-counter").innerHTML = get_counter_text(inside.length - inside.filter(Boolean).length);
+            //display_element.querySelector("#jspsych-free-sort-counter").innerHTML = get_counter_text(inside.length - inside.filter(Boolean).length);
           }
         }
         document.addEventListener(move_event_name, move_event);
@@ -473,6 +473,16 @@ jsPsych.plugins['eye-track-image-sort'] = (function() {
       y: rnd_y
     };
   }
+
+  var mouseCoords = [];
+function trackMouse(e) {
+  var x = e.clientX;
+  var y = e.clientY;
+  var t = performance.now();
+  mouseCoords.push({x,y,t});
+  alert(mouseCoords);
+}
+
 
   return plugin;
 })();
