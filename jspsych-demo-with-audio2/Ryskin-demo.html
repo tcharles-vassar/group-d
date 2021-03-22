@@ -50,7 +50,7 @@
   var calibration = {
     type: 'webgazer-calibrate',
     calibration_points: [
-      [5,5], [50,5], [95,5], 
+      [5,5], [50,5], [95,5],
         [25,25],[75,25],
       [5,50], [50,50], [95,50],
         [25,75], [75,75],
@@ -87,8 +87,8 @@
       choices: ['Continue'],
       margin_vertical: '20px'
     };
-    
-    
+
+
   var preload ={
     type: 'preload',
     audio: ['1_sentence1.wav'],
@@ -113,6 +113,8 @@ for (var i = 1; i <= 1; i++) {
 
     var sort_trial = {
     type: 'eye-track-image-sort',
+    sort_area_height: 600,
+    sort_area_width: 1400,
     stimuli: sorting_stimuli,
     stimulus: 'Audio/Audio/Critical_trials/strike_the_elephant_with_the_umbrella.mp3'
 };
@@ -143,7 +145,7 @@ timeline.push(camera_instructions);
   timeline.push(preload);
   timeline.push(sort_trial);
   timeline.push(sort_trial2);
- 
+
 jsPsych.init({
   timeline: timeline,
 });

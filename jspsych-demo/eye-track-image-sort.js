@@ -51,7 +51,7 @@ jsPsych.plugins['eye-track-image-sort'] = (function() {
       sort_area_width: {
         type: jsPsych.plugins.parameterType.INT,
         pretty_name: 'Sort area width',
-        default: 700,
+        default: 1400,
         description: 'The width in pixels of the container that subjects can move the stimuli in.'
       },
       sort_area_shape: {
@@ -83,7 +83,7 @@ jsPsych.plugins['eye-track-image-sort'] = (function() {
       change_border_background_color: {
         type: jsPsych.plugins.parameterType.BOOL,
         pretty_name: 'Change border background color',
-        default: true,
+        default: false,
         description: 'If true, the sort area border color will change while items are being moved in and out of '+
         'the sort area, and the background color will change once all items have been moved into the '+
         'sort area. If false, the border will remain black and the background will remain white throughout the trial.'
@@ -99,7 +99,7 @@ jsPsych.plugins['eye-track-image-sort'] = (function() {
       border_color_out: {
         type: jsPsych.plugins.parameterType.STRING,
         pretty_name: 'Border color - out',
-        default:  '#fc9272',
+        default:  '#000000',
         description: 'If change_border_background_color is true, this will be the color of the sort area border '+
         'when there are one or more items that still need to be moved into the sort area.'
       },
@@ -127,7 +127,7 @@ jsPsych.plugins['eye-track-image-sort'] = (function() {
       stim_starts_inside: {
         type: jsPsych.plugins.parameterType.BOOL,
         pretty_name: 'Stim starts inside',
-        default: false,
+        default: true,
         description: 'If false, the images will be positioned to the left and right of the sort area when the trial loads. '+
         'If true, the images will be positioned at random locations inside the sort area when the trial loads.'
       },
@@ -157,13 +157,13 @@ jsPsych.plugins['eye-track-image-sort'] = (function() {
       '<div '+
       'id="jspsych-free-sort-arena" '+
       'class="jspsych-free-sort-arena" '+
-      'style="position: relative; width:'+trial.sort_area_width+'px; height:'+trial.sort_area_height+'px; margin: auto;"</div>';
+      'style="position: relative; width:'+window.screen.width+'px; height:'+window.screen.height+'px; margin: auto;"</div>';
 
     // another div for border
     html += '<div '+
       'id="jspsych-free-sort-border" '+
       'class="jspsych-free-sort-border" '+
-      'style="position: relative; width:'+trial.sort_area_width*.99+'px; height:'+trial.sort_area_height*.50+'px; '+
+      'style="position: relative; width:'+window.screen.width+'px; height:'+window.screen.height+'px; '+
       'border:'+trial.border_width+'px solid '+trial.border_color_out+'; margin: auto; line-height: 0em; ';
 
     if ( trial.sort_area_shape == "rectangle") {
@@ -172,7 +172,7 @@ jsPsych.plugins['eye-track-image-sort'] = (function() {
       html += 'webkit-border-radius: 0%; moz-border-radius: 0%; border-radius: 0%"></div>'
     }
 
-    // variable that has the prompt text and counter
+  /*  // variable that has the prompt text and counter
     const html_text = '<div style="line-height: 1.0em;">' + trial.prompt +
       '<p id="jspsych-free-sort-counter" style="display: inline-block;">'+get_counter_text(trial.stimuli.length)+'</p></div>';
 
@@ -181,7 +181,7 @@ jsPsych.plugins['eye-track-image-sort'] = (function() {
         html += html_text
     } else {
         html = html_text + html
-    }
+    } */
     // add button
     html += '<div><button id="jspsych-free-sort-done-btn" class="jspsych-btn" '+
       'style="margin-top: 5px; margin-bottom: 15px; visibility: hidden;">' +
@@ -254,9 +254,9 @@ jsPsych.plugins['eye-track-image-sort'] = (function() {
         y: coords.y
       });
       if (trial.stim_starts_inside) {
-        inside.push(true);
-      } else {
         inside.push(false);
+      } else {
+        inside.push(true);
       }
     }
 
