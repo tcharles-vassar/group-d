@@ -18,8 +18,8 @@
     var welcome = {
       type: "html-button-response",
       stimulus: '<p>Welcome to the experiment.</p>' +
-      '<p>You will be presented with a series of pictures.</p>' +
-      '<p>If the word is red, press the red button. If the word is blue, press the blue button.</p>',
+      '<p>You will be presented with a set of images.</p>' +
+      '<p>Please listen to the audio instructions and move the images as they tell you to.</p>',
       choices: ['Continue'],
       margin_vertical: '20px'
     };
@@ -36,17 +36,19 @@
     }
 };
 
+
     var sorting_stimuli = [];
 for (var i = 1; i <= 1; i++) {
     sorting_stimuli.push("umbrella" + ".png");
     sorting_stimuli.push("bear_necklace" + ".png");
     sorting_stimuli.push("elephant_umbrella" + ".png");
     sorting_stimuli.push("necklace" + ".png");
+
   }
     var sort_trial = {
     type: 'eye-track-image-sort',
     stimuli: sorting_stimuli,
-    prompt: "<p>Click and drag the images below to sort them so that similar items are close together.</p>"
+    prompt: "1_sentence1.wav"
 };
 timeline.push(sort_trial);
 
