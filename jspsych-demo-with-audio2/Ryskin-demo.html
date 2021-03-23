@@ -1,172 +1,78 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Ryskin demo</title>
-    <script src="jspsych-6.3.1/jspsych.js"></script>
-    <script src="eye-track-image-sort.js"></script>
-    <script src="jspsych-6.3.1/plugins/jspsych-preload.js"></script>
-    <script src="jspsych-6.3.1/plugins/jspsych-fullscreen.js"></script>
-    <script src="jspsych-6.3.1/plugins/jspsych-html-button-response.js"></script>
-    <script src="jspsych-6.3.1/plugins/jspsych-webgazer-init-camera.js"></script>
-    <script src="jspsych-6.3.1/plugins/jspsych-webgazer-calibrate.js"></script>
-    <script src="jspsych-6.3.1/plugins/jspsych-webgazer-validate.js"></script>
-    <script src="js/webgazer.js"></script>
-    <script src="jspsych-6.3.1/extensions/jspsych-ext-webgazer.js"></script>
-    <script src="calibration-config.js"></script>
-    <script src="initial-calibration-timeline.js"></script>
-    <script src="calibration-booster-timeline.js"></script>
-    <link rel="stylesheet" href="jspsych-6.3.1/css/jspsych.css">
+
+<head>
+  <title>Ryskin demo</title>
+  <script src="jspsych-6.3.1/jspsych.js"></script>
+  <script src="js/webgazer.js"></script>
+  <script src="jspsych-6.3.1/plugins/jspsych-preload.js"></script>
+  <script src="jspsych-6.3.1/plugins/jspsych-fullscreen.js"></script>
+  <script src="jspsych-6.3.1/plugins/jspsych-html-button-response.js"></script>
+  <script src="jspsych-6.3.1/plugins/jspsych-webgazer-init-camera.js"></script>
+  <script src="jspsych-6.3.1/plugins/jspsych-webgazer-calibrate.js"></script>
+  <script src="jspsych-6.3.1/plugins/jspsych-webgazer-validate.js"></script>
+  <script src="jspsych-6.3.1/extensions/jspsych-ext-webgazer.js"></script>
+  <script src="eye-track-image-sort.js"></script>
+  <script src="calibration-config.js"></script>
+  <script src="initial-calibration-timeline.js"></script>
+  <script src="calibration-booster-timeline.js"></script>
+  <link rel="stylesheet" href="jspsych-6.3.1/css/jspsych.css">
   <style>
     .jspsych-content {
       max-width: 100%;
     }
   </style>
 </head>
-  <body></body>
-  <script>
 
-<<<<<<< HEAD
-var timeline = [];
-=======
-    /* create timeline */
-    var timeline = [];
+<body></body>
+<script>
 
-    var camera_instructions = {
-    type: 'html-button-response',
-    stimulus: `
-      <p>This experiment uses your camera for eye tracking.</p>
-      <p>In order to participate you must allow the experiment to use your camera.</p>
-      <p>You will be prompted to do this on the next screen.</p>
-      <p>If you do not want to permit the experiment to use your camera, please close the page.</p>
-    `,
-    choices: ['Click to begin'],
-    post_trial_gap: 1000
-  }
+  var timeline = [];
 
-  var init_camera = {
-    type: 'webgazer-init-camera'
-  }
+  //timeline.push(initial_calibration_timeline);
+  //timeline.push(calibration_booster_timeline);
 
-  var calibration_instructions = {
-    type: 'html-button-response',
-    stimulus: `
-      <p>Great! Now the eye tracker will be calibrated to translate the image of your eyes from the webcam to a location on your screen.</p>
-      <p>To do this, you need to click a series of dots.</p>
-      <p>Keep your head still, and click on each dot as it appears. Look at the dot as you click it.</p>
-    `,
-    choices: ['Click to begin'],
-    post_trial_gap: 1000
-  }
+  var preload = {
+    type: 'preload',
+    audio: ['Audio/Audio/Critical_trials/strike_the_elephant_with_the_umbrella.mp3'],
+    on_success: function (file) {
+      console.log('File loaded: ', file);
+    },
+    on_error: function (file) {
+      console.log('Error loading file: ', file);
+    }
+  };
 
-  var calibration = {
-    type: 'webgazer-calibrate',
-    calibration_points: [
-      [5,5], [50,5], [95,5],
-        [25,25],[75,25],
-      [5,50], [50,50], [95,50],
-        [25,75], [75,75],
-      [5,95], [50,95], [95,95]
-    ],
-    repetitions_per_point: 1,
-    randomize_calibration_order: true,
-  }
+  timeline.push(preload);
 
-  var validation_instructions = {
-    type: 'html-button-response',
-    stimulus: `
-      <p>Let's see how accurate the eye tracking is. </p>
-      <p>Keep your head still, and move your eyes to focus on each dot as it appears.</p>
-      <p>You do not need to click on the dots. Just move your eyes to look at the dots.</p>
-    `,
-    choices: ['Click to begin'],
-    post_trial_gap: 1000
-  }
->>>>>>> 3f530c1b9fbcd908fab22fe862524c20164e92f9
 
-timeline.push(initial_calibration_timeline);
-timeline.push(calibration_booster_timeline);
-
-    var welcome = {
-      type: "html-button-response",
-      stimulus: '<p>Welcome to the experiment.</p>' +
+  var welcome = {
+    type: "html-button-response",
+    stimulus: '<p>Welcome to the experiment.</p>' +
       '<p>You will be presented with four objects</p>' +
       '<p>Listen to the audio prompt and use your mouse to click and drag the objects</p>',
-      choices: ['Continue'],
-      margin_vertical: '20px'
-    };
-<<<<<<< HEAD
-    
-    timeline.push(welcome);
-=======
-
->>>>>>> 3f530c1b9fbcd908fab22fe862524c20164e92f9
-
-  var preload ={
-    type: 'preload',
-    audio: ['1_sentence1.wav'],
-    on_success: function(file) {
-        console.log('File loaded: ',file);
-    },
-    on_error: function(file) {
-        console.log('Error loading file: ',file);
-    }
-};
-
-timeline.push(preload);
-
-var critical_trials =('CriticalTrials');
-var triallist = jsPsych.randomization.sampleWithoutReplacement(critical_trials, 1)
-
-    var sorting_stimuli = [];
-for (var i = 1; i <= 1; i++) {
-    sorting_stimuli.push('img/umbrella' + '.png');
-    sorting_stimuli.push("img/bear_necklace" + ".png");
-    sorting_stimuli.push("img/elephant_umbrella" + ".png");
-    sorting_stimuli.push("img/necklace" + ".png");
+    choices: ['Continue'],
+    margin_vertical: '20px'
   };
 
-    var sort_trial = {
-    type: 'eye-track-image-sort',
-    sort_area_height: 600,
-    sort_area_width: 1400,
-    stimuli: sorting_stimuli,
-    stimulus: 'Audio/Audio/Critical_trials/strike_the_elephant_with_the_umbrella.mp3',
-
-on_trial_start: function(){
-    document.querySelector("#jspsych-free-sort-arena").addEventListener('mousemove', trackMouse);
-},
-};
-
-timeline.push(sort_trial);
-
-var sorting_stimuli2 = [];
-for (var i = 1; i <= 1; i++) {
-    sorting_stimuli2.push("img/pencil" + ".png");
-    sorting_stimuli2.push("img/cow_pencil" + ".png");
-    sorting_stimuli2.push("img/ladybug_fan" + ".png");
-    sorting_stimuli2.push("img/fan" + ".png");
-  };
-
-    var sort_trial2 = {
-    type: 'eye-track-image-sort',
-    stimuli: sorting_stimuli2,
-    stimulus: 'Audio/Audio/Critical_trials/wack_the_ladybug_with_the_fan.mp3'
-};
-
-timeline.push(sort_trial2);
-/* timeline.push(camera_instructions); 
-
-  timeline.push(calibration_instructions);
-  timeline.push(calibration);
-  timeline.push(validation_instructions);
-  timeline.push(validation);
-  timeline.push(done);
   timeline.push(welcome);
-  timeline.push(preload);
+
+
+
+  var sort_trial = {
+    type: 'eye-track-image-sort',
+    images: [
+      'img/elephant_umbrella.png',
+      'img/fan.png',
+      'img/umbrella.png',
+      'img/pencil.png'
+    ],
+    image_width: 200,
+    image_height: 200,
+    audio: 'Audio/Audio/Critical_trials/strike_the_elephant_with_the_umbrella.mp3',
+  };
+
   timeline.push(sort_trial);
-<<<<<<< HEAD
-  timeline.push(sort_trial2); */
- 
 
   jsPsych.init({
     timeline: timeline,
@@ -174,13 +80,7 @@ timeline.push(sort_trial2);
       { type: 'webgazer' }
     ]
   })
-=======
-  timeline.push(sort_trial2);
 
-jsPsych.init({
-  timeline: timeline,
-});
->>>>>>> 3f530c1b9fbcd908fab22fe862524c20164e92f9
+</script>
 
-  </script>
 </html>
