@@ -162,27 +162,27 @@ jsPsych.plugins['eye-track-image-sort'] = (function () {
     }
 
     // mouse tracking
-    function trackMouse(e){
-      let clientX = e.clientX;
-      let clientY = e.clientY;
+    // function trackMouse(e){
+    //   let clientX = e.clientX;
+    //   let clientY = e.clientY;
 
-      // check for collisions with objects when not actively dragging one
-      if(!is_dragging){
-        for(var i=0; i<draggables.length; i++){
-          if(isPointInBoundingRect(clientX, clientY, draggables[i])){
-            console.log(`Mouse is over ${draggables[i].src}`);
-          }
-        }
-      }
-    }
+    //   // check for collisions with objects when not actively dragging one
+    //   if(!is_dragging){
+    //     for(var i=0; i<draggables.length; i++){
+    //       if(isPointInBoundingRect(clientX, clientY, draggables[i])){
+    //         console.log(`Mouse is over ${draggables[i].src}`);
+    //       }
+    //     }
+    //   }
+    // }
     //document.addEventListener('mousemove', trackMouse)
   };
 
   // helper collision checker
-  function isPointInBoundingRect(x,y,elem){
-    var rect = elem.getBoundingClientRect();
-    return x > rect.left && x < rect.right && y > rect.top && y < rect.bottom;
-  }
+  // function isPointInBoundingRect(x,y,elem){
+  //   var rect = elem.getBoundingClientRect();
+  //   return x > rect.left && x < rect.right && y > rect.top && y < rect.bottom;
+  // }
 
   return plugin;
 })();
