@@ -153,7 +153,9 @@ jsPsych.plugins['eye-track-image-sort'] = (function () {
       });
 
       // add tracking events
+      var has_entered_image = false;
       draggables[i].addEventListener('mouseenter', function(event){
+        has_entered_image = true;
         console.log(`Mouse enters ${event.target.dataset.src}`)
       })
 
