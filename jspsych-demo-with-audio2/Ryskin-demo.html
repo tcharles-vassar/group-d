@@ -59,20 +59,46 @@
 
 
 
+  var trials1 = [
+    {audio: 'Audio/Audio/Critical_trials/strike_the_elephant_with_the_umbrella.mp3', images: ['img/elephant_umbrella.png','img/fan.png','img/umbrella.png','img/pencil.png']},
+    {audio: 'Audio/Audio/Critical_trials/bop_the_elephant_with_the_napkin.mp3', images: ['img/elephant_napkin.png','img/fan.png','img/napkin.png','img/pencil.png']}
+  ]
+
+  var trials2 = [
+    {verb_type: 'modified', compatibility_type: 'instrument', audio: 'Audio/Audio/Critical_trials/strike_the_elephant_with_the_umbrella.mp3', images: ['img/elephant_umbrella.png','img/fan.png','img/umbrella.png','img/pencil.png']},
+    {audio: 'Audio/Audio/Critical_trials/bop_the_elephant_with_the_napkin.mp3', images: ['img/elephant_napkin.png','img/fan.png','img/napkin.png','img/pencil.png']}
+  ]
+
+  var which_list = jsPsych.randomization.sampleWithoutReplacement(["list_1", "list_2"], 1)[0];
+  if(which_list == 'list_1'){
+    var trials = trials1;
+  } else {
+    var trials = trials2;
+  }
+
+  jsPsych.data.addProperties({
+    which_list: which_list
+  })
+
   var sort_trial = {
     type: 'eye-track-image-sort',
-    images: [
-      'img/elephant_umbrella.png',
-      'img/fan.png',
-      'img/umbrella.png',
-      'img/pencil.png'
-    ],
+    images: jsPsych.timelineVariable('images'),
     image_width: 200,
     image_height: 200,
-    audio: 'Audio/Audio/Critical_trials/strike_the_elephant_with_the_umbrella.mp3',
+    audio: jsPsych.timelineVariable('audio'),
+    data: {
+      verb: jsPsych.timelineVariable('verb_type'),
+      compatibility: jsPsych.timelineVariable('compatibility_type')
+    }
   };
 
-  timeline.push(sort_trial);
+  var test_trials = {
+    timeline: [sort_trial],
+    timeline_variables: trials,
+    randomize_order: true
+  }
+
+  timeline.push(test_trials);
 
   jsPsych.init({
     timeline: timeline,

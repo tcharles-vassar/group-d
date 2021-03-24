@@ -132,8 +132,9 @@ jsPsych.plugins['eye-track-image-sort'] = (function () {
 
           is_dragging = false;
 
-          elem.style.top = elem.dataset.locy + '%';
-          elem.style.left = elem.dataset.locx + '%';
+          // elem.style.top = elem.dataset.locy + '%';
+          // elem.style.left = elem.dataset.locx + '%';
+
           elem.style.zIndex = 0;
 
           display_element.querySelector('#jspsych-free-sort-arena').style.cursor = "grab";
