@@ -56,6 +56,7 @@ jsPsych.plugins['eye-track-image-sort'] = (function () {
     // setup audio stimulus
     var context = jsPsych.pluginAPI.audioContext();
     var audio;
+    var audio_done = false;
 
     jsPsych.pluginAPI.getAudioBuffer(trial.audio)
       .then(function (buffer) {
@@ -75,6 +76,9 @@ jsPsych.plugins['eye-track-image-sort'] = (function () {
 
     function startAudio(){
       trial_data.audio_start_time = Math.round(performance.now());
+      audio.addEventListener('ended', function(){
+        audio_done = true;
+      });
       // start audio
       if (context !== null) {
         audio.start(context.currentTime);
@@ -191,11 +195,9 @@ jsPsych.plugins['eye-track-image-sort'] = (function () {
       function after_response(info){
         // don't do anything if the user hasn't moved the mouse over at least one image
         // this is a crude way of ensuring some kind of action on the part of the user
-        if(has_entered_image == false){
-          return;
+        if(has_entered_image && audio_done){
+          end_trial();
         }
-
-        end_trial();
       }
 
       function end_trial(){
