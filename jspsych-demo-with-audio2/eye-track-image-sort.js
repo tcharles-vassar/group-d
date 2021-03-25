@@ -37,6 +37,10 @@ jsPsych.plugins['eye-track-image-sort'] = (function () {
         default: [
           [25,25],[75,25],[75,75],[25,75]
         ]
+      },
+      exit_key: {
+        type: jsPsych.plugins.parameterType.KEY,
+        default: ' '
       }
     }
   }
@@ -45,6 +49,8 @@ jsPsych.plugins['eye-track-image-sort'] = (function () {
 
     // create trial data store 
     var trial_data = {
+      mouse_events: [],
+      final_locations: []
     }
 
     // setup audio stimulus
@@ -92,6 +98,7 @@ jsPsych.plugins['eye-track-image-sort'] = (function () {
 
     // draggable items
     const draggables = display_element.querySelectorAll('.jspsych-free-sort-draggable');
+    var topZ = 0;
 
     for (let i = 0; i < draggables.length; i++) {
       // add dragging events
@@ -100,9 +107,13 @@ jsPsych.plugins['eye-track-image-sort'] = (function () {
         display_element.querySelector('#jspsych-free-sort-arena').style.cursor = "grabbing";
 
         let elem = event.currentTarget;
-        elem.style.zIndex = 10;
+        elem.style.zIndex = ++topZ;
 
         is_dragging = true;
+
+        trial_data.mouse_events.push(
+          {type: 'click', object: event.target.dataset.src, t: performance.now() - start_time}
+        )
 
         function move_event(e) {
           let clientX = e.clientX;
@@ -123,8 +134,10 @@ jsPsych.plugins['eye-track-image-sort'] = (function () {
             clientY = display_element.getBoundingClientRect().bottom- trial.image_height/2;
           }
 
-          elem.style.top = clientY + 'px';
-          elem.style.left = clientX + 'px';
+          let percentXY = convertPixelsToPercent(clientX, clientY);
+
+          elem.style.top = percentXY.y + '%';
+          elem.style.left = percentXY.x + '%';
         }
 
         function end_event(e) {
@@ -135,15 +148,14 @@ jsPsych.plugins['eye-track-image-sort'] = (function () {
           // elem.style.top = elem.dataset.locy + '%';
           // elem.style.left = elem.dataset.locx + '%';
 
-          elem.style.zIndex = 0;
+          //elem.style.zIndex = 0;
 
           display_element.querySelector('#jspsych-free-sort-arena').style.cursor = "grab";
 
-          // moves.push({
-          //   src: elem.dataset.src,
-          //   x: elem.offsetLeft,
-          //   y: elem.offsetTop
-          // });
+          trial_data.mouse_events.push(
+            {type: 'release', object: e.target.dataset.src, t: performance.now() - start_time}
+          )
+
           document.removeEventListener('mouseup', end_event);
         }
 
@@ -156,12 +168,55 @@ jsPsych.plugins['eye-track-image-sort'] = (function () {
       var has_entered_image = false;
       draggables[i].addEventListener('mouseenter', function(event){
         has_entered_image = true;
-        console.log(`Mouse enters ${event.target.dataset.src}`)
+        trial_data.mouse_events.push(
+          {type: 'enter', object: event.target.dataset.src, t: performance.now() - start_time}
+        )
       })
 
       draggables[i].addEventListener('mouseleave', function(event){
-        console.log(`Mouse exits ${event.target.dataset.src}`)
+        trial_data.mouse_events.push(
+          {type: 'exit', object: event.target.dataset.src, t: performance.now() - start_time}
+        )
       })
+
+      // add keyboard exit event
+      jsPsych.pluginAPI.getKeyboardResponse({
+        callback_function: after_response,
+        valid_responses: [trial.exit_key],
+        rt_method: 'performance',
+        persist: true,
+        allow_held_key: false
+      });
+
+      function after_response(info){
+        // don't do anything if the user hasn't moved the mouse over at least one image
+        // this is a crude way of ensuring some kind of action on the part of the user
+        if(has_entered_image == false){
+          return;
+        }
+
+        end_trial();
+      }
+
+      function end_trial(){
+
+        for (let i = 0; i < draggables.length; i++) {
+          trial_data.final_locations.push({
+            src: draggables[i].dataset.src, x: draggables[i].style.left , y: draggables[i].style.top
+          });
+        }
+
+        trial_data.screen_width = document.querySelector('#jspsych-free-sort-arena').getBoundingClientRect().width;
+        trial_data.screen_height = document.querySelector('#jspsych-free-sort-arena').getBoundingClientRect().height;
+
+        jsPsych.pluginAPI.cancelAllKeyboardResponses();
+
+        display_element.innerHTML = '';
+
+        jsPsych.finishTrial(trial_data);
+      }
+
+      var start_time = performance.now();
     }
 
     // mouse tracking
@@ -186,6 +241,11 @@ jsPsych.plugins['eye-track-image-sort'] = (function () {
   //   var rect = elem.getBoundingClientRect();
   //   return x > rect.left && x < rect.right && y > rect.top && y < rect.bottom;
   // }
+
+  function convertPixelsToPercent(x,y){
+    var arena = document.querySelector('#jspsych-free-sort-arena').getBoundingClientRect();
+    return {x: (x / arena.width)*100, y: (y / arena.height)*100}
+  }
 
   return plugin;
 })();
