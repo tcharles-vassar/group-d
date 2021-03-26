@@ -29,7 +29,7 @@
 
   var timeline = [];
 
-  //timeline.push(initial_calibration_timeline);
+ // timeline.push(initial_calibration_timeline);
   //timeline.push(calibration_booster_timeline);
 
   var preload = {
@@ -58,16 +58,197 @@
   timeline.push(welcome);
 
 
+ var trials1 = [
+/* Trial 1 */
+  {audio: ['CriticalTrials/1stList/CTrial1/strike_the_bear_with_the_umbrella.mp3'],
+  images: ['CriticalTrials/1stList/CTrial1/bear_umbrella.png', 
+   'CriticalTrials/1stList/CTrial1/umbrella.png', 
+   'CriticalTrials/1stList/CTrial1/necklace.png',
+   'CriticalTrials/1stList/CTrial1/elephant_necklace.png'],
+   verb: 'strike', compatibility: 'instrument'},
 
-  var trials1 = [
-    {audio: 'Audio/Audio/Critical_trials/strike_the_elephant_with_the_umbrella.mp3', images: ['img/elephant_umbrella.png','img/fan.png','img/umbrella.png','img/pencil.png']},
-    {audio: 'Audio/Audio/Critical_trials/bop_the_elephant_with_the_napkin.mp3', images: ['img/elephant_napkin.png','img/fan.png','img/napkin.png','img/pencil.png']}
-  ]
+ /* Trial 2 */
+{  audio: ['CriticalTrials/1stList/CTrial2/whack_the_ladybug_with_the_fan.mp3'], 
+   images:['CriticalTrials/1stList/CTrial2/cow_pencil.png', 
+           'CriticalTrials/1stList/CTrial2/pencil.png', 
+           'CriticalTrials/1stList/CTrial2/fan.png',
+           'CriticalTrials/1stList/CTrial2/ladybug_fan.png'],
+    verb: 'whack', compatibility: 'instrument'},
 
-  var trials2 = [
+ /* Trial 3 */
+{  audio: [
+    'CriticalTrials/1stList/CTrial3/hit_the_mouse_with_the_cup.mp3'],
+   images:['CriticalTrials/1stList/CTrial3/cup.png', 
+           'CriticalTrials/1stList/CTrial3/mouse_cup.png', 
+           'CriticalTrials/1stList/CTrial3/frog_tube.png',
+           'CriticalTrials/1stList/CTrial3/tube.png'], 
+    verb: 'hit', compatibility: 'instrument'},
+
+ /* Trial 4 */
+    {  audio:[
+    'CriticalTrials/1stList/CTrial4/rub_the_butterfly_with_the_violin.mp3'],
+   images: ['CriticalTrials/1stList/CTrial4/butterfly_violin.png', 
+    'CriticalTrials/1stList/CTrial4/violin.png', 
+    'CriticalTrials/1stList/CTrial4/crayon.png',
+    'CriticalTrials/1stList/CTrial4/panda_crayon.png'], 
+    verb: 'rub', compatibility: 'instrument'},
+
+/* Trial 5 */
+{  audio:[
+   'CriticalTrials/1stList/CTrial5/poke_the_pig_with_the_violin.mp3'],
+   images: [ 'CriticalTrials/1stList/CTrial5/bunny_spoon.png', 
+    'CriticalTrials/1stList/CTrial5/spoon.png', 
+    'CriticalTrials/1stList/CTrial5/pig_violin.png',
+    'CriticalTrials/1stList/CTrial5/violin.png'],
+    verb: 'poke', compatibility: 'instrument'},
+
+ /* Trial 6 */
+    {  audio: [
+    'CriticalTrials/1stList/CTrial6/bop_the_panda_with_the_spoon.mp3'],
+   images: ['CriticalTrials/1stList/CTrial6/elephant_napkin.png', 
+           'CriticalTrials/1stList/CTrial6/napkin.png', 
+           'CriticalTrials/1stList/CTrial6/panda_spoon.png',
+           'CriticalTrials/1stList/CTrial6/spoon.png'], 
+    verb: 'bop', compatibility: 'instrument'}, 
+
+/* Trial 7 */
+    {  audio: [
+    'CriticalTrials/1stList/CTrial7/smack_the_dog_with_the_hat.mp3'],
+   images: ['CriticalTrials/1stList/CTrial7/dog_hat.png', 
+   'CriticalTrials/1stList/CTrial7/hat.png', 
+   'CriticalTrials/1stList/CTrial7/flute.png',
+    'CriticalTrials/1stList/CTrial7/leopard_flute.png'], 
+    verb: 'smack', compatibility: 'instrument'},   
+
+ /* Trial 8 */
+    {  audio: [
+    'CriticalTrials/1stList/CTrial8/clean_the_dog_with_the_violin.mp3'],
+   images: ['CriticalTrials/1stList/CTrial8/dog_violin.png', 
+    'CriticalTrials/1stList/CTrial8/violin.png', 
+    'CriticalTrials/1stList/CTrial8/turtle_leaf.png',
+    'CriticalTrials/1stList/CTrial8/leaf.png'], 
+    verb: 'clean', compatibility: 'instrument'},  
+
+ /* Trial 9 */
+    {  audio: [
+    'CriticalTrials/1stList/CTrial9/tease_the_leopard_with_the_crayon.mp3'],
+    images: ['CriticalTrials/1stList/CTrial9/dog_lollipop.png', 
+    'CriticalTrials/1stList/CTrial9/lollipop.png', 
+    'CriticalTrials/1stList/CTrial9/leopard_crayon.png',
+    'CriticalTrials/1stList/CTrial9/crayon.png'], 
+    verb: 'tease', compatibility: 'instrument'}, 
+
+/* Trial 10 */
+    {  audio: [
+    'CriticalTrials/1stList/CTrial10/feed_the_duckling_with_the_book.mp3'],
+    images: ['CriticalTrials/1stList/CTrial10/duckling_book.png', 
+    'CriticalTrials/1stList/CTrial10/book.png', 
+    'CriticalTrials/1stList/CTrial10/zebra_lollipop.png',
+    'CriticalTrials/1stList/CTrial10/lollipop.png'], 
+    verb: 'feed', compatibility: 'equibiased'},  
+    ]
+    
+// var trials1 = [
+  //  {audio: 'Audio/Audio/Critical_trials/strike_the_elephant_with_the_umbrella.mp3', images: ['img/elephant_umbrella.png','img/fan.png','img/umbrella.png','img/pencil.png']},
+  //  {audio: 'Audio/Audio/Critical_trials/bop_the_elephant_with_the_napkin.mp3', images: ['img/elephant_napkin.png','img/fan.png','img/napkin.png','img/pencil.png']}
+ // ]
+
+ var trials2 = [
+/* Trial 1 */
+{audio: [
+'CriticalTrials/2ndList/CTrial1/strike_the_bear_with_the_umbrella.mp3'],
+images: ['CriticalTrials/2ndList/CTrial1/bear_umbrella.png',
+ 'CriticalTrials/2ndList/CTrial1/umbrella.png',
+ 'CriticalTrials/2ndList/CTrial1/necklace.png',
+ 'CriticalTrials/2ndList/CTrial1/elephant_necklace.png'],
+verb: 'strike', compatibility: 'instrument'},
+
+/* Trial 2 */
+{ audio: [
+'CriticalTrials/2ndList/CTrial2/whack_the_ladybug_with_the_pencil.mp3'],
+images: ['CriticalTrials/2ndList/CTrial2/cow_fan.png',
+ 'CriticalTrials/2ndList/CTrial2/pencil.png',
+ 'CriticalTrials/2ndList/CTrial2/fan.png',
+ 'CriticalTrials/2ndList/CTrial2/ladybug_pencil.png'],
+verb: 'whack', compatibility: 'instrument'},
+
+/* Trial 3 */
+{ audio: [
+'CriticalTrials/2ndList/CTrial3/hit_the_frog_with_the_cup.mp3'],
+images: ['CriticalTrials/2ndList/CTrial3/cup.png',
+ 'CriticalTrials/2ndList/CTrial3/mouse_tube.png',
+ 'CriticalTrials/2ndList/CTrial3/frog_cup.png',
+ 'CriticalTrials/2ndList/CTrial3/tube.png'],
+verb: 'hit', compatibility: 'instrument'},
+
+/* Trial 4 */
+{ audio:[
+'CriticalTrials/2ndList/CTrial4/rub_the_butterfly_with_the_crayon.mp3'],
+images: ['CriticalTrials/2ndList/CTrial4/butterfly_crayon.png',
+ 'CriticalTrials/2ndList/CTrial4/violin.png',
+ 'CriticalTrials/2ndList/CTrial4/crayon.png',
+ 'CriticalTrials/2ndList/CTrial4/panda_violin.png'],
+verb: 'rub', compatibility: 'instrument'},
+
+/* Trial 5 */
+{ audio:[
+'CriticalTrials/2ndList/CTrial5/poke_the_pig_with_the_spoon.mp3'],
+images: ['CriticalTrials/2ndList/CTrial5/bunny_violin.png',
+ 'CriticalTrials/2ndList/CTrial5/spoon.png',
+ 'CriticalTrials/2ndList/CTrial5/pig_spoon.png',
+ 'CriticalTrials/2ndList/CTrial5/violin.png'],
+verb: 'poke', compatibility: 'instrument'},
+
+/* Trial 6 */
+{ audio: [
+'CriticalTrials/2ndList/CTrial6/bop_the_panda_with_the_napkin.mp3'],
+images: ['CriticalTrials/2ndList/CTrial6/elephant_spoon.png',
+ 'CriticalTrials/2ndList/CTrial6/napkin.png',
+ 'CriticalTrials/2ndList/CTrial6/panda_napkin.png',
+ 'CriticalTrials/2ndList/CTrial6/spoon.png'],
+verb: 'bop', compatibility: 'instrument'},
+
+/* Trial 7 */
+{ audio: [
+'CriticalTrials/2ndList/CTrial7/smack_the_dog_with_the_flute.mp3'],
+images: ['CriticalTrials/2ndList/CTrial7/dog_flute.png',
+ 'CriticalTrials/2ndList/CTrial7/hat.png',
+ 'CriticalTrials/2ndList/CTrial7/flute.png',
+ 'CriticalTrials/2ndList/CTrial7/leopard_hat.png'],
+verb: 'smack', compatibility: 'instrument'},
+
+/* Trial 8 */
+{ audio: [
+'CriticalTrials/2ndList/CTrial8/clean_the_turtle_with_the_violin.mp3'],
+images: ['CriticalTrials/2ndList/CTrial8/dog_leaf.png',
+ 'CriticalTrials/2ndList/CTrial8/violin.png',
+ 'CriticalTrials/2ndList/CTrial8/turtle_violin.png',
+ 'CriticalTrials/2ndList/CTrial8/leaf.png'],
+verb: 'clean', compatibility: 'instrument'},
+
+/* Trial 9 */
+{ audio: [
+'CriticalTrials/2ndList/CTrial9/tease_the_leopard_with_the_lollipop.mp3'],
+images: ['CriticalTrials/2ndList/CTrial9/dog_crayon.png',
+ 'CriticalTrials/2ndList/CTrial9/lollipop.png',
+ 'CriticalTrials/2ndList/CTrial9/leopard_lollipop.png',
+ 'CriticalTrials/2ndList/CTrial9/crayon.png'],
+verb: 'tease', compatibility: 'instrument'},
+
+/* Trial 10 */
+{ audio: [
+'CriticalTrials/2ndList/CTrial10/feed_the_zebra_with_the_book.mp3'],
+images: ['CriticalTrials/2ndList/CTrial10/duckling_lollipop.png',
+ 'CriticalTrials/2ndList/CTrial10/book.png',
+ 'CriticalTrials/2ndList/CTrial10/zebra_book.png',
+ 'CriticalTrials/2ndList/CTrial10/lollipop.png'],
+verb: 'feed', compatibility: 'equibiased'},
+
+]
+ /* var trials2 = [
     {verb_type: 'modified', compatibility_type: 'instrument', audio: 'Audio/Audio/Critical_trials/strike_the_elephant_with_the_umbrella.mp3', images: ['img/elephant_umbrella.png','img/fan.png','img/umbrella.png','img/pencil.png']},
     {audio: 'Audio/Audio/Critical_trials/bop_the_elephant_with_the_napkin.mp3', images: ['img/elephant_napkin.png','img/fan.png','img/napkin.png','img/pencil.png']}
-  ]
+  ]*/
 
   var which_list = jsPsych.randomization.sampleWithoutReplacement(["list_1", "list_2"], 1)[0];
   if(which_list == 'list_1'){

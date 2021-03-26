@@ -186,7 +186,7 @@ jsPsych.plugins['eye-track-image-sort'] = (function () {
       // add keyboard exit event
       jsPsych.pluginAPI.getKeyboardResponse({
         callback_function: after_response,
-        valid_responses: [trial.exit_key],
+        valid_responses: ['spacebar'],
         rt_method: 'performance',
         persist: true,
         allow_held_key: false
