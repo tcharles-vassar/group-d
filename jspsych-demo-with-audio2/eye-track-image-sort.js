@@ -47,7 +47,7 @@ jsPsych.plugins['eye-track-image-sort'] = (function () {
 
   plugin.trial = function (display_element, trial) {
 
-    // create trial data store 
+    // create trial data store
     var trial_data = {
       mouse_events: [],
       final_locations: []
@@ -186,7 +186,7 @@ jsPsych.plugins['eye-track-image-sort'] = (function () {
       // add keyboard exit event
       jsPsych.pluginAPI.getKeyboardResponse({
         callback_function: after_response,
-        valid_responses: ['spacebar'],
+        valid_responses: [trial.exit_key],
         rt_method: 'performance',
         persist: true,
         allow_held_key: false
