@@ -1621,6 +1621,34 @@
 
   timeline.push(test_trials);
 
+  var check1 = {
+    type: 'html-button-response',
+    stimulus: '<p> Were you wearing glasses during this experiment? </p>',
+    choices: ['Yes', 'No']
+  }
+timeline.push(check1);
+
+  var check2 = {
+    type: 'html-button-response',
+    stimulus: '<p> Were you able to keep your head still during the course of this experiment? </p>',
+    choices: ['Yes', 'No']
+  }
+  timeline.push(check2);
+
+  var check3 = {
+    type: 'html-button-response',
+    stimulus: '<p> Were you distracted by any notifications? </p>',
+    choices: ['Yes', 'No']
+  }
+  timeline.push(check3);
+
+  var check4 = {
+    type: 'html-button-response',
+    stimulus: '<p> Were you able to hear all of the audios? </p>',
+    choices: ['Yes', 'No']
+  }
+  timeline.push(check4);
+
   var finale = {
     type: "html-keyboard-response",
     stimulus: '<p>You have now completed the experiment!</p>' +
