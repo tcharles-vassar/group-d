@@ -89,7 +89,7 @@ var audiocheck = {
     type: 'html-keyboard-response',
     stimulus: ` <p>First, we must perform an audio check</p>
                 <p>Adjust your volume until you can clearly hear the audio prompt.
-                <p>Once you can clearly hear the audio, press the spacebar to continue</p>
+                <p>Once you can clearly hear the audio, press the spacebar to continue.</p>
               `,
     choices: [' '] // <-- change this to whatever instruction your audio prompt says to follow
 }
@@ -101,7 +101,7 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     type: "html-keyboard-response",
     stimulus: "<p>Let's start with three practice trials.</p>" +
       "<p>Try to keep your head still throughout the trials and press the <b>spacebar</b> when you are done with a trial.</p>" +
-      "<p>Press the spacebar to continue</p>",
+      "<p>Press the spacebar to continue.</p>",
     choices: [" "]
   };
 
