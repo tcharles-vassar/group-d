@@ -188,7 +188,7 @@
         'CriticalTrials/1stList/CTrial4/panda_crayon.png'],
       verb: 'rub', compatibility: 'instrument'
     },
-    
+
     {
       audio: [
         'CriticalTrials/1stList/CTrial4/rub_the_panda_with_the_crayon.mp3'],
@@ -450,7 +450,7 @@
       images: [
         'CriticalTrials/1stList/CTrial16/candle.png',
         'CriticalTrials/1stList/CTrial16/leopard_pen.png',
-       'CriticalTrials/1stList/CTrial16/bear_candle.png', 
+       'CriticalTrials/1stList/CTrial16/bear_candle.png',
         'CriticalTrials/1stList/CTrial16/pen.png'],
       verb: 'feel', compatibility: 'equibiased'
     },
@@ -1177,7 +1177,7 @@
         'CriticalTrials/2ndList/CTrial16/pen.png'],
       verb: 'feel', compatibility: 'equibiased'
     },
-    
+
     {
       audio: [
         'CriticalTrials/2ndList/CTrial16/feel_the_leopard_with_the_candle.mp3'],
@@ -1606,8 +1606,15 @@
     }
   };
 
+  var button_click_trial = {
+    type: 'html-button-response',
+    prompt: "",
+    stimulus: "",
+    choices: ['Continue']
+  }
+
   var test_trials = {
-    timeline: [sort_trial],
+    timeline: [sort_trial, button_click_trial],
     timeline_variables: trials,
     randomize_order: true
   }
