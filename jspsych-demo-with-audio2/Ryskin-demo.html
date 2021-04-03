@@ -62,7 +62,7 @@
 
 /*var before_audio = {
     type: 'html-button-response',
-    stimulus: 
+    stimulus:
          "<p>First, we must perform an audio check</p>" +
          "<p>Adjust your volume until you can clearly hear the audio prompt.",
     choices: ['Continue']
@@ -1688,6 +1688,18 @@ timeline.push(check1);
     choices: ['Yes', 'No']
   }
   timeline.push(check4);
+
+  var save_server_data = {
+    type: 'call-function',
+    func: function () {
+      var data = jsPsych.data.get().json();
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'php/save_json.php');
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(JSON.stringify({ filedata: data }));
+    },
+    post_trial_gap: 1000
+  }
 
   var finale = {
     type: "html-keyboard-response",
