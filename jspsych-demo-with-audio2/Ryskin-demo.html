@@ -29,6 +29,13 @@
 <body></body>
 <script>
 
+var prolific_id = jsPsych.data.getURLVariable('PROLIFIC_PID');
+var subject_id = typeof prolific_id == 'undefined' ? jsPsych.randomization.randomID(20) : prolific_id;
+
+jsPsych.data.addProperties({
+  subject: subject_id,
+});
+
   var timeline = [];
 
   timeline.push(initial_calibration_timeline);
@@ -1704,8 +1711,14 @@ timeline.push(check1);
 
   var finale = {
     type: "html-keyboard-response",
-    stimulus: '<p>You have now completed the experiment!</p>' +
-      '<p>Thank you for participating. You may exit fullscreen using the esc key.</p>'
+    stimulus: '<div class="instructions">'+
+    '<p>You have completed the experiment. Thank you for participating!</p>'+
+    '<p>This is an experiment about eye-tracking and how certain verbs influence associations.</p>'+
+    '<p>One theory is that we will fixate on the image of the target animal more when a modifier-biased verb is used, than when a instrument or equibiased verb is used.</p>'+
+    '<p>An additional theory was that we will first click on the image of the target instrument more often when an instrument-biased verb is used, but less often when a modifier-biased verb is used.</p>'+
+    '<p>We will look at your individual eye and mouse movements to determine whether they show these theorized trends. If we do in fact follow the trends mentioned above, then your eye and mouse movements should reflect that.</p>'+
+    '<p><a href="https://app.prolific.co/submissions/complete?cc=5E47AAF9">Click here to finish the experiment and return to Prolific</a>. You do not need a completion code.</p>'+
+    '</div>',
   }
 
   timeline.push(finale);
