@@ -146,8 +146,15 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     }
   };
 
+  var filler_button_click_trial = {
+    type: 'html-button-response',
+    prompt: "",
+    stimulus: "",
+    choices: ['Click Here']
+  }
+
   var test_practice_trials = {
-    timeline: [sort_practice_trials],
+    timeline: [sort_practice_trials, filler_button_click_trial],
     timeline_variables: practice_trials
   };
 
