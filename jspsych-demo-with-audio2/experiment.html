@@ -2037,6 +2037,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     which_list: which_list
   })
 
+  var random_order_trials = jsPsych.randomization.shuffle(trials)
+  var half = Math.ceil(random_order_trials.length / 2);
+
+  var first_half = random_order_trials.splice(0, half);
+  var second_half = random_order_trials.splice(-half);
+
   var sort_trial = {
     type: 'eye-track-image-sort',
     images: jsPsych.timelineVariable('images'),
@@ -2056,13 +2062,33 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     choices: ['Click Here']
   }
 
-  var test_trials = {
+  var test_trials1 = {
     timeline: [sort_trial, button_click_trial],
-    timeline_variables: trials,
+    timeline_variables: first_half,
     randomize_order: true
   }
 
-  timeline.push(test_trials);
+  timeline.push(test_trials1);
+
+  var booster = {
+    type: "html-button-response",
+    stimulus: '<p>You are halfway through the experiment! </p>' +
+      '<p>We are now going to re-calibrate the eye-tracking software to ensure accuracy.</p>',
+    choices: ['Continue'],
+    margin_vertical: '20px'
+  }
+
+  timeline.push(booster);
+
+  timeline.push(calibration_booster_timeline);
+
+  var test_trials2 = {
+    timeline: [sort_trial, button_click_trial],
+    timeline_variables: second_half,
+    randomize_order: true
+  }
+
+  timeline.push(test_trials2);
 
   var check1 = {
     type: 'html-button-response',
