@@ -40,10 +40,7 @@ jsPsych.data.addProperties({
 
   var welcome = {
     type: "html-button-response",
-    stimulus: '<p>You will be presented with four objects and an audio prompt. </p>' +
-      '<p>Listen to the audio prompt and do your best to follow the instructions using your mouse.</p>' +
-      '<p>You can pick up and move objects on the screen, or just move your mouse to act out the directions.</p>' +
-      '<p>For example, if the audio says to look at an object, you should move your mouse on top of the object as if "looking" with your cursor.</p>',
+    stimulus: '<p>Welcome to the experiment!</p>',
     choices: ['Continue'],
     margin_vertical: '20px'
   };
@@ -91,6 +88,18 @@ var stop_audio = {
          audio.pause();
     }
 }
+
+var basic = {
+  type: "html-button-response",
+  stimulus: '<p>You will be presented with four objects and an audio prompt. </p>' +
+    '<p>Listen to the audio prompt and do your best to follow the instructions using your mouse.</p>' +
+    '<p>You can pick up and move objects on the screen, or just move your mouse to act out the directions.</p>' +
+    '<p>For example, if the audio says to look at an object, you should move your mouse on top of the object as if "looking" with your cursor.</p>',
+  choices: ['Continue'],
+  margin_vertical: '20px'
+};
+
+timeline.push(basic);
 
 var audiocheck = {
     type: 'html-keyboard-response',
