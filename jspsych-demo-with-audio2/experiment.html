@@ -562,6 +562,16 @@ timeline.push(audio_loop, audiocheck, stop_audio)
       'CriticalTrials/2ndList/CTrial27/choose_the_squirrel_with_the_barrette.mp3'
     ];
 
+    var start = {
+      type: "html-button-response",
+      stimulus: '<p>Please wait while we load the experiment.</p>' +
+      '<p>The experiment will start as soon as the loading is complete.</p>',
+      choices: ['Continue'],
+      margin_vertical: '20px'
+    }
+
+    timeline.push(start);
+
   var preload = {
     type: 'preload',
     images: image,
