@@ -593,11 +593,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
 
     {
       audio: ['CriticalTrials/1stList/CTrial1/strike_the_elephant_with_the_umbrella.mp3'],
-      images: ['CriticalTrials/1stList/CTrial1/necklace.png',
-        'CriticalTrials/1stList/CTrial1/umbrella.png',
-        'CriticalTrials/1stList/CTrial1/bear_necklace.png',
-        'CriticalTrials/1stList/CTrial1/elephant_umbrella.png'],
-      verb: 'strike', compatibility: 'instrument'
+      images: ['<img id = "necklace" src = "CriticalTrials/1stList/CTrial1/necklace.png"></img>',
+        '<img id = "umbrella" src = "CriticalTrials/1stList/CTrial1/umbrella.png"></img>',
+        '<img id = "bear" src = "CriticalTrials/1stList/CTrial1/bear_necklace.png"></img>',
+        '<img id = "elephant" src = "CriticalTrials/1stList/CTrial1/elephant_umbrella.png"></img>'],
+      verb: 'strike', compatibility: 'instrument',
+      extensions: [{type: 'webgazer',
+      params: {
+        targets: ['#necklace', '#umbrella', '#bear', '#elephant']
+          }
+        }
+      ]
     },
 
     /* Trial 2 */
