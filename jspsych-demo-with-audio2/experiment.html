@@ -30,6 +30,7 @@
 <body></body>
 <script>
 
+  /* get prolific ID */
   var prolific_id = jsPsych.data.getURLVariable('PROLIFIC_PID');
   var subject_id = typeof prolific_id == 'undefined' ? jsPsych.randomization.randomID(20) : prolific_id;
 
@@ -37,150 +38,29 @@
     subject: subject_id,
   });
 
+  /* randomly assign a list */
+  var which_list = jsPsych.randomization.sampleWithoutReplacement(["list_1", "list_2"], 1)[0];
+  if (which_list == 'list_1') {
+    var trials = trials1;
+  } else {
+    var trials = trials2;
+  }
+
+  jsPsych.data.addProperties({
+    which_list: which_list
+  })
+
+  var random_order_trials = jsPsych.randomization.shuffle(trials)
+  var half = Math.ceil(random_order_trials.length / 2);
+
+  var first_half = random_order_trials.splice(0, half);
+  var second_half = random_order_trials.splice(-half);
+
+
+  /* create timeline */
   var timeline = [];
 
-  var welcome = {
-    type: "html-button-response",
-    stimulus: '<p>Welcome to the experiment!</p>',
-    choices: ['Continue'],
-    margin_vertical: '20px'
-  };
-
-  timeline.push(welcome);
-
-  timeline.push(initial_calibration_timeline);
-
-  /*var preload = {
-    type: 'preload',
-    audio: ['Audio/Audio/Critical_trials/strike_the_elephant_with_the_umbrella.mp3'],
-    on_success: function (file) {
-      console.log('File loaded: ', file);
-    },
-    on_error: function (file) {
-      console.log('Error loading file: ', file);
-    }
-  };
-
-  timeline.push(preload);*/
-
-  var audio = null;
-
-  /*var before_audio = {
-      type: 'html-button-response',
-      stimulus:
-           "<p>First, we must perform an audio check</p>" +
-           "<p>Adjust your volume until you can clearly hear the audio prompt.",
-      choices: ['Continue']
-  }*/
-
-  var audio_loop = {
-    type: 'call-function',
-    func: () => {
-      audio = new Audio();
-      audio.src = "img/111_sentence1.mp3";
-      audio.loop = true
-      audio.play();
-    }
-  }
-
-  var stop_audio = {
-    type: 'call-function',
-    func: () => {
-      audio.pause();
-    }
-  }
-
-  var basic = {
-    type: "html-button-response",
-    stimulus: '<p>You will be presented with four objects and an audio prompt. </p>' +
-      '<p>Listen to the audio prompt and do your best to follow the instructions using your mouse.</p>' +
-      '<p>You can pick up and move objects on the screen, or just move your mouse to act out the directions.</p>' +
-      '<p>For example, if the audio says to look at an object, you should move your mouse on top of the object as if "looking" with your cursor.</p>',
-    choices: ['Continue'],
-    margin_vertical: '20px'
-  };
-
-  timeline.push(basic);
-
-  var audiocheck = {
-    type: 'html-keyboard-response',
-    stimulus: ` <p>First, we must perform an audio check</p>
-                <p>Adjust your volume until you can clearly hear the audio prompt.
-                <p>Once you can clearly hear the audio, press the spacebar to continue.</p>
-              `,
-    choices: [' '] // <-- change this to whatever instruction your audio prompt says to follow
-  }
-
-  timeline.push(audio_loop, audiocheck, stop_audio)
-
-
-  var instructions = {
-    type: "html-keyboard-response",
-    stimulus: "<p>Let's start with three practice trials.</p>" +
-      "<p>Try to keep your head still throughout the trials and press the <b>spacebar</b> when you are done with a trial.</p>" +
-      "<p>Press the spacebar to continue.</p>",
-    choices: [" "]
-  };
-
-  timeline.push(instructions);
-
-  var practice_trials = [
-    {
-      audio: 'img/111_sentence1.mp3',
-      images: ['img/fish.png', 'img/funnel.png', 'img/giraffe.png',
-        'img/lollipop.png'], compatibility: 'practice'
-    },
-
-    {
-      audio: 'img/110_sentence1.mp3',
-      images: ['img/clip.png', 'img/elephant.png', 'img/pen.png',
-        'img/whale.png'], compatibility: 'practice'
-    },
-
-    {
-      audio: 'img/109_sentence1.mp3',
-      images: ['img/bear.png', 'img/dolphin.png', 'img/fork.png',
-        'img/microphone.png'], compatibility: 'practice'
-    }
-  ]
-
-  var sort_practice_trials = {
-    type: 'eye-track-image-sort',
-    images: jsPsych.timelineVariable('images'),
-    image_width: 200,
-    image_height: 200,
-    audio: jsPsych.timelineVariable('audio'),
-    stimulus: "<p>Press spacebar to continue</p>",
-    data: {
-      compatibility: jsPsych.timelineVariable('compatibility_type')
-    }
-  };
-
-  var filler_button_click_trial = {
-    type: 'html-button-response',
-    prompt: "",
-    stimulus: "",
-    choices: ['Click Here']
-  }
-
-  var test_practice_trials = {
-    timeline: [sort_practice_trials, filler_button_click_trial],
-    timeline_variables: practice_trials
-  };
-
-  timeline.push(test_practice_trials);
-
-  var begin = {
-    type: 'html-keyboard-response',
-    stimulus: '<p>We will now begin the experiment.</p>' +
-      '<p>Remember to <b>stay as still as possible</b> and act out the instructions with your cursor.</p>' +
-      '<p>Make sure to press the spacebar once you have completed the prompt.</p>' +
-      '</p> After each trial, you will be asked to press a button to proceed to the next trial<p>' +
-      '<p>Press the spacebar to begin.',
-    choices: [" "]
-  }
-
-  timeline.push(begin);
+  /* preload */
 
   var image = ['CriticalTrials/1stList/CTrial1/bear_necklace.png',
     'CriticalTrials/1stList/CTrial1/umbrella.png',
@@ -581,24 +461,105 @@
 
   timeline.push(preload);
 
+  /* audio check */
 
-  var which_list = jsPsych.randomization.sampleWithoutReplacement(["list_1", "list_2"], 1)[0];
-  if (which_list == 'list_1') {
-    var trials = trials1;
-  } else {
-    var trials = trials2;
+  var audio = null;
+
+  var audio_loop = {
+    type: 'call-function',
+    func: () => {
+      audio = new Audio();
+      audio.src = "img/111_sentence1.mp3";
+      audio.loop = true
+      audio.play();
+    }
   }
 
-  jsPsych.data.addProperties({
-    which_list: which_list
-  })
+  var stop_audio = {
+    type: 'call-function',
+    func: () => {
+      audio.pause();
+    }
+  }
 
-  var random_order_trials = jsPsych.randomization.shuffle(trials)
-  var half = Math.ceil(random_order_trials.length / 2);
+  var audiocheck = {
+    type: 'html-keyboard-response',
+    stimulus: ` <p>First, we must perform an audio check</p>
+                <p>Adjust your volume until you can clearly hear the audio prompt.
+                <p>Once you can clearly hear the audio, press the spacebar to continue.</p>
+              `,
+    choices: [' '] // <-- change this to whatever instruction your audio prompt says to follow
+  }
 
-  var first_half = random_order_trials.splice(0, half);
-  var second_half = random_order_trials.splice(-half);
+  timeline.push(audio_loop, audiocheck, stop_audio)
 
+  /* initial calibration */
+  timeline.push(initial_calibration_timeline);
+
+  /* instructions */
+  var basic = {
+    type: "html-button-response",
+    stimulus: '<p>You will be presented with four objects and an audio prompt. </p>' +
+      '<p>Listen to the audio prompt and do your best to follow the instructions using your mouse.</p>' +
+      '<p>You can pick up and move objects on the screen, or just move your mouse to act out the directions.</p>' +
+      '<p>For example, if the audio says to look at an object, you should move your mouse on top of the object as if "looking" with your cursor.</p>',
+    choices: ['Continue'],
+    margin_vertical: '20px'
+  };
+
+  timeline.push(basic);
+
+  var instructions = {
+    type: "html-keyboard-response",
+    stimulus: "<p>Let's start with three practice trials.</p>" +
+      "<p>Try to keep your head still throughout the trials and press the <b>spacebar</b> when you are done with a trial.</p>" +
+      "<p>Press the spacebar to continue.</p>",
+    choices: [" "]
+  };
+
+  timeline.push(instructions);
+
+  /* practice trials */
+
+  var sort_practice_trials = {
+    type: 'eye-track-image-sort',
+    images: jsPsych.timelineVariable('images'),
+    image_width: 200,
+    image_height: 200,
+    audio: jsPsych.timelineVariable('audio'),
+    stimulus: "<p>Press spacebar to continue</p>",
+    data: {
+      compatibility: jsPsych.timelineVariable('compatibility_type')
+    }
+  };
+
+  var filler_button_click_trial = {
+    type: 'html-button-response',
+    stimulus: "",
+    choices: ['Click Here']
+  }
+
+  var test_practice_trials = {
+    timeline: [sort_practice_trials, filler_button_click_trial],
+    timeline_variables: practice_trials
+  };
+
+  timeline.push(test_practice_trials);
+
+
+  /* main trials */
+  var begin = {
+    type: 'html-keyboard-response',
+    stimulus: '<p>We will now begin the experiment.</p>' +
+      '<p>Remember to <b>stay as still as possible</b> and act out the instructions with your cursor.</p>' +
+      '<p>Make sure to press the spacebar once you have completed the prompt.</p>' +
+      '</p> After each trial, you will be asked to press a button to proceed to the next trial<p>' +
+      '<p>Press the spacebar to begin.',
+    choices: [" "]
+  }
+
+  timeline.push(begin);
+  
   var sort_trial = {
     type: 'eye-track-image-sort',
     images: jsPsych.timelineVariable('images'),
@@ -629,7 +590,7 @@
   var booster = {
     type: "html-button-response",
     stimulus: '<p>You are halfway through the experiment! </p>' +
-      '<p>We are now going to re-calibrate the eye-tracking software to ensure accuracy.</p>',
+      '<p>We are now going to re-calibrate the eye-tracking software to ensure accuracy in the second half.</p>',
     choices: ['Continue'],
     margin_vertical: '20px'
   }

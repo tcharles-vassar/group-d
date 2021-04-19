@@ -1,3 +1,23 @@
+var practice_trials = [
+  {
+    audio: 'img/111_sentence1.mp3',
+    images: ['img/fish.png', 'img/funnel.png', 'img/giraffe.png',
+      'img/lollipop.png'], compatibility: 'practice'
+  },
+
+  {
+    audio: 'img/110_sentence1.mp3',
+    images: ['img/clip.png', 'img/elephant.png', 'img/pen.png',
+      'img/whale.png'], compatibility: 'practice'
+  },
+
+  {
+    audio: 'img/109_sentence1.mp3',
+    images: ['img/bear.png', 'img/dolphin.png', 'img/fork.png',
+      'img/microphone.png'], compatibility: 'practice'
+  }
+]
+
 var trials1 = [
   /* Trial 1 */
   {
