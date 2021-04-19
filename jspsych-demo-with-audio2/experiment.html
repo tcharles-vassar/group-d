@@ -29,12 +29,12 @@
 <body></body>
 <script>
 
-var prolific_id = jsPsych.data.getURLVariable('PROLIFIC_PID');
-var subject_id = typeof prolific_id == 'undefined' ? jsPsych.randomization.randomID(20) : prolific_id;
+  var prolific_id = jsPsych.data.getURLVariable('PROLIFIC_PID');
+  var subject_id = typeof prolific_id == 'undefined' ? jsPsych.randomization.randomID(20) : prolific_id;
 
-jsPsych.data.addProperties({
-  subject: subject_id,
-});
+  jsPsych.data.addProperties({
+    subject: subject_id,
+  });
 
   var timeline = [];
 
@@ -64,53 +64,53 @@ jsPsych.data.addProperties({
 
   var audio = null;
 
-/*var before_audio = {
-    type: 'html-button-response',
-    stimulus:
-         "<p>First, we must perform an audio check</p>" +
-         "<p>Adjust your volume until you can clearly hear the audio prompt.",
-    choices: ['Continue']
-}*/
+  /*var before_audio = {
+      type: 'html-button-response',
+      stimulus:
+           "<p>First, we must perform an audio check</p>" +
+           "<p>Adjust your volume until you can clearly hear the audio prompt.",
+      choices: ['Continue']
+  }*/
 
-var audio_loop = {
+  var audio_loop = {
     type: 'call-function',
     func: () => {
-         audio = new Audio();
-         audio.src = "img/111_sentence1.mp3";
-         audio.loop = true
-         audio.play();
+      audio = new Audio();
+      audio.src = "img/111_sentence1.mp3";
+      audio.loop = true
+      audio.play();
     }
-}
+  }
 
-var stop_audio = {
+  var stop_audio = {
     type: 'call-function',
     func: () => {
-         audio.pause();
+      audio.pause();
     }
-}
+  }
 
-var basic = {
-  type: "html-button-response",
-  stimulus: '<p>You will be presented with four objects and an audio prompt. </p>' +
-    '<p>Listen to the audio prompt and do your best to follow the instructions using your mouse.</p>' +
-    '<p>You can pick up and move objects on the screen, or just move your mouse to act out the directions.</p>' +
-    '<p>For example, if the audio says to look at an object, you should move your mouse on top of the object as if "looking" with your cursor.</p>',
-  choices: ['Continue'],
-  margin_vertical: '20px'
-};
+  var basic = {
+    type: "html-button-response",
+    stimulus: '<p>You will be presented with four objects and an audio prompt. </p>' +
+      '<p>Listen to the audio prompt and do your best to follow the instructions using your mouse.</p>' +
+      '<p>You can pick up and move objects on the screen, or just move your mouse to act out the directions.</p>' +
+      '<p>For example, if the audio says to look at an object, you should move your mouse on top of the object as if "looking" with your cursor.</p>',
+    choices: ['Continue'],
+    margin_vertical: '20px'
+  };
 
-timeline.push(basic);
+  timeline.push(basic);
 
-var audiocheck = {
+  var audiocheck = {
     type: 'html-keyboard-response',
     stimulus: ` <p>First, we must perform an audio check</p>
                 <p>Adjust your volume until you can clearly hear the audio prompt.
                 <p>Once you can clearly hear the audio, press the spacebar to continue.</p>
               `,
     choices: [' '] // <-- change this to whatever instruction your audio prompt says to follow
-}
+  }
 
-timeline.push(audio_loop, audiocheck, stop_audio)
+  timeline.push(audio_loop, audiocheck, stop_audio)
 
 
   var instructions = {
@@ -182,395 +182,395 @@ timeline.push(audio_loop, audiocheck, stop_audio)
   timeline.push(begin);
 
   var image = ['CriticalTrials/1stList/CTrial1/bear_necklace.png',
-      'CriticalTrials/1stList/CTrial1/umbrella.png',
-      'CriticalTrials/1stList/CTrial1/necklace.png',
-      'CriticalTrials/1stList/CTrial1/elephant_umbrella.png',
-      'CriticalTrials/1stList/CTrial2/cow_pencil.png',
-      'CriticalTrials/1stList/CTrial2/pencil.png',
-      'CriticalTrials/1stList/CTrial2/fan.png',
-      'CriticalTrials/1stList/CTrial2/ladybug_fan.png',
-      'CriticalTrials/1stList/CTrial3/cup.png',
-      'CriticalTrials/1stList/CTrial3/mouse_cup.png',
-      'CriticalTrials/1stList/CTrial3/frog_tube.png',
-      'CriticalTrials/1stList/CTrial3/tube.png',
-      'CriticalTrials/1stList/CTrial4/butterfly_violin.png',
-      'CriticalTrials/1stList/CTrial4/violin.png',
-      'CriticalTrials/1stList/CTrial4/crayon.png',
-      'CriticalTrials/1stList/CTrial4/panda_crayon.png',
-      'CriticalTrials/1stList/CTrial5/bunny_spoon.png',
-      'CriticalTrials/1stList/CTrial5/spoon.png',
-      'CriticalTrials/1stList/CTrial5/pig_violin.png',
-      'CriticalTrials/1stList/CTrial5/violin.png',
-      'CriticalTrials/1stList/CTrial6/elephant_napkin.png',
-      'CriticalTrials/1stList/CTrial6/napkin.png',
-      'CriticalTrials/1stList/CTrial6/panda_spoon.png',
-      'CriticalTrials/1stList/CTrial6/spoon.png',
-      'CriticalTrials/1stList/CTrial7/dog_hat.png',
-      'CriticalTrials/1stList/CTrial7/hat.png',
-      'CriticalTrials/1stList/CTrial7/flute.png',
-      'CriticalTrials/1stList/CTrial7/leopard_flute.png',
-      'CriticalTrials/1stList/CTrial8/dog_violin.png',
-      'CriticalTrials/1stList/CTrial8/violin.png',
-      'CriticalTrials/1stList/CTrial8/turtle_leaf.png',
-      'CriticalTrials/1stList/CTrial8/leaf.png',
-      'CriticalTrials/1stList/CTrial9/dog_lollipop.png',
-      'CriticalTrials/1stList/CTrial9/lollipop.png',
-      'CriticalTrials/1stList/CTrial9/leopard_crayon.png',
-      'CriticalTrials/1stList/CTrial9/crayon.png',
-      'CriticalTrials/1stList/CTrial10/book.png',
-      'CriticalTrials/1stList/CTrial10/zebra_lollipop.png',
-      'CriticalTrials/1stList/CTrial10/duckling_book.png',
-      'CriticalTrials/1stList/CTrial10/lollipop.png',
-      'CriticalTrials/1stList/CTrial11/chicken_cup.png',
-      'CriticalTrials/1stList/CTrial11/cup.png',
-      'CriticalTrials/1stList/CTrial11/pig_flower.png',
-      'CriticalTrials/1stList/CTrial11/flower.png',
-      'CriticalTrials/1stList/CTrial12/leopard_hat.png',
-      'CriticalTrials/1stList/CTrial12/hat.png',
-      'CriticalTrials/1stList/CTrial12/panda_toothbrush.png',
-      'CriticalTrials/1stList/CTrial12/toothbrush.png',
-      'CriticalTrials/1stList/CTrial13/bunny_feather.png',
-      'CriticalTrials/1stList/CTrial13/feather.png',
-      'CriticalTrials/1stList/CTrial13/sponge.png',
-      'CriticalTrials/1stList/CTrial13/frog_sponge.png',
-      'CriticalTrials/1stList/CTrial14/dog_flower.png',
-      'CriticalTrials/1stList/CTrial14/flower.png',
-      'CriticalTrials/1stList/CTrial14/leopard_pencil.png',
-      'CriticalTrials/1stList/CTrial14/pencil.png',
-      'CriticalTrials/1stList/CTrial15/camel_straw.png',
-      'CriticalTrials/1stList/CTrial15/straw.png',
-      'CriticalTrials/1stList/CTrial15/penguin_tube.png',
-      'CriticalTrials/1stList/CTrial15/tube.png',
-      'CriticalTrials/1stList/CTrial16/bear_candle.png',
-      'CriticalTrials/1stList/CTrial16/candle.png',
-      'CriticalTrials/1stList/CTrial16/leopard_pen.png',
-      'CriticalTrials/1stList/CTrial16/pen.png',
-      'CriticalTrials/1stList/CTrial17/bird_pencil.png',
-      'CriticalTrials/1stList/CTrial17/pencil.png',
-      'CriticalTrials/1stList/CTrial17/lion_straw.png',
-      'CriticalTrials/1stList/CTrial17/straw.png',
-      'CriticalTrials/1stList/CTrial18/fish_funnel.png',
-      'CriticalTrials/1stList/CTrial18/funnel.png',
-      'CriticalTrials/1stList/CTrial18/penguin_leaf.png',
-      'CriticalTrials/1stList/CTrial18/leaf.png',
-      'CriticalTrials/1stList/CTrial19/dolphin_sponge.png',
-      'CriticalTrials/1stList/CTrial19/sponge.png',
-      'CriticalTrials/1stList/CTrial19/lion_tongs.png',
-      'CriticalTrials/1stList/CTrial19/tongs.png',
-      'CriticalTrials/1stList/CTrial20/chicken_leaf.png',
-      'CriticalTrials/1stList/CTrial20/leaf.png',
-      'CriticalTrials/1stList/CTrial20/horse_spoon.png',
-      'CriticalTrials/1stList/CTrial20/spoon.png',
-      'CriticalTrials/1stList/CTrial21/bunny_hat.png',
-      'CriticalTrials/1stList/CTrial21/hat.png',
-      'CriticalTrials/1stList/CTrial21/zebra_microphone.png',
-      'CriticalTrials/1stList/CTrial21/microphone.png',
-      'CriticalTrials/1stList/CTrial22/duckling_net.png',
-      'CriticalTrials/1stList/CTrial22/net.png',
-      'CriticalTrials/1stList/CTrial22/ladybug_straw.png',
-      'CriticalTrials/1stList/CTrial22/straw.png',
-      'CriticalTrials/1stList/CTrial23/dolphin_microphone.png',
-      'CriticalTrials/1stList/CTrial23/microphone.png',
-      'CriticalTrials/1stList/CTrial23/whale_pen.png',
-      'CriticalTrials/1stList/CTrial23/pen.png',
-      'CriticalTrials/1stList/CTrial24/bird_mitten.png',
-      'CriticalTrials/1stList/CTrial24/mitten.png',
-      'CriticalTrials/1stList/CTrial24/lion_towel.png',
-      'CriticalTrials/1stList/CTrial24/towel.png',
-      'CriticalTrials/1stList/CTrial25/giraffe_partyhat.png',
-      'CriticalTrials/1stList/CTrial25/partyhat.png',
-      'CriticalTrials/1stList/CTrial25/panda_umbrella.png',
-      'CriticalTrials/1stList/CTrial25/umbrella.png',
-      'CriticalTrials/1stList/CTrial26/squirrel_partyhat.png',
-      'CriticalTrials/1stList/CTrial26/partyhat.png',
-      'CriticalTrials/1stList/CTrial26/zebra_towel.png',
-      'CriticalTrials/1stList/CTrial26/towel.png',
-      'CriticalTrials/1stList/CTrial27/cow_barrette.png',
-      'CriticalTrials/1stList/CTrial27/barrette.png',
-      'CriticalTrials/1stList/CTrial27/squirrel_pen.png',
-      'CriticalTrials/1stList/CTrial27/pen.png',
-      'img/butterfly.png', 'img/frog_shell.png', 'img/shell.png', 'img/towel.png',
-      'img/camel.png', 'img/fish.png', 'img/flag.png',
-      'img/hat.png', 'img/bird.png', 'img/chicken.png', 'img/mitten.png',
-      'img/net.png', 'img/net.png', 'img/duckling.png', 'img/giraffe.png',
-      'img/umbrella.png', 'img/net.png', 'img/cup.png', 'img/dolphin.png',
-      'img/frog.png', 'img/dog_funnel.png', 'img/fork.png', 'img/funnel.png',
-      'img/panda.png', 'img/bear.png', 'img/cow.png', 'img/flute.png',
-      'img/stick.png', 'img/camel.png', 'img/flute.png', 'img/hat.png',
-      'img/whale.png', 'img/butterfly.png', 'img/fork.png', 'img/towel.png',
-      'img/hippo.png', 'img/brush.png', 'img/bunny.png', 'img/camel.png',
-      'img/tube.png', 'img/clip.png', 'img/stick.png', 'img/elephant.png',
-      'img/zebra.png', 'img/zebra.png', 'img/leaf.png', 'img/penguin.png',
-      'img/train.png', 'img/book.png', 'img/flute.png', 'img/whale.png',
-      'img/zebra.png', 'img/bird.png', 'img/flower.png', 'img/toy.png',
-      'img/turtle.png', 'img/tube.png', 'img/turtle.png', 'img/mouse.png',
-      'img/partyhat.png', 'img/bear.png', 'img/stick.png', 'img/pen.png',
-      'img/squirrel.png', 'img/chopsticks.png', 'img/hippo.png', 'img/squirrel.png',
-      'img/sponge.png', 'img/net.png', 'img/ladybug_net.png', 'img/pig.png',
-      'img/straw.png', 'img/bird.png', 'img/fork.png', 'img/panda.png',
-      'img/pencil.png', 'img/panda.png', 'img/towel.png', 'img/leopard.png',
-      'img/lollipop.png', 'img/panda.png', 'img/fan.png', 'img/lion.png',
-      'img/napkin.png', 'img/chicken.png', 'img/funnel.png', 'img/leaf.png',
-      'img/leopard_funnel.png', 'img/fan.png', 'img/turtle.png', 'img/horse.png',
-      'img/toothbrush.png', 'img/book.png', 'img/hippo.png', 'img/penguin.png',
-      'img/straw.png',
-      'CriticalTrials/2ndList/CTrial1/bear_umbrella.png',
-      'CriticalTrials/2ndList/CTrial1/umbrella.png',
-      'CriticalTrials/2ndList/CTrial1/necklace.png',
-      'CriticalTrials/2ndList/CTrial1/elephant_necklace.png',
-      'CriticalTrials/2ndList/CTrial2/cow_fan.png',
-      'CriticalTrials/2ndList/CTrial2/pencil.png',
-      'CriticalTrials/2ndList/CTrial2/fan.png',
-      'CriticalTrials/2ndList/CTrial2/ladybug_pencil.png',
-      'CriticalTrials/2ndList/CTrial3/cup.png',
-      'CriticalTrials/2ndList/CTrial3/mouse_tube.png',
-      'CriticalTrials/2ndList/CTrial3/frog_cup.png',
-      'CriticalTrials/2ndList/CTrial3/tube.png',
-      'CriticalTrials/2ndList/CTrial4/butterfly_crayon.png',
-      'CriticalTrials/2ndList/CTrial4/violin.png',
-      'CriticalTrials/2ndList/CTrial4/crayon.png',
-      'CriticalTrials/2ndList/CTrial4/panda_violin.png',
-      'CriticalTrials/2ndList/CTrial5/bunny_violin.png',
-      'CriticalTrials/2ndList/CTrial5/spoon.png',
-      'CriticalTrials/2ndList/CTrial5/pig_spoon.png',
-      'CriticalTrials/2ndList/CTrial5/violin.png',
-      'CriticalTrials/2ndList/CTrial6/elephant_spoon.png',
-      'CriticalTrials/2ndList/CTrial6/napkin.png',
-      'CriticalTrials/2ndList/CTrial6/panda_napkin.png',
-      'CriticalTrials/2ndList/CTrial6/spoon.png',
-      'CriticalTrials/2ndList/CTrial7/dog_flute.png',
-      'CriticalTrials/2ndList/CTrial7/hat.png',
-      'CriticalTrials/2ndList/CTrial7/flute.png',
-      'CriticalTrials/2ndList/CTrial7/leopard_hat.png',
-      'CriticalTrials/2ndList/CTrial8/dog_leaf.png',
-      'CriticalTrials/2ndList/CTrial8/violin.png',
-      'CriticalTrials/2ndList/CTrial8/turtle_violin.png',
-      'CriticalTrials/2ndList/CTrial8/leaf.png',
-      'CriticalTrials/2ndList/CTrial9/dog_crayon.png',
-      'CriticalTrials/2ndList/CTrial9/lollipop.png',
-      'CriticalTrials/2ndList/CTrial9/leopard_lollipop.png',
-      'CriticalTrials/2ndList/CTrial9/crayon.png',
-      'CriticalTrials/2ndList/CTrial10/duckling_lollipop.png',
-      'CriticalTrials/2ndList/CTrial10/book.png',
-      'CriticalTrials/2ndList/CTrial10/zebra_book.png',
-      'CriticalTrials/2ndList/CTrial10/lollipop.png',
-      'CriticalTrials/2ndList/CTrial11/chicken_flower.png',
-      'CriticalTrials/2ndList/CTrial11/cup.png',
-      'CriticalTrials/2ndList/CTrial11/pig_cup.png',
-      'CriticalTrials/2ndList/CTrial11/flower.png',
-      'CriticalTrials/2ndList/CTrial12/leopard_toothbrush.png',
-      'CriticalTrials/2ndList/CTrial12/hat.png',
-      'CriticalTrials/2ndList/CTrial12/panda_hat.png',
-      'CriticalTrials/2ndList/CTrial12/toothbrush.png',
-      'CriticalTrials/2ndList/CTrial13/bunny_sponge.png',
-      'CriticalTrials/2ndList/CTrial13/feather.png',
-      'CriticalTrials/2ndList/CTrial13/sponge.png',
-      'CriticalTrials/2ndList/CTrial13/frog_feather.png',
-      'CriticalTrials/2ndList/CTrial14/dog_pencil.png',
-      'CriticalTrials/2ndList/CTrial14/flower.png',
-      'CriticalTrials/2ndList/CTrial14/leopard_flower.png',
-      'CriticalTrials/2ndList/CTrial14/pencil.png',
-      'CriticalTrials/2ndList/CTrial15/camel_tube.png',
-      'CriticalTrials/2ndList/CTrial15/straw.png',
-      'CriticalTrials/2ndList/CTrial15/penguin_straw.png',
-      'CriticalTrials/2ndList/CTrial15/tube.png',
-      'CriticalTrials/2ndList/CTrial16/bear_pen.png',
-      'CriticalTrials/2ndList/CTrial16/candle.png',
-      'CriticalTrials/2ndList/CTrial16/leopard_candle.png',
-      'CriticalTrials/2ndList/CTrial16/pen.png',
-      'CriticalTrials/2ndList/CTrial17/bird_straw.png',
-      'CriticalTrials/2ndList/CTrial17/pencil.png',
-      'CriticalTrials/2ndList/CTrial17/lion_pencil.png',
-      'CriticalTrials/2ndList/CTrial17/straw.png',
-      'CriticalTrials/2ndList/CTrial18/fish_leaf.png',
-      'CriticalTrials/2ndList/CTrial18/funnel.png',
-      'CriticalTrials/2ndList/CTrial18/penguin_funnel.png',
-      'CriticalTrials/2ndList/CTrial18/leaf.png',
-      'CriticalTrials/2ndList/CTrial19/dolphin_tongs.png',
-      'CriticalTrials/2ndList/CTrial19/sponge.png',
-      'CriticalTrials/2ndList/CTrial19/lion_sponge.png',
-      'CriticalTrials/2ndList/CTrial19/tongs.png',
-      'CriticalTrials/2ndList/CTrial20/chicken_spoon.png',
-      'CriticalTrials/2ndList/CTrial20/leaf.png',
-      'CriticalTrials/2ndList/CTrial20/horse_leaf.png',
-      'CriticalTrials/2ndList/CTrial20/spoon.png',
-      'CriticalTrials/2ndList/CTrial21/bunny_microphone.png',
-      'CriticalTrials/2ndList/CTrial21/hat.png',
-      'CriticalTrials/2ndList/CTrial21/zebra_hat.png',
-      'CriticalTrials/2ndList/CTrial21/microphone.png',
-      'CriticalTrials/2ndList/CTrial22/duckling_straw.png',
-      'CriticalTrials/2ndList/CTrial22/net.png',
-      'CriticalTrials/2ndList/CTrial22/ladybug_net.png',
-      'CriticalTrials/2ndList/CTrial22/straw.png',
-      'CriticalTrials/2ndList/CTrial23/dolphin_pen.png',
-      'CriticalTrials/2ndList/CTrial23/microphone.png',
-      'CriticalTrials/2ndList/CTrial23/whale_microphone.png',
-      'CriticalTrials/2ndList/CTrial23/pen.png',
-      'CriticalTrials/2ndList/CTrial24/bird_towel.png',
-      'CriticalTrials/2ndList/CTrial24/mitten.png',
-      'CriticalTrials/2ndList/CTrial24/lion_mitten.png',
-      'CriticalTrials/2ndList/CTrial24/towel.png',
-      'CriticalTrials/2ndList/CTrial25/giraffe_umbrella.png',
-      'CriticalTrials/2ndList/CTrial25/partyhat.png',
-      'CriticalTrials/2ndList/CTrial25/panda_partyhat.png',
-      'CriticalTrials/2ndList/CTrial25/umbrella.png',
-      'CriticalTrials/2ndList/CTrial26/squirrel_towel.png',
-      'CriticalTrials/2ndList/CTrial26/partyhat.png',
-      'CriticalTrials/2ndList/CTrial26/zebra_partyhat.png',
-      'CriticalTrials/2ndList/CTrial26/towel.png',
-      'CriticalTrials/2ndList/CTrial27/cow_pen.png',
-      'CriticalTrials/2ndList/CTrial27/barrette.png',
-      'CriticalTrials/2ndList/CTrial27/squirrel_barrette.png',
-      'CriticalTrials/2ndList/CTrial27/pen.png'
-    ];
+    'CriticalTrials/1stList/CTrial1/umbrella.png',
+    'CriticalTrials/1stList/CTrial1/necklace.png',
+    'CriticalTrials/1stList/CTrial1/elephant_umbrella.png',
+    'CriticalTrials/1stList/CTrial2/cow_pencil.png',
+    'CriticalTrials/1stList/CTrial2/pencil.png',
+    'CriticalTrials/1stList/CTrial2/fan.png',
+    'CriticalTrials/1stList/CTrial2/ladybug_fan.png',
+    'CriticalTrials/1stList/CTrial3/cup.png',
+    'CriticalTrials/1stList/CTrial3/mouse_cup.png',
+    'CriticalTrials/1stList/CTrial3/frog_tube.png',
+    'CriticalTrials/1stList/CTrial3/tube.png',
+    'CriticalTrials/1stList/CTrial4/butterfly_violin.png',
+    'CriticalTrials/1stList/CTrial4/violin.png',
+    'CriticalTrials/1stList/CTrial4/crayon.png',
+    'CriticalTrials/1stList/CTrial4/panda_crayon.png',
+    'CriticalTrials/1stList/CTrial5/bunny_spoon.png',
+    'CriticalTrials/1stList/CTrial5/spoon.png',
+    'CriticalTrials/1stList/CTrial5/pig_violin.png',
+    'CriticalTrials/1stList/CTrial5/violin.png',
+    'CriticalTrials/1stList/CTrial6/elephant_napkin.png',
+    'CriticalTrials/1stList/CTrial6/napkin.png',
+    'CriticalTrials/1stList/CTrial6/panda_spoon.png',
+    'CriticalTrials/1stList/CTrial6/spoon.png',
+    'CriticalTrials/1stList/CTrial7/dog_hat.png',
+    'CriticalTrials/1stList/CTrial7/hat.png',
+    'CriticalTrials/1stList/CTrial7/flute.png',
+    'CriticalTrials/1stList/CTrial7/leopard_flute.png',
+    'CriticalTrials/1stList/CTrial8/dog_violin.png',
+    'CriticalTrials/1stList/CTrial8/violin.png',
+    'CriticalTrials/1stList/CTrial8/turtle_leaf.png',
+    'CriticalTrials/1stList/CTrial8/leaf.png',
+    'CriticalTrials/1stList/CTrial9/dog_lollipop.png',
+    'CriticalTrials/1stList/CTrial9/lollipop.png',
+    'CriticalTrials/1stList/CTrial9/leopard_crayon.png',
+    'CriticalTrials/1stList/CTrial9/crayon.png',
+    'CriticalTrials/1stList/CTrial10/book.png',
+    'CriticalTrials/1stList/CTrial10/zebra_lollipop.png',
+    'CriticalTrials/1stList/CTrial10/duckling_book.png',
+    'CriticalTrials/1stList/CTrial10/lollipop.png',
+    'CriticalTrials/1stList/CTrial11/chicken_cup.png',
+    'CriticalTrials/1stList/CTrial11/cup.png',
+    'CriticalTrials/1stList/CTrial11/pig_flower.png',
+    'CriticalTrials/1stList/CTrial11/flower.png',
+    'CriticalTrials/1stList/CTrial12/leopard_hat.png',
+    'CriticalTrials/1stList/CTrial12/hat.png',
+    'CriticalTrials/1stList/CTrial12/panda_toothbrush.png',
+    'CriticalTrials/1stList/CTrial12/toothbrush.png',
+    'CriticalTrials/1stList/CTrial13/bunny_feather.png',
+    'CriticalTrials/1stList/CTrial13/feather.png',
+    'CriticalTrials/1stList/CTrial13/sponge.png',
+    'CriticalTrials/1stList/CTrial13/frog_sponge.png',
+    'CriticalTrials/1stList/CTrial14/dog_flower.png',
+    'CriticalTrials/1stList/CTrial14/flower.png',
+    'CriticalTrials/1stList/CTrial14/leopard_pencil.png',
+    'CriticalTrials/1stList/CTrial14/pencil.png',
+    'CriticalTrials/1stList/CTrial15/camel_straw.png',
+    'CriticalTrials/1stList/CTrial15/straw.png',
+    'CriticalTrials/1stList/CTrial15/penguin_tube.png',
+    'CriticalTrials/1stList/CTrial15/tube.png',
+    'CriticalTrials/1stList/CTrial16/bear_candle.png',
+    'CriticalTrials/1stList/CTrial16/candle.png',
+    'CriticalTrials/1stList/CTrial16/leopard_pen.png',
+    'CriticalTrials/1stList/CTrial16/pen.png',
+    'CriticalTrials/1stList/CTrial17/bird_pencil.png',
+    'CriticalTrials/1stList/CTrial17/pencil.png',
+    'CriticalTrials/1stList/CTrial17/lion_straw.png',
+    'CriticalTrials/1stList/CTrial17/straw.png',
+    'CriticalTrials/1stList/CTrial18/fish_funnel.png',
+    'CriticalTrials/1stList/CTrial18/funnel.png',
+    'CriticalTrials/1stList/CTrial18/penguin_leaf.png',
+    'CriticalTrials/1stList/CTrial18/leaf.png',
+    'CriticalTrials/1stList/CTrial19/dolphin_sponge.png',
+    'CriticalTrials/1stList/CTrial19/sponge.png',
+    'CriticalTrials/1stList/CTrial19/lion_tongs.png',
+    'CriticalTrials/1stList/CTrial19/tongs.png',
+    'CriticalTrials/1stList/CTrial20/chicken_leaf.png',
+    'CriticalTrials/1stList/CTrial20/leaf.png',
+    'CriticalTrials/1stList/CTrial20/horse_spoon.png',
+    'CriticalTrials/1stList/CTrial20/spoon.png',
+    'CriticalTrials/1stList/CTrial21/bunny_hat.png',
+    'CriticalTrials/1stList/CTrial21/hat.png',
+    'CriticalTrials/1stList/CTrial21/zebra_microphone.png',
+    'CriticalTrials/1stList/CTrial21/microphone.png',
+    'CriticalTrials/1stList/CTrial22/duckling_net.png',
+    'CriticalTrials/1stList/CTrial22/net.png',
+    'CriticalTrials/1stList/CTrial22/ladybug_straw.png',
+    'CriticalTrials/1stList/CTrial22/straw.png',
+    'CriticalTrials/1stList/CTrial23/dolphin_microphone.png',
+    'CriticalTrials/1stList/CTrial23/microphone.png',
+    'CriticalTrials/1stList/CTrial23/whale_pen.png',
+    'CriticalTrials/1stList/CTrial23/pen.png',
+    'CriticalTrials/1stList/CTrial24/bird_mitten.png',
+    'CriticalTrials/1stList/CTrial24/mitten.png',
+    'CriticalTrials/1stList/CTrial24/lion_towel.png',
+    'CriticalTrials/1stList/CTrial24/towel.png',
+    'CriticalTrials/1stList/CTrial25/giraffe_partyhat.png',
+    'CriticalTrials/1stList/CTrial25/partyhat.png',
+    'CriticalTrials/1stList/CTrial25/panda_umbrella.png',
+    'CriticalTrials/1stList/CTrial25/umbrella.png',
+    'CriticalTrials/1stList/CTrial26/squirrel_partyhat.png',
+    'CriticalTrials/1stList/CTrial26/partyhat.png',
+    'CriticalTrials/1stList/CTrial26/zebra_towel.png',
+    'CriticalTrials/1stList/CTrial26/towel.png',
+    'CriticalTrials/1stList/CTrial27/cow_barrette.png',
+    'CriticalTrials/1stList/CTrial27/barrette.png',
+    'CriticalTrials/1stList/CTrial27/squirrel_pen.png',
+    'CriticalTrials/1stList/CTrial27/pen.png',
+    'img/butterfly.png', 'img/frog_shell.png', 'img/shell.png', 'img/towel.png',
+    'img/camel.png', 'img/fish.png', 'img/flag.png',
+    'img/hat.png', 'img/bird.png', 'img/chicken.png', 'img/mitten.png',
+    'img/net.png', 'img/net.png', 'img/duckling.png', 'img/giraffe.png',
+    'img/umbrella.png', 'img/net.png', 'img/cup.png', 'img/dolphin.png',
+    'img/frog.png', 'img/dog_funnel.png', 'img/fork.png', 'img/funnel.png',
+    'img/panda.png', 'img/bear.png', 'img/cow.png', 'img/flute.png',
+    'img/stick.png', 'img/camel.png', 'img/flute.png', 'img/hat.png',
+    'img/whale.png', 'img/butterfly.png', 'img/fork.png', 'img/towel.png',
+    'img/hippo.png', 'img/brush.png', 'img/bunny.png', 'img/camel.png',
+    'img/tube.png', 'img/clip.png', 'img/stick.png', 'img/elephant.png',
+    'img/zebra.png', 'img/zebra.png', 'img/leaf.png', 'img/penguin.png',
+    'img/train.png', 'img/book.png', 'img/flute.png', 'img/whale.png',
+    'img/zebra.png', 'img/bird.png', 'img/flower.png', 'img/toy.png',
+    'img/turtle.png', 'img/tube.png', 'img/turtle.png', 'img/mouse.png',
+    'img/partyhat.png', 'img/bear.png', 'img/stick.png', 'img/pen.png',
+    'img/squirrel.png', 'img/chopsticks.png', 'img/hippo.png', 'img/squirrel.png',
+    'img/sponge.png', 'img/net.png', 'img/ladybug_net.png', 'img/pig.png',
+    'img/straw.png', 'img/bird.png', 'img/fork.png', 'img/panda.png',
+    'img/pencil.png', 'img/panda.png', 'img/towel.png', 'img/leopard.png',
+    'img/lollipop.png', 'img/panda.png', 'img/fan.png', 'img/lion.png',
+    'img/napkin.png', 'img/chicken.png', 'img/funnel.png', 'img/leaf.png',
+    'img/leopard_funnel.png', 'img/fan.png', 'img/turtle.png', 'img/horse.png',
+    'img/toothbrush.png', 'img/book.png', 'img/hippo.png', 'img/penguin.png',
+    'img/straw.png',
+    'CriticalTrials/2ndList/CTrial1/bear_umbrella.png',
+    'CriticalTrials/2ndList/CTrial1/umbrella.png',
+    'CriticalTrials/2ndList/CTrial1/necklace.png',
+    'CriticalTrials/2ndList/CTrial1/elephant_necklace.png',
+    'CriticalTrials/2ndList/CTrial2/cow_fan.png',
+    'CriticalTrials/2ndList/CTrial2/pencil.png',
+    'CriticalTrials/2ndList/CTrial2/fan.png',
+    'CriticalTrials/2ndList/CTrial2/ladybug_pencil.png',
+    'CriticalTrials/2ndList/CTrial3/cup.png',
+    'CriticalTrials/2ndList/CTrial3/mouse_tube.png',
+    'CriticalTrials/2ndList/CTrial3/frog_cup.png',
+    'CriticalTrials/2ndList/CTrial3/tube.png',
+    'CriticalTrials/2ndList/CTrial4/butterfly_crayon.png',
+    'CriticalTrials/2ndList/CTrial4/violin.png',
+    'CriticalTrials/2ndList/CTrial4/crayon.png',
+    'CriticalTrials/2ndList/CTrial4/panda_violin.png',
+    'CriticalTrials/2ndList/CTrial5/bunny_violin.png',
+    'CriticalTrials/2ndList/CTrial5/spoon.png',
+    'CriticalTrials/2ndList/CTrial5/pig_spoon.png',
+    'CriticalTrials/2ndList/CTrial5/violin.png',
+    'CriticalTrials/2ndList/CTrial6/elephant_spoon.png',
+    'CriticalTrials/2ndList/CTrial6/napkin.png',
+    'CriticalTrials/2ndList/CTrial6/panda_napkin.png',
+    'CriticalTrials/2ndList/CTrial6/spoon.png',
+    'CriticalTrials/2ndList/CTrial7/dog_flute.png',
+    'CriticalTrials/2ndList/CTrial7/hat.png',
+    'CriticalTrials/2ndList/CTrial7/flute.png',
+    'CriticalTrials/2ndList/CTrial7/leopard_hat.png',
+    'CriticalTrials/2ndList/CTrial8/dog_leaf.png',
+    'CriticalTrials/2ndList/CTrial8/violin.png',
+    'CriticalTrials/2ndList/CTrial8/turtle_violin.png',
+    'CriticalTrials/2ndList/CTrial8/leaf.png',
+    'CriticalTrials/2ndList/CTrial9/dog_crayon.png',
+    'CriticalTrials/2ndList/CTrial9/lollipop.png',
+    'CriticalTrials/2ndList/CTrial9/leopard_lollipop.png',
+    'CriticalTrials/2ndList/CTrial9/crayon.png',
+    'CriticalTrials/2ndList/CTrial10/duckling_lollipop.png',
+    'CriticalTrials/2ndList/CTrial10/book.png',
+    'CriticalTrials/2ndList/CTrial10/zebra_book.png',
+    'CriticalTrials/2ndList/CTrial10/lollipop.png',
+    'CriticalTrials/2ndList/CTrial11/chicken_flower.png',
+    'CriticalTrials/2ndList/CTrial11/cup.png',
+    'CriticalTrials/2ndList/CTrial11/pig_cup.png',
+    'CriticalTrials/2ndList/CTrial11/flower.png',
+    'CriticalTrials/2ndList/CTrial12/leopard_toothbrush.png',
+    'CriticalTrials/2ndList/CTrial12/hat.png',
+    'CriticalTrials/2ndList/CTrial12/panda_hat.png',
+    'CriticalTrials/2ndList/CTrial12/toothbrush.png',
+    'CriticalTrials/2ndList/CTrial13/bunny_sponge.png',
+    'CriticalTrials/2ndList/CTrial13/feather.png',
+    'CriticalTrials/2ndList/CTrial13/sponge.png',
+    'CriticalTrials/2ndList/CTrial13/frog_feather.png',
+    'CriticalTrials/2ndList/CTrial14/dog_pencil.png',
+    'CriticalTrials/2ndList/CTrial14/flower.png',
+    'CriticalTrials/2ndList/CTrial14/leopard_flower.png',
+    'CriticalTrials/2ndList/CTrial14/pencil.png',
+    'CriticalTrials/2ndList/CTrial15/camel_tube.png',
+    'CriticalTrials/2ndList/CTrial15/straw.png',
+    'CriticalTrials/2ndList/CTrial15/penguin_straw.png',
+    'CriticalTrials/2ndList/CTrial15/tube.png',
+    'CriticalTrials/2ndList/CTrial16/bear_pen.png',
+    'CriticalTrials/2ndList/CTrial16/candle.png',
+    'CriticalTrials/2ndList/CTrial16/leopard_candle.png',
+    'CriticalTrials/2ndList/CTrial16/pen.png',
+    'CriticalTrials/2ndList/CTrial17/bird_straw.png',
+    'CriticalTrials/2ndList/CTrial17/pencil.png',
+    'CriticalTrials/2ndList/CTrial17/lion_pencil.png',
+    'CriticalTrials/2ndList/CTrial17/straw.png',
+    'CriticalTrials/2ndList/CTrial18/fish_leaf.png',
+    'CriticalTrials/2ndList/CTrial18/funnel.png',
+    'CriticalTrials/2ndList/CTrial18/penguin_funnel.png',
+    'CriticalTrials/2ndList/CTrial18/leaf.png',
+    'CriticalTrials/2ndList/CTrial19/dolphin_tongs.png',
+    'CriticalTrials/2ndList/CTrial19/sponge.png',
+    'CriticalTrials/2ndList/CTrial19/lion_sponge.png',
+    'CriticalTrials/2ndList/CTrial19/tongs.png',
+    'CriticalTrials/2ndList/CTrial20/chicken_spoon.png',
+    'CriticalTrials/2ndList/CTrial20/leaf.png',
+    'CriticalTrials/2ndList/CTrial20/horse_leaf.png',
+    'CriticalTrials/2ndList/CTrial20/spoon.png',
+    'CriticalTrials/2ndList/CTrial21/bunny_microphone.png',
+    'CriticalTrials/2ndList/CTrial21/hat.png',
+    'CriticalTrials/2ndList/CTrial21/zebra_hat.png',
+    'CriticalTrials/2ndList/CTrial21/microphone.png',
+    'CriticalTrials/2ndList/CTrial22/duckling_straw.png',
+    'CriticalTrials/2ndList/CTrial22/net.png',
+    'CriticalTrials/2ndList/CTrial22/ladybug_net.png',
+    'CriticalTrials/2ndList/CTrial22/straw.png',
+    'CriticalTrials/2ndList/CTrial23/dolphin_pen.png',
+    'CriticalTrials/2ndList/CTrial23/microphone.png',
+    'CriticalTrials/2ndList/CTrial23/whale_microphone.png',
+    'CriticalTrials/2ndList/CTrial23/pen.png',
+    'CriticalTrials/2ndList/CTrial24/bird_towel.png',
+    'CriticalTrials/2ndList/CTrial24/mitten.png',
+    'CriticalTrials/2ndList/CTrial24/lion_mitten.png',
+    'CriticalTrials/2ndList/CTrial24/towel.png',
+    'CriticalTrials/2ndList/CTrial25/giraffe_umbrella.png',
+    'CriticalTrials/2ndList/CTrial25/partyhat.png',
+    'CriticalTrials/2ndList/CTrial25/panda_partyhat.png',
+    'CriticalTrials/2ndList/CTrial25/umbrella.png',
+    'CriticalTrials/2ndList/CTrial26/squirrel_towel.png',
+    'CriticalTrials/2ndList/CTrial26/partyhat.png',
+    'CriticalTrials/2ndList/CTrial26/zebra_partyhat.png',
+    'CriticalTrials/2ndList/CTrial26/towel.png',
+    'CriticalTrials/2ndList/CTrial27/cow_pen.png',
+    'CriticalTrials/2ndList/CTrial27/barrette.png',
+    'CriticalTrials/2ndList/CTrial27/squirrel_barrette.png',
+    'CriticalTrials/2ndList/CTrial27/pen.png'
+  ];
 
-    var audio = ['img/111_sentence1.mp3',
-      'img/110_sentence1.mp3',
-      'img/109_sentence1.mp3',
-      'img/109_sentence1.mp3',
-      'CriticalTrials/1stList/CTrial1/strike_the_bear_with_the_necklace.mp3',
-      'CriticalTrials/1stList/CTrial1/strike_the_elephant_with_the_umbrella.mp3',
-      'CriticalTrials/1stList/CTrial2/whack_the_ladybug_with_the_fan.mp3',
-      'CriticalTrials/1stList/CTrial2/whack_the_cow_with_the_pencil.mp3',
-      'CriticalTrials/1stList/CTrial3/hit_the_mouse_with_the_cup.mp3',
-      'CriticalTrials/1stList/CTrial3/hit_the_frog_with_the_tube.mp3',
-      'CriticalTrials/1stList/CTrial4/rub_the_butterfly_with_the_violin.mp3',
-      'CriticalTrials/1stList/CTrial4/rub_the_panda_with_the_crayon.mp3',
-      'CriticalTrials/1stList/CTrial5/poke_the_pig_with_the_violin.mp3',
-      'CriticalTrials/1stList/CTrial5/poke_the_bunny_with_the_spoon.mp3',
-      'CriticalTrials/1stList/CTrial6/bop_the_panda_with_the_spoon.mp3',
-      'CriticalTrials/1stList/CTrial6/bop_the_elephant_with_the_napkin.mp3',
-      'CriticalTrials/1stList/CTrial7/smack_the_dog_with_the_hat.mp3',
-      'CriticalTrials/1stList/CTrial7/smack_the_leopard_with_the_flute.mp3',
-      'CriticalTrials/1stList/CTrial8/clean_the_turtle_with_the_leaf.mp3',
-      'CriticalTrials/1stList/CTrial8/clean_the_dog_with_the_violin.mp3',
-      'CriticalTrials/1stList/CTrial9/tease_the_leopard_with_the_crayon.mp3',
-      'CriticalTrials/1stList/CTrial9/tease_the_dog_with_the_lolipop.mp3',
-      'CriticalTrials/1stList/CTrial10/feed_the_duckling_with_the_book.mp3',
-      'CriticalTrials/1stList/CTrial10/feed_the_zebra_with_the_lollipop.mp3',
-      'CriticalTrials/1stList/CTrial11/scuff_the_pig_with_the_flower.mp3',
-      'CriticalTrials/1stList/CTrial11/scuff_the_chicken_the_cup.mp3',
-      'CriticalTrials/1stList/CTrial12/pinch_the_leopard_with_the_hat.mp3',
-      'CriticalTrials/1stList/CTrial12/pinch_the_panda_with_the_toothbrush.mp3',
-      'CriticalTrials/1stList/CTrial13/knock_on_the_frog_with_the_sponge.mp3',
-      'CriticalTrials/1stList/CTrial13/knock_on_the_bunny_with_the_feather.mp3',
-      'CriticalTrials/1stList/CTrial14/pat_the_dog_with_the_flower.mp3',
-      'CriticalTrials/1stList/CTrial14/pat_the_leopard_with_the_pencil.mp3',
-      'CriticalTrials/1stList/CTrial15/locate_the_penguin_with_the_tube.mp3',
-      'CriticalTrials/1stList/CTrial15/locate_the_camel_with_the_straw.mp3',
-      'CriticalTrials/1stList/CTrial16/feel_the_leopard_with_the_pen.mp3',
-      'CriticalTrials/1stList/CTrial16/feel_the_bear_with_the_candle.mp3',
-      'CriticalTrials/1stList/CTrial17/spot_the_lion_with_the_straw.mp3',
-      'CriticalTrials/1stList/CTrial17/spot_the_bird_with_the_pencil.mp3',
-      'CriticalTrials/1stList/CTrial18/point_to_the_penguin_with_the_leaf.mp3',
-      'CriticalTrials/1stList/CTrial18/point_to_the_fish_with_the_funnel.mp3',
-      'CriticalTrials/1stList/CTrial19/pet_the_lion_with_the_tongs.mp3',
-      'CriticalTrials/1stList/CTrial19/pet_the_dolphin_with_the_sponge.mp3',
-      'CriticalTrials/1stList/CTrial20/look_at_the_chicken_with_the_leaf.mp3',
-      'CriticalTrials/1stList/CTrial20/look_at_the_horse_with_the_spoon.mp3',
-      'CriticalTrials/1stList/CTrial21/squeeze_the_bunny_with_the_hat.mp3',
-      'CriticalTrials/1stList/CTrial21/squeeze_the_zebra_with_the_microphone.mp3',
-      'CriticalTrials/1stList/CTrial22/pick_out_the_ladybug_with_a_straw.mp3',
-      'CriticalTrials/1stList/CTrial22/pickout_the_duckling_with_the_net.mp3',
-      'CriticalTrials/1stList/CTrial23/cuddle_the_whale_with_the_pen.mp3',
-      'CriticalTrials/1stList/CTrial23/cuddle_dolphin_with_the_microphone.mp3',
-      'CriticalTrials/1stList/CTrial24/find_the_bird_with_the_mitten.mp3',
-      'CriticalTrials/1stList/CTrial24/find_the_lion_with_the_towel.mp3',
-      'CriticalTrials/1stList/CTrial25/hug_the_panda_with_the_umbrella.mp3',
-      'CriticalTrials/1stList/CTrial25/hug_the_giraffe_with_the_partyhat.mp3',
-      'CriticalTrials/1stList/CTrial26/select_the_squirrel_with_the_partyhat.mp3',
-      'CriticalTrials/1stList/CTrial26/select_the_zebra_with_a_towel.mp3',
-      'CriticalTrials/1stList/CTrial27/choose_the_cow_with_the_barrette.mp3',
-      'CriticalTrials/1stList/CTrial27/choose_the_squirrel_with_the_pen.mp3',
-      'img/135_sentence1.mp3',
-      'img/134_sentence1.mp3',
-      'img/133_sentence1.mp3',
-      'img/132_sentence1.mp3',
-      'img/131_sentence1.mp3',
-      'img/130_sentence1.mp3',
-      'img/129_sentence1.mp3',
-      'img/128_sentence1.mp3',
-      'img/127_sentence1.mp3',
-      'img/126_sentence1.mp3',
-      'img/125_sentence1.mp3',
-      'img/124_sentence1.mp3',
-      'img/123_sentence1.mp3',
-      'img/122_sentence1.mp3',
-      'img/121_sentence1.mp3',
-      'img/120_sentence1.mp3',
-      'img/119_sentence1.mp3',
-      'img/118_sentence1.mp3',
-      'img/117_sentence1.mp3',
-      'img/116_sentence1.mp3',
-      'img/115_sentence1.mp3',
-      'img/114_sentence1.mp3',
-      'img/113_sentence1.mp3',
-      'img/112_sentence1.mp3',
-      'CriticalTrials/2ndList/CTrial1/strike_the_bear_with_the_umbrella.mp3',
-      'CriticalTrials/2ndList/CTrial1/strike_the_elephant_with_the_necklace.mp3',
-      'CriticalTrials/2ndList/CTrial2/wack_the_cow_with_the_fan.mp3',
-      'CriticalTrials/2ndList/CTrial2/wack_the_ladybug_with_the_pencil.mp3',
-      'CriticalTrials/2ndList/CTrial3/hit_the_frog_with_the_cup.mp3',
-      'CriticalTrials/2ndList/CTrial3/hit_the_mouse_with_the_tube.mp3',
-      'CriticalTrials/2ndList/CTrial4/rub_the_butterfly_with_the_crayon.mp3',
-      'CriticalTrials/2ndList/CTrial4/rub_the_panda_with_the_violin.mp3',
-      'CriticalTrials/2ndList/CTrial5/poke_the_pig_with_the_spoon.mp3',
-      'CriticalTrials/2ndList/CTrial5/poke_the_bunny_with_the_violin.mp3',
-      'CriticalTrials/2ndList/CTrial6/bop_the_panda_with_the_napkin.mp3',
-      'CriticalTrials/2ndList/CTrial6/bop_the_elephant_with_the_spoon.mp3',
-      'CriticalTrials/2ndList/CTrial7/smack_the_dog_with_the_flute.mp3',
-      'CriticalTrials/2ndList/CTrial7/smack_the_leopard_with_the_hat.mp3',
-      'CriticalTrials/2ndList/CTrial8/clean_the_turtle_with_the_violin.mp3',
-      'CriticalTrials/2ndList/CTrial8/clean_the_dog_with_the_leaf.mp3',
-      'CriticalTrials/2ndList/CTrial9/tease_the_leopard_with_the_lollipop.mp3',
-      'CriticalTrials/2ndList/CTrial9/tease_the_dog_with_the_crayon.mp3',
-      'CriticalTrials/2ndList/CTrial10/feed_the_zebra_with_the_book.mp3',
-      'CriticalTrials/2ndList/CTrial10/feed_the_duckling_with_the_lollipop.mp3',
-      'CriticalTrials/2ndList/CTrial11/scuff_the_pig_with_the_cup.mp3',
-      'CriticalTrials/2ndList/CTrial11/scuff_the_chicken_with_the_flower.mp3',
-      'CriticalTrials/2ndList/CTrial12/pinch_the_panda_with_the_hat.mp3',
-      'CriticalTrials/2ndList/CTrial12/pinch_the_leopard_with_the_toothbrush.mp3',
-      'CriticalTrials/2ndList/CTrial13/knock_on_the_bunny_with_the_sponge.mp3',
-      'CriticalTrials/2ndList/CTrial13/knock_on_the_frog_with_the_feather.mp3',
-      'CriticalTrials/2ndList/CTrial14/pat_the_leopard_with_the_flower.mp3',
-      'CriticalTrials/2ndList/CTrial14/pat_the_dog_with_the_pencil.mp3',
-      'CriticalTrials/2ndList/CTrial15/locate_the_camel_with_the_tube.mp3',
-      'CriticalTrials/2ndList/CTrial15/locate_the_penguin_with_the_straw.mp3',
-      'CriticalTrials/2ndList/CTrial16/feel_the_bear_with_the_pen.mp3',
-      'CriticalTrials/2ndList/CTrial16/feel_the_leopard_with_the_candle.mp3',
-      'CriticalTrials/2ndList/CTrial17/spot_the_bird_with_the_straw.mp3',
-      'CriticalTrials/2ndList/CTrial17/spot_the_lion_with_the_pencil.mp3',
-      'CriticalTrials/2ndList/CTrial18/point_to_the_penguin_with_the_funnel.mp3',
-      'CriticalTrials/2ndList/CTrial18/point_to_the_fish_with_the_leaf.mp3',
-      'CriticalTrials/2ndList/CTrial19/pet_the_lion_with_the_sponge.mp3',
-      'CriticalTrials/2ndList/CTrial19/pet_the_dolphin_with_the_tongs.mp3',
-      'CriticalTrials/2ndList/CTrial20/look_at_the_chicken_with_the_spoon.mp3',
-      'CriticalTrials/2ndList/CTrial20/look_at_horse_with_the_leaf.mp3',
-      'CriticalTrials/2ndList/CTrial21/squeeze_zebra_with_the_hat.mp3',
-      'CriticalTrials/2ndList/CTrial21/squeeze_the_bunny_with_the_microphone.mp3',
-      'CriticalTrials/2ndList/CTrial22/pick_out_the_duckling_with_a_straw.mp3',
-      'CriticalTrials/2ndList/CTrial22/pickout_the_ladybug_with_the_net.mp3',
-      'CriticalTrials/2ndList/CTrial23/cuddle_the_dolphin_with_the_pen.mp3',
-      'CriticalTrials/2ndList/CTrial23/cuddle_the_whale_with_the_microphone.mp3',
-      'CriticalTrials/2ndList/CTrial24/find_the_bird_with_the_towel.mp3',
-      'CriticalTrials/2ndList/CTrial24/find_the_lion_with_the_mitten.mp3',
-      'CriticalTrials/2ndList/CTrial25/hug_the_giraffe_with_the_umbrella.mp3',
-      'CriticalTrials/2ndList/CTrial25/hug_the_panda_with_the_partyhat.mp3',
-      'CriticalTrials/2ndList/CTrial26/select_the_zebra_with_the_partyhat.mp3',
-      'CriticalTrials/2ndList/CTrial26/select_the_squirrel_with_the_towel.mp3',
-      'CriticalTrials/2ndList/CTrial27/choose_the_cow_with_the_pen.mp3',
-      'CriticalTrials/2ndList/CTrial27/choose_the_squirrel_with_the_barrette.mp3'
-    ];
+  var audio = ['img/111_sentence1.mp3',
+    'img/110_sentence1.mp3',
+    'img/109_sentence1.mp3',
+    'img/109_sentence1.mp3',
+    'CriticalTrials/1stList/CTrial1/strike_the_bear_with_the_necklace.mp3',
+    'CriticalTrials/1stList/CTrial1/strike_the_elephant_with_the_umbrella.mp3',
+    'CriticalTrials/1stList/CTrial2/whack_the_ladybug_with_the_fan.mp3',
+    'CriticalTrials/1stList/CTrial2/whack_the_cow_with_the_pencil.mp3',
+    'CriticalTrials/1stList/CTrial3/hit_the_mouse_with_the_cup.mp3',
+    'CriticalTrials/1stList/CTrial3/hit_the_frog_with_the_tube.mp3',
+    'CriticalTrials/1stList/CTrial4/rub_the_butterfly_with_the_violin.mp3',
+    'CriticalTrials/1stList/CTrial4/rub_the_panda_with_the_crayon.mp3',
+    'CriticalTrials/1stList/CTrial5/poke_the_pig_with_the_violin.mp3',
+    'CriticalTrials/1stList/CTrial5/poke_the_bunny_with_the_spoon.mp3',
+    'CriticalTrials/1stList/CTrial6/bop_the_panda_with_the_spoon.mp3',
+    'CriticalTrials/1stList/CTrial6/bop_the_elephant_with_the_napkin.mp3',
+    'CriticalTrials/1stList/CTrial7/smack_the_dog_with_the_hat.mp3',
+    'CriticalTrials/1stList/CTrial7/smack_the_leopard_with_the_flute.mp3',
+    'CriticalTrials/1stList/CTrial8/clean_the_turtle_with_the_leaf.mp3',
+    'CriticalTrials/1stList/CTrial8/clean_the_dog_with_the_violin.mp3',
+    'CriticalTrials/1stList/CTrial9/tease_the_leopard_with_the_crayon.mp3',
+    'CriticalTrials/1stList/CTrial9/tease_the_dog_with_the_lolipop.mp3',
+    'CriticalTrials/1stList/CTrial10/feed_the_duckling_with_the_book.mp3',
+    'CriticalTrials/1stList/CTrial10/feed_the_zebra_with_the_lollipop.mp3',
+    'CriticalTrials/1stList/CTrial11/scuff_the_pig_with_the_flower.mp3',
+    'CriticalTrials/1stList/CTrial11/scuff_the_chicken_the_cup.mp3',
+    'CriticalTrials/1stList/CTrial12/pinch_the_leopard_with_the_hat.mp3',
+    'CriticalTrials/1stList/CTrial12/pinch_the_panda_with_the_toothbrush.mp3',
+    'CriticalTrials/1stList/CTrial13/knock_on_the_frog_with_the_sponge.mp3',
+    'CriticalTrials/1stList/CTrial13/knock_on_the_bunny_with_the_feather.mp3',
+    'CriticalTrials/1stList/CTrial14/pat_the_dog_with_the_flower.mp3',
+    'CriticalTrials/1stList/CTrial14/pat_the_leopard_with_the_pencil.mp3',
+    'CriticalTrials/1stList/CTrial15/locate_the_penguin_with_the_tube.mp3',
+    'CriticalTrials/1stList/CTrial15/locate_the_camel_with_the_straw.mp3',
+    'CriticalTrials/1stList/CTrial16/feel_the_leopard_with_the_pen.mp3',
+    'CriticalTrials/1stList/CTrial16/feel_the_bear_with_the_candle.mp3',
+    'CriticalTrials/1stList/CTrial17/spot_the_lion_with_the_straw.mp3',
+    'CriticalTrials/1stList/CTrial17/spot_the_bird_with_the_pencil.mp3',
+    'CriticalTrials/1stList/CTrial18/point_to_the_penguin_with_the_leaf.mp3',
+    'CriticalTrials/1stList/CTrial18/point_to_the_fish_with_the_funnel.mp3',
+    'CriticalTrials/1stList/CTrial19/pet_the_lion_with_the_tongs.mp3',
+    'CriticalTrials/1stList/CTrial19/pet_the_dolphin_with_the_sponge.mp3',
+    'CriticalTrials/1stList/CTrial20/look_at_the_chicken_with_the_leaf.mp3',
+    'CriticalTrials/1stList/CTrial20/look_at_the_horse_with_the_spoon.mp3',
+    'CriticalTrials/1stList/CTrial21/squeeze_the_bunny_with_the_hat.mp3',
+    'CriticalTrials/1stList/CTrial21/squeeze_the_zebra_with_the_microphone.mp3',
+    'CriticalTrials/1stList/CTrial22/pick_out_the_ladybug_with_a_straw.mp3',
+    'CriticalTrials/1stList/CTrial22/pickout_the_duckling_with_the_net.mp3',
+    'CriticalTrials/1stList/CTrial23/cuddle_the_whale_with_the_pen.mp3',
+    'CriticalTrials/1stList/CTrial23/cuddle_dolphin_with_the_microphone.mp3',
+    'CriticalTrials/1stList/CTrial24/find_the_bird_with_the_mitten.mp3',
+    'CriticalTrials/1stList/CTrial24/find_the_lion_with_the_towel.mp3',
+    'CriticalTrials/1stList/CTrial25/hug_the_panda_with_the_umbrella.mp3',
+    'CriticalTrials/1stList/CTrial25/hug_the_giraffe_with_the_partyhat.mp3',
+    'CriticalTrials/1stList/CTrial26/select_the_squirrel_with_the_partyhat.mp3',
+    'CriticalTrials/1stList/CTrial26/select_the_zebra_with_a_towel.mp3',
+    'CriticalTrials/1stList/CTrial27/choose_the_cow_with_the_barrette.mp3',
+    'CriticalTrials/1stList/CTrial27/choose_the_squirrel_with_the_pen.mp3',
+    'img/135_sentence1.mp3',
+    'img/134_sentence1.mp3',
+    'img/133_sentence1.mp3',
+    'img/132_sentence1.mp3',
+    'img/131_sentence1.mp3',
+    'img/130_sentence1.mp3',
+    'img/129_sentence1.mp3',
+    'img/128_sentence1.mp3',
+    'img/127_sentence1.mp3',
+    'img/126_sentence1.mp3',
+    'img/125_sentence1.mp3',
+    'img/124_sentence1.mp3',
+    'img/123_sentence1.mp3',
+    'img/122_sentence1.mp3',
+    'img/121_sentence1.mp3',
+    'img/120_sentence1.mp3',
+    'img/119_sentence1.mp3',
+    'img/118_sentence1.mp3',
+    'img/117_sentence1.mp3',
+    'img/116_sentence1.mp3',
+    'img/115_sentence1.mp3',
+    'img/114_sentence1.mp3',
+    'img/113_sentence1.mp3',
+    'img/112_sentence1.mp3',
+    'CriticalTrials/2ndList/CTrial1/strike_the_bear_with_the_umbrella.mp3',
+    'CriticalTrials/2ndList/CTrial1/strike_the_elephant_with_the_necklace.mp3',
+    'CriticalTrials/2ndList/CTrial2/wack_the_cow_with_the_fan.mp3',
+    'CriticalTrials/2ndList/CTrial2/wack_the_ladybug_with_the_pencil.mp3',
+    'CriticalTrials/2ndList/CTrial3/hit_the_frog_with_the_cup.mp3',
+    'CriticalTrials/2ndList/CTrial3/hit_the_mouse_with_the_tube.mp3',
+    'CriticalTrials/2ndList/CTrial4/rub_the_butterfly_with_the_crayon.mp3',
+    'CriticalTrials/2ndList/CTrial4/rub_the_panda_with_the_violin.mp3',
+    'CriticalTrials/2ndList/CTrial5/poke_the_pig_with_the_spoon.mp3',
+    'CriticalTrials/2ndList/CTrial5/poke_the_bunny_with_the_violin.mp3',
+    'CriticalTrials/2ndList/CTrial6/bop_the_panda_with_the_napkin.mp3',
+    'CriticalTrials/2ndList/CTrial6/bop_the_elephant_with_the_spoon.mp3',
+    'CriticalTrials/2ndList/CTrial7/smack_the_dog_with_the_flute.mp3',
+    'CriticalTrials/2ndList/CTrial7/smack_the_leopard_with_the_hat.mp3',
+    'CriticalTrials/2ndList/CTrial8/clean_the_turtle_with_the_violin.mp3',
+    'CriticalTrials/2ndList/CTrial8/clean_the_dog_with_the_leaf.mp3',
+    'CriticalTrials/2ndList/CTrial9/tease_the_leopard_with_the_lollipop.mp3',
+    'CriticalTrials/2ndList/CTrial9/tease_the_dog_with_the_crayon.mp3',
+    'CriticalTrials/2ndList/CTrial10/feed_the_zebra_with_the_book.mp3',
+    'CriticalTrials/2ndList/CTrial10/feed_the_duckling_with_the_lollipop.mp3',
+    'CriticalTrials/2ndList/CTrial11/scuff_the_pig_with_the_cup.mp3',
+    'CriticalTrials/2ndList/CTrial11/scuff_the_chicken_with_the_flower.mp3',
+    'CriticalTrials/2ndList/CTrial12/pinch_the_panda_with_the_hat.mp3',
+    'CriticalTrials/2ndList/CTrial12/pinch_the_leopard_with_the_toothbrush.mp3',
+    'CriticalTrials/2ndList/CTrial13/knock_on_the_bunny_with_the_sponge.mp3',
+    'CriticalTrials/2ndList/CTrial13/knock_on_the_frog_with_the_feather.mp3',
+    'CriticalTrials/2ndList/CTrial14/pat_the_leopard_with_the_flower.mp3',
+    'CriticalTrials/2ndList/CTrial14/pat_the_dog_with_the_pencil.mp3',
+    'CriticalTrials/2ndList/CTrial15/locate_the_camel_with_the_tube.mp3',
+    'CriticalTrials/2ndList/CTrial15/locate_the_penguin_with_the_straw.mp3',
+    'CriticalTrials/2ndList/CTrial16/feel_the_bear_with_the_pen.mp3',
+    'CriticalTrials/2ndList/CTrial16/feel_the_leopard_with_the_candle.mp3',
+    'CriticalTrials/2ndList/CTrial17/spot_the_bird_with_the_straw.mp3',
+    'CriticalTrials/2ndList/CTrial17/spot_the_lion_with_the_pencil.mp3',
+    'CriticalTrials/2ndList/CTrial18/point_to_the_penguin_with_the_funnel.mp3',
+    'CriticalTrials/2ndList/CTrial18/point_to_the_fish_with_the_leaf.mp3',
+    'CriticalTrials/2ndList/CTrial19/pet_the_lion_with_the_sponge.mp3',
+    'CriticalTrials/2ndList/CTrial19/pet_the_dolphin_with_the_tongs.mp3',
+    'CriticalTrials/2ndList/CTrial20/look_at_the_chicken_with_the_spoon.mp3',
+    'CriticalTrials/2ndList/CTrial20/look_at_horse_with_the_leaf.mp3',
+    'CriticalTrials/2ndList/CTrial21/squeeze_zebra_with_the_hat.mp3',
+    'CriticalTrials/2ndList/CTrial21/squeeze_the_bunny_with_the_microphone.mp3',
+    'CriticalTrials/2ndList/CTrial22/pick_out_the_duckling_with_a_straw.mp3',
+    'CriticalTrials/2ndList/CTrial22/pickout_the_ladybug_with_the_net.mp3',
+    'CriticalTrials/2ndList/CTrial23/cuddle_the_dolphin_with_the_pen.mp3',
+    'CriticalTrials/2ndList/CTrial23/cuddle_the_whale_with_the_microphone.mp3',
+    'CriticalTrials/2ndList/CTrial24/find_the_bird_with_the_towel.mp3',
+    'CriticalTrials/2ndList/CTrial24/find_the_lion_with_the_mitten.mp3',
+    'CriticalTrials/2ndList/CTrial25/hug_the_giraffe_with_the_umbrella.mp3',
+    'CriticalTrials/2ndList/CTrial25/hug_the_panda_with_the_partyhat.mp3',
+    'CriticalTrials/2ndList/CTrial26/select_the_zebra_with_the_partyhat.mp3',
+    'CriticalTrials/2ndList/CTrial26/select_the_squirrel_with_the_towel.mp3',
+    'CriticalTrials/2ndList/CTrial27/choose_the_cow_with_the_pen.mp3',
+    'CriticalTrials/2ndList/CTrial27/choose_the_squirrel_with_the_barrette.mp3'
+  ];
 
-    var start = {
-      type: "html-button-response",
-      stimulus: '<p>Please wait while we load the experiment.</p>' +
+  var start = {
+    type: "html-button-response",
+    stimulus: '<p>Please wait while we load the experiment.</p>' +
       '<p>The experiment will start as soon as the loading is complete.</p>',
-      choices: ['Continue'],
-      margin_vertical: '20px'
-    }
+    choices: ['Continue'],
+    margin_vertical: '20px'
+  }
 
-    timeline.push(start);
+  timeline.push(start);
 
   var preload = {
     type: 'preload',
@@ -589,11 +589,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "umbrella" src = "CriticalTrials/1stList/CTrial1/umbrella.png"></img>',
         '<img id = "elephant" src = "CriticalTrials/1stList/CTrial1/elephant_umbrella.png"></img>'],
       verb: 'strike', compatibility: 'instrument',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#necklace', '#umbrella', '#bear', '#elephant']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#necklace', '#umbrella', '#bear', '#elephant']
         }
+      }
       ]
     },
 
@@ -604,11 +605,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "bear" src = "CriticalTrials/1stList/CTrial1/bear_necklace.png"></img>',
         '<img id = "elephant" src = "CriticalTrials/1stList/CTrial1/elephant_umbrella.png"></img>'],
       verb: 'strike', compatibility: 'instrument',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#necklace', '#umbrella', '#bear', '#elephant']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#necklace', '#umbrella', '#bear', '#elephant']
         }
+      }
       ]
     },
 
@@ -620,11 +622,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "fan" src = "CriticalTrials/1stList/CTrial2/fan.pn"></img>',
         '<img id = "ladybug" src = "CriticalTrials/1stList/CTrial2/ladybug_fan.png"></img>'],
       verb: 'whack', compatibility: 'instrument',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#cow', '#pencil', '#fan', '#ladybug']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#cow', '#pencil', '#fan', '#ladybug']
         }
+      }
       ]
     },
 
@@ -635,28 +638,30 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "fan" src = "CriticalTrials/1stList/CTrial2/fan.png"><img/>',
         '<img id = "ladybug" src = "CriticalTrials/1stList/CTrial2/ladybug_fan.png"></img>'],
       verb: 'whack', compatibility: 'instrument',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#cow', '#pencil', '#fan', '#ladybug']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#cow', '#pencil', '#fan', '#ladybug']
         }
+      }
       ]
     },
 
     /* Trial 3 */
-       {
+    {
       audio: [
         'CriticalTrials/1stList/CTrial3/hit_the_mouse_with_the_cup.mp3'],
-        images: ['<img id = "cup" src = "CriticalTrials/1stList/CTrial3/cup.png"></img>',
+      images: ['<img id = "cup" src = "CriticalTrials/1stList/CTrial3/cup.png"></img>',
         '<img id = "mouse" src = "CriticalTrials/1stList/CTrial3/mouse_cup.png"></img>',
         '<img id = "frog" src = "CriticalTrials/1stList/CTrial3/frog_tube.png"></img>',
         '<img id = "tube" src = "CriticalTrials/1stList/CTrial3/tube.png"></img>'],
       verb: 'hit', compatibility: 'instrument',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#cup', '#mouse', '#frog', '#tube']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#cup', '#mouse', '#frog', '#tube']
         }
+      }
       ]
     },
 
@@ -668,11 +673,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "frog" src = "CriticalTrials/1stList/CTrial3/frog_tube.png"></img>',
         '<img id = "tube" src = CriticalTrials/1stList/CTrial3/tube.png"></img>'],
       verb: 'hit', compatibility: 'instrument',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#cup', '#mouse', '#frog', '#tube']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#cup', '#mouse', '#frog', '#tube']
         }
+      }
       ]
     },
 
@@ -680,16 +686,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial4/rub_the_butterfly_with_the_violin.mp3'],
-        images: ['<img id = "butterfly" src = "CriticalTrials/1stList/CTrial4/butterfly_violin.png"></img>',
+      images: ['<img id = "butterfly" src = "CriticalTrials/1stList/CTrial4/butterfly_violin.png"></img>',
         '<img id = "violin" src = "CriticalTrials/1stList/CTrial4/violin.png"></img>',
         '<img id = "crayon" src = "CriticalTrials/1stList/CTrial4/crayon.png"></img>',
         '<img id = "panda" src = "CriticalTrials/1stList/CTrial4/panda_crayon.png"></img>'],
       verb: 'rub', compatibility: 'instrument',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#butterfly', '#violin', '#crayon', '#panda']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#butterfly', '#violin', '#crayon', '#panda']
         }
+      }
       ]
     },
 
@@ -701,11 +708,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "crayon" src = "CriticalTrials/1stList/CTrial4/crayon.png"></img>',
         '<img id = "panda" src = "CriticalTrials/1stList/CTrial4/panda_crayon.png"></img>'],
       verb: 'rub', compatibility: 'instrument',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#butterfly', '#violin', '#crayon', '#panda']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#butterfly', '#violin', '#crayon', '#panda']
         }
+      }
       ]
     },
 
@@ -713,16 +721,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial5/poke_the_pig_with_the_violin.mp3'],
-        images: ['<img id = "bunny" src = "CriticalTrials/1stList/CTrial5/bunny_spoon.png"></img>',
+      images: ['<img id = "bunny" src = "CriticalTrials/1stList/CTrial5/bunny_spoon.png"></img>',
         '<img id = "violin" src = "CriticalTrials/1stList/CTrial5/violin.png"></img>',
         '<img id = "pig" src = "CriticalTrials/1stList/CTrial5/pig_violin.png"></img>',
         '<img id = "spoon" src = "CriticalTrials/1stList/CTrial5/spoon.png"></img>'],
       verb: 'poke', compatibility: 'instrument',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#bunny', '#violin', '#pig', '#spoon']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#bunny', '#violin', '#pig', '#spoon']
         }
+      }
       ]
     },
 
@@ -730,15 +739,16 @@ timeline.push(audio_loop, audiocheck, stop_audio)
       audio: [
         'CriticalTrials/1stList/CTrial5/poke_the_bunny_with_the_spoon.mp3'],
       images: ['<img id = "bunny" src = "CriticalTrials/1stList/CTrial5/bunny_spoon.png"></img>',
-         '<img id = "violin" src = "CriticalTrials/1stList/CTrial5/violin.png"></img>' ,
+        '<img id = "violin" src = "CriticalTrials/1stList/CTrial5/violin.png"></img>',
         '<img id = "pig" src = "CriticalTrials/1stList/CTrial5/pig_violin.png"></img>',
         '<img id = "spoon" src = "CriticalTrials/1stList/CTrial5/spoon.png"></img>'],
       verb: 'poke', compatibility: 'instrument',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#bunny', '#violin', '#pig', '#spoon']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#bunny', '#violin', '#pig', '#spoon']
         }
+      }
       ]
     },
 
@@ -746,16 +756,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial6/bop_the_panda_with_the_spoon.mp3'],
-        images: ['<img id = "elephant" src = "CriticalTrials/1stList/CTrial6/elephant_napkin.png"></img>',
+      images: ['<img id = "elephant" src = "CriticalTrials/1stList/CTrial6/elephant_napkin.png"></img>',
         '<img id = "panda" src = "CriticalTrials/1stList/CTrial6/panda_spoon.png"></img>',
         '<img id = "napkin" src = "CriticalTrials/1stList/CTrial6/napkin.png"></img>',
         '<img id = "spoon" src = "CriticalTrials/1stList/CTrial6/spoon.png"></img>'],
       verb: 'bop', compatibility: 'instrument',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#elephant', '#panda', '#napkin', '#spoon']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#elephant', '#panda', '#napkin', '#spoon']
         }
+      }
       ]
     },
 
@@ -767,11 +778,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "napkin" src = "CriticalTrials/1stList/CTrial6/napkin.png"></img>',
         '<img id = "spoon" src = "CriticalTrials/1stList/CTrial6/spoon.png"></img>'],
       verb: 'bop', compatibility: 'instrument',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#elephant', '#panda', '#napkin', '#spoon']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#elephant', '#panda', '#napkin', '#spoon']
         }
+      }
       ]
     },
 
@@ -784,11 +796,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "dog" src = "CriticalTrials/1stList/CTrial7/dog_hat.png"></img>',
         '<img id = "leopard" src = "CriticalTrials/1stList/CTrial7/leopard_flute.png"></img>'],
       verb: 'smack', compatibility: 'instrument',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#hat', '#flute', '#dog', '#leopard']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#hat', '#flute', '#dog', '#leopard']
         }
+      }
       ]
     },
 
@@ -800,11 +813,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "dog" src = "CriticalTrials/1stList/CTrial7/dog_hat.png"></img>',
         '<img id = "leopard" src = "CriticalTrials/1stList/CTrial7/leopard_flute.png"></img>'],
       verb: 'smack', compatibility: 'instrument',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#hat', '#flute', '#dog', '#leopard']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#hat', '#flute', '#dog', '#leopard']
         }
+      }
       ]
     },
 
@@ -817,11 +831,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "turtle" src = "CriticalTrials/1stList/CTrial8/turtle_leaf.png"></img>',
         '<img id = "leaf" src = "CriticalTrials/1stList/CTrial8/leaf.png"></img>'],
       verb: 'clean', compatibility: 'instrument',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#dog', '#violin', '#turtle', '#leaf']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#dog', '#violin', '#turtle', '#leaf']
         }
+      }
       ]
     },
 
@@ -833,11 +848,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "turtle" src = "CriticalTrials/1stList/CTrial8/turtle_leaf.png"></img>',
         '<img id = "leaf" src = "CriticalTrials/1stList/CTrial8/leaf.png"></img>'],
       verb: 'clean', compatibility: 'instrument',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#dog', '#violin', '#turtle', '#leaf']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#dog', '#violin', '#turtle', '#leaf']
         }
+      }
       ]
     },
 
@@ -850,11 +866,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "lollipop" src = "CriticalTrials/1stList/CTrial9/leopard_crayon.png"></img>',
         '<img id = "leopard" src = "CriticalTrials/1stList/CTrial9/lollipop.png"></img>'],
       verb: 'tease', compatibility: 'instrument',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#crayon', '#dog', '#lollipop', '#leopard']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#crayon', '#dog', '#lollipop', '#leopard']
         }
+      }
       ]
     },
 
@@ -862,15 +879,16 @@ timeline.push(audio_loop, audiocheck, stop_audio)
       audio: [
         'CriticalTrials/1stList/CTrial9/tease_the_dog_with_the_lolipop.mp3'],
       images: ['<img id = "crayon" src = "CriticalTrials/1stList/CTrial9/crayon.png"></img>',
-      '<img id = "dog" src = "CriticalTrials/1stList/CTrial9/dog_lollipop.png"></img>',
+        '<img id = "dog" src = "CriticalTrials/1stList/CTrial9/dog_lollipop.png"></img>',
         '<img id = "leopard" src = "CriticalTrials/1stList/CTrial9/leopard_crayon.png"></img>',
         '<img id = "lollipop" src = "CriticalTrials/1stList/CTrial9/lollipop.png"></img>'],
       verb: 'tease', compatibility: 'instrument',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#crayon', '#dog', '#leopard', '#lollipop']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#crayon', '#dog', '#leopard', '#lollipop']
         }
+      }
       ]
     },
 
@@ -883,11 +901,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "duckling" src = "CriticalTrials/1stList/CTrial10/duckling_book.png"></img>',
         '<img id = "lollipop" src = "CriticalTrials/1stList/CTrial10/lollipop.png"></img>'],
       verb: 'feed', compatibility: 'equibiased',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#book', '#zebra', '#duckling', '#lollipop']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#book', '#zebra', '#duckling', '#lollipop']
         }
+      }
       ]
     },
 
@@ -900,11 +919,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "duckling" src = "CriticalTrials/1stList/CTrial10/duckling_book.png"></img>',
         '<img id = "lollipop" src = "CriticalTrials/1stList/CTrial10/lollipop.png"></img>'],
       verb: 'feed', compatibility: 'equibiased',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#book', '#zebra', '#duckling', '#elollipop']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#book', '#zebra', '#duckling', '#elollipop']
         }
+      }
       ]
     },
 
@@ -917,11 +937,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "cup" src = "CriticalTrials/1stList/1stList/CTrial11/cup.png"></img>',
         '<img id = "flower" src = "CriticalTrials/1stList/CTrial11/flower.png"></img>'],
       verb: 'scuff', compatibility: 'equibiased',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#chicken', '#pig', '#cup', '#flower']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#chicken', '#pig', '#cup', '#flower']
         }
+      }
       ]
     },
 
@@ -933,11 +954,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "cup" src = "CriticalTrials/1stList/CTrial11/cup.png"></img>',
         '<img id = "flower" src = "CriticalTrials/1stList/CTrial11/flower.png"></img>'],
       verb: 'scuff', compatibility: 'equibiased',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#chicken', '#pig', '#cup', '#flower']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#chicken', '#pig', '#cup', '#flower']
         }
+      }
       ]
     },
 
@@ -950,11 +972,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "panda" src = "CriticalTrials/1stList/CTrial12/panda_toothbrush.png"></img>',
         '<img id = "toothbrush" src = "CriticalTrials/1stList/CTrial12/toothbrush.png"></img>'],
       verb: 'pinch', compatibility: 'equibiased',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#hat', '#leopard', '#panda', '#toothbrush']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#hat', '#leopard', '#panda', '#toothbrush']
         }
+      }
       ]
     },
 
@@ -967,11 +990,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "panda" src = "CriticalTrials/1stList/CTrial12/panda_toothbrush.png"></img>',
         '<img id = "toothbrush" src = "CriticalTrials/1stList/CTrial12/toothbrush.png"></img>'],
       verb: 'pinch', compatibility: 'equibiased',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#hat', '#leopard', '#panda', '#toothbrush']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#hat', '#leopard', '#panda', '#toothbrush']
         }
+      }
       ]
     },
 
@@ -984,11 +1008,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "sponge" src = "CriticalTrials/1stList/CTrial13/sponge.png"></img>',
         '<img id = "frog" src = "CriticalTrials/1stList/CTrial13/frog_sponge.png"></img>'],
       verb: 'knockon', compatibility: 'equibiased',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#bunny', '#feather', '#sponge', '#frog']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#bunny', '#feather', '#sponge', '#frog']
         }
+      }
       ]
     },
 
@@ -1000,11 +1025,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "sponge" src = "CriticalTrials/1stList/CTrial13/sponge.png"></img>',
         '<img id = "frog" src = "CriticalTrials/1stList/CTrial13/frog_sponge.png"></img>'],
       verb: 'knockon', compatibility: 'equibiased',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#bunny', '#feather', '#sponge', '#frog']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#bunny', '#feather', '#sponge', '#frog']
         }
+      }
       ]
     },
 
@@ -1017,11 +1043,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "leopard" src = "CriticalTrials/1stList/CTrial14/leopard_pencil.png"></img>',
         '<img id = "pencil" src = "CriticalTrials/1stList/CTrial14/pencil.png"></img>'],
       verb: 'pat', compatibility: 'equibiased',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#dog', '#flower', '#leopard', '#pencil']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#dog', '#flower', '#leopard', '#pencil']
         }
+      }
       ]
     },
 
@@ -1033,11 +1060,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "leopard" src = "CriticalTrials/1stList/CTrial14/leopard_pencil.png"></img>',
         '<img id = "pencil" src = "CriticalTrials/1stList/CTrial14/pencil.png"></img>'],
       verb: 'pat', compatibility: 'equibiased',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#dog', '#flower', '#leopard', '#pencil']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#dog', '#flower', '#leopard', '#pencil']
         }
+      }
       ]
     },
 
@@ -1050,11 +1078,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "penguin" src = "CriticalTrials/1stList/CTrial15/penguin_tube.png"></img>',
         '<img id = "tube" src = "CriticalTrials/1stList/CTrial15/tube.png"></img>'],
       verb: 'locate', compatibility: 'equibiased',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#camel', '#straw', '#penguin', '#tube']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#camel', '#straw', '#penguin', '#tube']
         }
+      }
       ]
     },
 
@@ -1066,11 +1095,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "penguin" src = "CriticalTrials/1stList/CTrial15/penguin_tube.png"></img>',
         '<img id = "tube" src = "CriticalTrials/1stList/CTrial15/tube.png"></img>'],
       verb: 'locate', compatibility: 'equibiased',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#camel', '#straw', '#penguin', '#tube']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#camel', '#straw', '#penguin', '#tube']
         }
+      }
       ]
     },
 
@@ -1084,11 +1114,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "bear" src = "CriticalTrials/1stList/CTrial16/bear_candle.png"></img>',
         '<img id = "pen" src = "CriticalTrials/1stList/CTrial16/pen.png"></img>'],
       verb: 'feel', compatibility: 'equibiased',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#candle', '#leopard', '#bear', '#pen']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#candle', '#leopard', '#bear', '#pen']
         }
+      }
       ]
     },
 
@@ -1098,14 +1129,15 @@ timeline.push(audio_loop, audiocheck, stop_audio)
       images: [
         '<img id = "candle" src = "CriticalTrials/1stList/CTrial16/candle.png"></img>',
         '<img id = "leopard" src = "CriticalTrials/1stList/CTrial16/leopard_pen.png"></img>',
-       '<img id = "bear" src = "CriticalTrials/1stList/CTrial16/bear_candle.png"></img>',
+        '<img id = "bear" src = "CriticalTrials/1stList/CTrial16/bear_candle.png"></img>',
         '<img id = "pen" src = "CriticalTrials/1stList/CTrial16/pen.png"></img>'],
       verb: 'feel', compatibility: 'equibiased',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#candle', '#leopard', '#bear', '#pen']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#candle', '#leopard', '#bear', '#pen']
         }
+      }
       ]
     },
 
@@ -1118,11 +1150,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "lion" src = "CriticalTrials/1stList/CTrial17/lion_straw.png"></img>',
         '<img id = "straw" src = "CriticalTrials/1stList/CTrial17/straw.png"></img>'],
       verb: 'spot', compatibility: 'equibiased',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#pencil', '#bird', '#lion', '#straw']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#pencil', '#bird', '#lion', '#straw']
         }
+      }
       ]
     },
 
@@ -1136,11 +1169,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "lion" src = "CriticalTrials/1stList/CTrial17/lion_straw.png"></img>',
         '<img id = "straw" src = "CriticalTrials/1stList/CTrial17/straw.png"></img>'],
       verb: 'spot', compatibility: 'equibiased',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#pencil', '#bird', '#lion', '#straw']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#pencil', '#bird', '#lion', '#straw']
         }
+      }
       ]
     },
 
@@ -1154,11 +1188,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "penguin" src = "CriticalTrials/1stList/CTrial18/penguin_leaf.png"></img>',
         '<img id = "leaf" src = "CriticalTrials/1stList/CTrial18/leaf.png"></img>'],
       verb: 'point', compatibility: 'equibiased',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#fish', '#funnel', '#penguin', '#leaf']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#fish', '#funnel', '#penguin', '#leaf']
         }
+      }
       ]
     },
 
@@ -1170,11 +1205,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "penguin" src = "CriticalTrials/1stList/CTrial18/penguin_leaf.png"></img>',
         '<img id = "leaf" src = "CriticalTrials/1stList/CTrial18/leaf.png"></img>'],
       verb: 'point', compatibility: 'equibiased',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#fish', '#funnel', '#penguin', '#leaf']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#fish', '#funnel', '#penguin', '#leaf']
         }
+      }
       ]
     },
 
@@ -1187,11 +1223,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "lion" src = "CriticalTrials/1stList/CTrial19/lion_tongs.png"></img>',
         '<img id = "tongs" src = "CriticalTrials/1stList/CTrial19/tongs.png"></img>'],
       verb: 'pet', compatibility: 'modifier',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#dolphin', '#sponge', '#lion', '#tongs']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#dolphin', '#sponge', '#lion', '#tongs']
         }
+      }
       ]
     },
 
@@ -1203,11 +1240,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "lion" src = "CriticalTrials/1stList/CTrial19/lion_tongs.png"></img>',
         '<img id = "tongs" src = "CriticalTrials/1stList/CTrial19/tongs.png"></img>'],
       verb: 'pet', compatibility: 'modifier',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#dolphin', '#sponge', '#lion', '#tongs']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#dolphin', '#sponge', '#lion', '#tongs']
         }
+      }
       ]
     },
 
@@ -1220,11 +1258,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "horse" src = "CriticalTrials/1stList/CTrial20/horse_spoon.png"></img>',
         '<img id = "spoon" src = "CriticalTrials/1stList/CTrial20/spoon.png"></img>'],
       verb: 'look', compatibility: 'modifier',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#chicken', '#leaf', '#horse', '#spoon']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#chicken', '#leaf', '#horse', '#spoon']
         }
+      }
       ]
     },
 
@@ -1236,11 +1275,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "horse" src = "CriticalTrials/1stList/CTrial20/horse_spoon.png"></img>',
         '<img id = "spoon" src = "CriticalTrials/1stList/CTrial20/spoon.png"></img>'],
       verb: 'look', compatibility: 'modifier',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#chicken', '#leaf', '#horse', '#spoon']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#chicken', '#leaf', '#horse', '#spoon']
         }
+      }
       ]
     },
 
@@ -1253,11 +1293,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "zebra" src = "CriticalTrials/1stList/CTrial21/zebra_microphone.png"></img>',
         '<img id = "microphone" src = "CriticalTrials/1stList/CTrial21/microphone.png"></img>'],
       verb: 'squeeze', compatibility: 'modifier',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#bunny', '#hat', '#zebra', '#microphone']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#bunny', '#hat', '#zebra', '#microphone']
         }
+      }
       ]
     },
 
@@ -1269,11 +1310,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "zebra" src = "CriticalTrials/1stList/CTrial21/zebra_microphone.png"></img>',
         '<img id = "microphone" src = "CriticalTrials/1stList/CTrial21/microphone.png"></img>'],
       verb: 'squeeze', compatibility: 'modifier',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#bunny', '#hat', '#zebra', '#microphone']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#bunny', '#hat', '#zebra', '#microphone']
         }
+      }
       ]
     },
 
@@ -1287,11 +1329,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "ladybug" src = "CriticalTrials/1stList/CTrial22/ladybug_straw.png"></img>',
         '<img id = "straw" src = "CriticalTrials/1stList/CTrial22/straw.png"></img>'],
       verb: 'pickout', compatibility: 'modifier',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#duckling', '#net', '#ladybug', '#straw']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#duckling', '#net', '#ladybug', '#straw']
         }
+      }
       ]
     },
 
@@ -1303,11 +1346,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "ladybug" src = "CriticalTrials/1stList/CTrial22/ladybug_straw.png"></img>',
         '<img id = "straw" src = "CriticalTrials/1stList/CTrial22/straw.png"></img>'],
       verb: 'pickout', compatibility: 'modifier',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#duckling', '#net', '#ladybug', '#straw']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#duckling', '#net', '#ladybug', '#straw']
         }
+      }
       ]
     },
 
@@ -1320,11 +1364,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "whale" src = "CriticalTrials/1stList/CTrial23/whale_pen.png"></img>',
         '<img id = "pen" src = "CriticalTrials/1stList/CTrial23/pen.png"></img>'],
       verb: 'cuddle', compatibility: 'modifier',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#dolphin', '#microphone', '#whale', '#pen']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#dolphin', '#microphone', '#whale', '#pen']
         }
+      }
       ]
     },
 
@@ -1336,11 +1381,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "whale" src = "CriticalTrials/1stList/CTrial23/whale_pen.png"></img>',
         '<img id = "pen" src = "CriticalTrials/1stList/CTrial23/pen.png"></img>'],
       verb: 'cuddle', compatibility: 'modifier',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#dolphin', '#microphone', '#whale', '#pen']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#dolphin', '#microphone', '#whale', '#pen']
         }
+      }
       ]
     },
 
@@ -1353,11 +1399,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "lion" src = "CriticalTrials/1stList/CTrial24/lion_towel.png"></img>',
         '<img id = "towel" src = "CriticalTrials/1stList/CTrial24/towel.png"></img>'],
       verb: 'find', compatibility: 'modifier',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#bird', '#mitten', '#lion', '#towel']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#bird', '#mitten', '#lion', '#towel']
         }
+      }
       ]
     },
 
@@ -1369,11 +1416,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "lion" src = "CriticalTrials/1stList/CTrial24/lion_towel.png"></img>',
         '<img id = "towel" src = "CriticalTrials/1stList/CTrial24/towel.png"></img>'],
       verb: 'find', compatibility: 'modifier',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#bird', '#mitten', '#lion', '#towel']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#bird', '#mitten', '#lion', '#towel']
         }
+      }
       ]
     },
 
@@ -1387,11 +1435,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "panda" src = "CriticalTrials/1stList/CTrial25/panda_umbrella.png"></img>',
         '<img id = "umbrella" src = "CriticalTrials/1stList/CTrial25/umbrella.png"></img>'],
       verb: 'hug', compatibility: 'modifier',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#giraffe', '#partyhat', '#panda', '#umbrella']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#giraffe', '#partyhat', '#panda', '#umbrella']
         }
+      }
       ]
     },
 
@@ -1403,11 +1452,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "panda" src = "CriticalTrials/1stList/CTrial25/panda_umbrella.png"></img>',
         '<img id = "umbrella" src = "CriticalTrials/1stList/CTrial25/umbrella.png"></img>'],
       verb: 'hug', compatibility: 'modifier',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#giraffe', '#partyhat', '#panda', '#umbrella']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#giraffe', '#partyhat', '#panda', '#umbrella']
         }
+      }
       ]
     },
 
@@ -1421,11 +1471,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "zebra" src = "CriticalTrials/1stList/CTrial26/zebra_towel.png"></img>',
         '<img id = "towel" src = "CriticalTrials/1stList/CTrial26/towel.png"></img>'],
       verb: 'select', compatibility: 'modifier',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#squirrel', '#partyhat', '#zebra', '#towel']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#squirrel', '#partyhat', '#zebra', '#towel']
         }
+      }
       ]
     },
 
@@ -1437,11 +1488,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "zebra" src = "CriticalTrials/1stList/CTrial26/zebra_towel.png"></img>',
         '<img id = "towel" src = "CriticalTrials/1stList/CTrial26/towel.png"></img>'],
       verb: 'select', compatibility: 'modifier',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#squirrel', '#partyhat', '#zebra', '#towel']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#squirrel', '#partyhat', '#zebra', '#towel']
         }
+      }
       ]
     },
 
@@ -1454,11 +1506,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "squirrel" src = "CriticalTrials/1stList/CTrial27/squirrel_pen.png"></img>',
         '<img id = "pen" src = "CriticalTrials/1stList/CTrial27/pen.png"></img>'],
       verb: 'choose', compatibility: 'modifier',
-      extensions: [{type: 'webgazer', 
-      params: {
-        targets: ['#cow', '#barette', '#squirrel', '#pen']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#cow', '#barette', '#squirrel', '#pen']
         }
+      }
       ]
     },
 
@@ -1470,11 +1523,12 @@ timeline.push(audio_loop, audiocheck, stop_audio)
         '<img id = "squirrel" src = "CriticalTrials/1stList/CTrial27/squirrel_pen.png"></img>',
         '<img id = "pen" src = "CriticalTrials/1stList/CTrial27/pen.png"></img>'],
       verb: 'choose', compatibility: 'modifier',
-      extensions: [{type: 'webgazer',
-      params: {
-        targets: ['#cow', '#barrette', '#squirrel', '#pen']
-          }
+      extensions: [{
+        type: 'webgazer',
+        params: {
+          targets: ['#cow', '#barrette', '#squirrel', '#pen']
         }
+      }
       ]
     },
 
@@ -1642,9 +1696,9 @@ timeline.push(audio_loop, audiocheck, stop_audio)
       audio: [
         'CriticalTrials/2ndList/CTrial1/strike_the_bear_with_the_umbrella.mp3'],
       images: ['<img id = "bearumbrella" src = "CriticalTrials/2ndList/CTrial1/bear_umbrella.png"></img>',
-      '<img id = "umbrella" src = "CriticalTrials/2ndList/CTrial1/umbrella.png"></img>',
-      '<img id = "necklace" src = "CriticalTrials/2ndList/CTrial1/necklace.png"></img>',
-      '<img id = "elephantnecklace" src = "CriticalTrials/2ndList/CTrial1/elephant_necklace.png"></img>'],
+        '<img id = "umbrella" src = "CriticalTrials/2ndList/CTrial1/umbrella.png"></img>',
+        '<img id = "necklace" src = "CriticalTrials/2ndList/CTrial1/necklace.png"></img>',
+        '<img id = "elephantnecklace" src = "CriticalTrials/2ndList/CTrial1/elephant_necklace.png"></img>'],
       verb: 'strike', compatibility: 'instrument'
     },
 
@@ -1663,9 +1717,9 @@ timeline.push(audio_loop, audiocheck, stop_audio)
       audio: [
         'CriticalTrials/2ndList/CTrial2/wack_the_cow_with_the_fan.mp3'],
       images: ['<img id = "cowfan" src = "CriticalTrials/2ndList/CTrial2/cow_fan.png"></img>',
-      '<img id = "pencil" src = "CriticalTrials/2ndList/CTrial2/pencil.png"></img>',
-      '<img id = "fan" src = "CriticalTrials/2ndList/CTrial2/fan.png"></img>',
-      '<img id = "ladybugpencil" src = "CriticalTrials/2ndList/CTrial2/ladybug_pencil.png"></img>'],
+        '<img id = "pencil" src = "CriticalTrials/2ndList/CTrial2/pencil.png"></img>',
+        '<img id = "fan" src = "CriticalTrials/2ndList/CTrial2/fan.png"></img>',
+        '<img id = "ladybugpencil" src = "CriticalTrials/2ndList/CTrial2/ladybug_pencil.png"></img>'],
       verb: 'whack', compatibility: 'instrument'
     },
 
@@ -1684,9 +1738,9 @@ timeline.push(audio_loop, audiocheck, stop_audio)
       audio: [
         'CriticalTrials/2ndList/CTrial3/hit_the_frog_with_the_cup.mp3'],
       images: ['<img id = "cup" src = "CriticalTrials/2ndList/CTrial3/cup.png"> </img>',
-      '<img id = "mousetube" src = "CriticalTrials/2ndList/CTrial3/mouse_tube.png"></img>',
-      '<img id = "frogcup" src = "CriticalTrials/2ndList/CTrial3/frog_cup.png"></img>',
-      '<img id = "tube" src = "CriticalTrials/2ndList/CTrial3/tube.png"></img>'],
+        '<img id = "mousetube" src = "CriticalTrials/2ndList/CTrial3/mouse_tube.png"></img>',
+        '<img id = "frogcup" src = "CriticalTrials/2ndList/CTrial3/frog_cup.png"></img>',
+        '<img id = "tube" src = "CriticalTrials/2ndList/CTrial3/tube.png"></img>'],
       verb: 'hit', compatibility: 'instrument'
     },
 
@@ -2439,7 +2493,7 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     stimulus: '<p> Were you wearing glasses during this experiment? </p>',
     choices: ['Yes', 'No']
   }
-timeline.push(check1);
+  timeline.push(check1);
 
   var check2 = {
     type: 'html-button-response',
@@ -2477,14 +2531,14 @@ timeline.push(check1);
 
   var finale = {
     type: "html-keyboard-response",
-    stimulus: '<div class="instructions">'+
-    '<p>You have completed the experiment. Thank you for participating!</p>'+
-    '<p>This is an experiment about eye-tracking and how certain verbs influence associations.</p>'+
-    '<p>One hypothesis is that sentences containing certain verbs will cause participants to fixate on the image of the target animal more than they would when other types of verbs are used.</p>'+
-    '<p>An additional hypothesis is that particpants will first click on the image of the target object more often when a verb associated with object-use is used, rather than a verb without that association.</p>'+
-    '<p>We will look at your individual eye and mouse movements to determine whether they show these theorized trends. If people generally do in fact follow the verb-bias trends mentioned before, then your eye and mouse movements should reflect that.</p>'+
-    '<p><a href="https://app.prolific.co/submissions/complete?cc=44DB0CF7">Click here to finish the experiment and return to Prolific</a>. You do not need a completion code.</p>'+
-    '</div>',
+    stimulus: '<div class="instructions">' +
+      '<p>You have completed the experiment. Thank you for participating!</p>' +
+      '<p>This is an experiment about eye-tracking and how certain verbs influence associations.</p>' +
+      '<p>One hypothesis is that sentences containing certain verbs will cause participants to fixate on the image of the target animal more than they would when other types of verbs are used.</p>' +
+      '<p>An additional hypothesis is that particpants will first click on the image of the target object more often when a verb associated with object-use is used, rather than a verb without that association.</p>' +
+      '<p>We will look at your individual eye and mouse movements to determine whether they show these theorized trends. If people generally do in fact follow the verb-bias trends mentioned before, then your eye and mouse movements should reflect that.</p>' +
+      '<p><a href="https://app.prolific.co/submissions/complete?cc=44DB0CF7">Click here to finish the experiment and return to Prolific</a>. You do not need a completion code.</p>' +
+      '</div>',
   }
 
   timeline.push(finale);
