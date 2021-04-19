@@ -584,11 +584,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     /* Trial 1 */
     {
       audio: ['CriticalTrials/1stList/CTrial1/strike_the_bear_with_the_necklace.mp3'],
-      images: ['CriticalTrials/1stList/CTrial1/bear_necklace.png',
-        'CriticalTrials/1stList/CTrial1/umbrella.png',
-        'CriticalTrials/1stList/CTrial1/necklace.png',
-        'CriticalTrials/1stList/CTrial1/elephant_umbrella.png'],
-      verb: 'strike', compatibility: 'instrument'
+      images: ['<img id = "necklace" src = "CriticalTrials/1stList/CTrial1/necklace.png"></img>',
+        '<img id = "necklace" src = "CriticalTrials/1stList/CTrial1/necklace.png"></img>',
+        '<img id = "umbrella" src = "CriticalTrials/1stList/CTrial1/umbrella.png"></img>',
+        '<img id = "elephant" src = "CriticalTrials/1stList/CTrial1/elephant_umbrella.png"></img>'],
+      verb: 'strike', compatibility: 'instrument',
+      extensions: [{type: 'webgazer',
+      params: {
+        targets: ['#necklace', '#umbrella', '#bear', '#elephant']
+          }
+        }
+      ]
     },
 
     {
@@ -609,11 +615,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     /* Trial 2 */
     {
       audio: ['CriticalTrials/1stList/CTrial2/whack_the_ladybug_with_the_fan.mp3'],
-      images: ['CriticalTrials/1stList/CTrial2/cow_pencil.png',
-        'CriticalTrials/1stList/CTrial2/pencil.png',
-        'CriticalTrials/1stList/CTrial2/fan.png',
-        'CriticalTrials/1stList/CTrial2/ladybug_fan.png'],
-      verb: 'whack', compatibility: 'instrument'
+      images: ['<img id = "cow" src = "CriticalTrials/1stList/CTrial2/cow_pencil.png"></img>',
+        '<img id = "pencil" src = "CriticalTrials/1stList/CTrial2/pencil.png"></img>',
+        '<img id = "fan" src = "CriticalTrials/1stList/CTrial2/fan.pn"></img>',
+        '<img id = "ladybug" src = "CriticalTrials/1stList/CTrial2/ladybug_fan.png"></img>'],
+      verb: 'whack', compatibility: 'instrument',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#cow', '#pencil', '#fan', '#ladybug']
+          }
+        }
+      ]
     },
 
     {
@@ -632,14 +644,20 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     },
 
     /* Trial 3 */
-    {
+       {
       audio: [
         'CriticalTrials/1stList/CTrial3/hit_the_mouse_with_the_cup.mp3'],
-      images: ['CriticalTrials/1stList/CTrial3/cup.png',
-        'CriticalTrials/1stList/CTrial3/mouse_cup.png',
-        'CriticalTrials/1stList/CTrial3/frog_tube.png',
-        'CriticalTrials/1stList/CTrial3/tube.png'],
-      verb: 'hit', compatibility: 'instrument'
+        images: ['<img id = "cup" src = "CriticalTrials/1stList/CTrial3/cup.png"></img>',
+        '<img id = "mouse" src = "CriticalTrials/1stList/CTrial3/mouse_cup.png"></img>',
+        '<img id = "frog" src = "CriticalTrials/1stList/CTrial3/frog_tube.png"></img>',
+        '<img id = "tube" src = "CriticalTrials/1stList/CTrial3/tube.png"></img>'],
+      verb: 'hit', compatibility: 'instrument',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#cup', '#mouse', '#frog', '#tube']
+          }
+        }
+      ]
     },
 
     {
@@ -662,11 +680,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial4/rub_the_butterfly_with_the_violin.mp3'],
-      images: ['CriticalTrials/1stList/CTrial4/butterfly_violin.png',
-        'CriticalTrials/1stList/CTrial4/violin.png',
-        'CriticalTrials/1stList/CTrial4/crayon.png',
-        'CriticalTrials/1stList/CTrial4/panda_crayon.png'],
-      verb: 'rub', compatibility: 'instrument'
+        images: ['<img id = "butterfly" src = "CriticalTrials/1stList/CTrial4/butterfly_violin.png"></img>',
+        '<img id = "violin" src = "CriticalTrials/1stList/CTrial4/violin.png"></img>',
+        '<img id = "crayon" src = "CriticalTrials/1stList/CTrial4/crayon.png"></img>',
+        '<img id = "panda" src = "CriticalTrials/1stList/CTrial4/panda_crayon.png"></img>'],
+      verb: 'rub', compatibility: 'instrument',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#butterfly', '#violin', '#crayon', '#panda']
+          }
+        }
+      ]
     },
 
     {
@@ -689,11 +713,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial5/poke_the_pig_with_the_violin.mp3'],
-      images: ['CriticalTrials/1stList/CTrial5/bunny_spoon.png',
-        'CriticalTrials/1stList/CTrial5/spoon.png',
-        'CriticalTrials/1stList/CTrial5/pig_violin.png',
-        'CriticalTrials/1stList/CTrial5/violin.png'],
-      verb: 'poke', compatibility: 'instrument'
+        images: ['<img id = "bunny" src = "CriticalTrials/1stList/CTrial5/bunny_spoon.png"></img>',
+        '<img id = "violin" src = "CriticalTrials/1stList/CTrial5/violin.png"></img>',
+        '<img id = "pig" src = "CriticalTrials/1stList/CTrial5/pig_violin.png"></img>',
+        '<img id = "spoon" src = "CriticalTrials/1stList/CTrial5/spoon.png"></img>'],
+      verb: 'poke', compatibility: 'instrument',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#bunny', '#violin', '#pig', '#spoon']
+          }
+        }
+      ]
     },
 
     {
@@ -716,11 +746,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial6/bop_the_panda_with_the_spoon.mp3'],
-      images: ['CriticalTrials/1stList/CTrial6/elephant_napkin.png',
-        'CriticalTrials/1stList/CTrial6/napkin.png',
-        'CriticalTrials/1stList/CTrial6/panda_spoon.png',
-        'CriticalTrials/1stList/CTrial6/spoon.png'],
-      verb: 'bop', compatibility: 'instrument'
+        images: ['<img id = "elephant" src = "CriticalTrials/1stList/CTrial6/elephant_napkin.png"></img>',
+        '<img id = "panda" src = "CriticalTrials/1stList/CTrial6/panda_spoon.png"></img>',
+        '<img id = "napkin" src = "CriticalTrials/1stList/CTrial6/napkin.png"></img>',
+        '<img id = "spoon" src = "CriticalTrials/1stList/CTrial6/spoon.png"></img>'],
+      verb: 'bop', compatibility: 'instrument',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#elephant', '#panda', '#napkin', '#spoon']
+          }
+        }
+      ]
     },
 
     {
@@ -743,11 +779,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial7/smack_the_dog_with_the_hat.mp3'],
-      images: ['CriticalTrials/1stList/CTrial7/dog_hat.png',
-        'CriticalTrials/1stList/CTrial7/hat.png',
-        'CriticalTrials/1stList/CTrial7/flute.png',
-        'CriticalTrials/1stList/CTrial7/leopard_flute.png'],
-      verb: 'smack', compatibility: 'instrument'
+      images: ['<img id = "hat" src = "CriticalTrials/1stList/CTrial7/hat.png"></img>',
+        '<img id = "flute" src = "CriticalTrials/1stList/CTrial7/flute.png"></img>',
+        '<img id = "dog" src = "CriticalTrials/1stList/CTrial7/dog_hat.png"></img>',
+        '<img id = "leopard" src = "CriticalTrials/1stList/CTrial7/leopard_flute.png"></img>'],
+      verb: 'smack', compatibility: 'instrument',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#hat', '#flute', '#dog', '#leopard']
+          }
+        }
+      ]
     },
 
     {
@@ -770,11 +812,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial8/clean_the_turtle_with_the_leaf.mp3'],
-      images: ['CriticalTrials/1stList/CTrial8/dog_violin.png',
-        'CriticalTrials/1stList/CTrial8/violin.png',
-        'CriticalTrials/1stList/CTrial8/turtle_leaf.png',
-        'CriticalTrials/1stList/CTrial8/leaf.png'],
-      verb: 'clean', compatibility: 'instrument'
+      images: ['<img id = "dog" src = "CriticalTrials/1stList/CTrial8/dog_violin.png"></img>',
+        '<img id = "violin" src = "CriticalTrials/1stList/CTrial8/violin.png"></img>',
+        '<img id = "turtle" src = "CriticalTrials/1stList/CTrial8/turtle_leaf.png"></img>',
+        '<img id = "leaf" src = "CriticalTrials/1stList/CTrial8/leaf.png"></img>'],
+      verb: 'clean', compatibility: 'instrument',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#dog', '#violin', '#turtle', '#leaf']
+          }
+        }
+      ]
     },
 
     {
@@ -797,11 +845,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial9/tease_the_leopard_with_the_crayon.mp3'],
-      images: ['CriticalTrials/1stList/CTrial9/dog_lollipop.png',
-        'CriticalTrials/1stList/CTrial9/lollipop.png',
-        'CriticalTrials/1stList/CTrial9/leopard_crayon.png',
-        'CriticalTrials/1stList/CTrial9/crayon.png'],
-      verb: 'tease', compatibility: 'instrument'
+      images: ['<img id = "crayon" src = "CriticalTrials/1stList/CTrial9/crayon.png"></img>',
+        '<img id = "dog" src = "CriticalTrials/1stList/CTrial9/dog_lollipop.png"></img>',
+        '<img id = "lollipop" src = "CriticalTrials/1stList/CTrial9/leopard_crayon.png"></img>',
+        '<img id = "leopard" src = "CriticalTrials/1stList/CTrial9/lollipop.png"></img>'],
+      verb: 'tease', compatibility: 'instrument',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#crayon', '#dog', '#lollipop', '#leopard']
+          }
+        }
+      ]
     },
 
     {
@@ -824,11 +878,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial10/feed_the_duckling_with_the_book.mp3'],
-      images: ['CriticalTrials/1stList/CTrial10/duckling_book.png',
-        'CriticalTrials/1stList/CTrial10/book.png',
-        'CriticalTrials/1stList/CTrial10/zebra_lollipop.png',
-        'CriticalTrials/1stList/CTrial10/lollipop.png'],
-      verb: 'feed', compatibility: 'equibiased'
+      images: ['<img id = "book" src = "CriticalTrials/1stList/CTrial10/book.png"></img>',
+        '<img id = "zebra" src = "CriticalTrials/1stList/CTrial10/zebra_lollipop.png"></img>',
+        '<img id = "duckling" src = "CriticalTrials/1stList/CTrial10/duckling_book.png"></img>',
+        '<img id = "lollipop" src = "CriticalTrials/1stList/CTrial10/lollipop.png"></img>'],
+      verb: 'feed', compatibility: 'equibiased',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#book', '#zebra', '#duckling', '#lollipop']
+          }
+        }
+      ]
     },
 
     {
@@ -852,11 +912,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial11/scuff_the_pig_with_the_flower.mp3'],
-      images: ['CriticalTrials/1stList/CTrial11/chicken_cup.png',
-        'CriticalTrials/1stList/CTrial11/cup.png',
-        'CriticalTrials/1stList/CTrial11/pig_flower.png',
-        'CriticalTrials/1stList/CTrial11/flower.png'],
-      verb: 'scuff', compatibility: 'equibiased'
+      images: ['<img id = "chicken" src = "CriticalTrials/1stList/CTrial11/chicken_cup.png"></img>',
+        '<img id = "pig" src = "CriticalTrials/1stList/CTrial11/pig_flower.png"></img>',
+        '<img id = "cup" src = "CriticalTrials/1stList/1stList/CTrial11/cup.png"></img>',
+        '<img id = "flower" src = "CriticalTrials/1stList/CTrial11/flower.png"></img>'],
+      verb: 'scuff', compatibility: 'equibiased',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#chicken', '#pig', '#cup', '#flower']
+          }
+        }
+      ]
     },
 
     {
@@ -879,11 +945,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial12/pinch_the_leopard_with_the_hat.mp3'],
-      images: ['CriticalTrials/1stList/CTrial12/leopard_hat.png',
-        'CriticalTrials/1stList/CTrial12/hat.png',
-        'CriticalTrials/1stList/CTrial12/panda_toothbrush.png',
-        'CriticalTrials/1stList/CTrial12/toothbrush.png'],
-      verb: 'pinch', compatibility: 'equibiased'
+      images: ['<img id = "hat" src = "CriticalTrials/1stList/CTrial12/hat.png"></img>',
+        '<img id = "leopard" src = "CriticalTrials/1stList/CTrial12/leopard_hat.png"></img>',
+        '<img id = "panda" src = "CriticalTrials/1stList/CTrial12/panda_toothbrush.png"></img>',
+        '<img id = "toothbrush" src = "CriticalTrials/1stList/CTrial12/toothbrush.png"></img>'],
+      verb: 'pinch', compatibility: 'equibiased',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#hat', '#leopard', '#panda', '#toothbrush']
+          }
+        }
+      ]
     },
 
     {
@@ -907,11 +979,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial13/knock_on_the_frog_with_the_sponge.mp3'],
-      images: ['CriticalTrials/1stList/CTrial13/bunny_feather.png',
-        'CriticalTrials/1stList/CTrial13/feather.png',
-        'CriticalTrials/1stList/CTrial13/sponge.png',
-        'CriticalTrials/1stList/CTrial13/frog_sponge.png'],
-      verb: 'knockon', compatibility: 'equibiased'
+      images: ['<img id = "bunny" src = "CriticalTrials/1stList/CTrial13/bunny_feather.png"></img>',
+        '<img id = "feather" src = "CriticalTrials/1stList/CTrial13/feather.png"></img>',
+        '<img id = "sponge" src = "CriticalTrials/1stList/CTrial13/sponge.png"></img>',
+        '<img id = "frog" src = "CriticalTrials/1stList/CTrial13/frog_sponge.png"></img>'],
+      verb: 'knockon', compatibility: 'equibiased',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#bunny', '#feather', '#sponge', '#frog']
+          }
+        }
+      ]
     },
 
     {
@@ -934,11 +1012,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial14/pat_the_dog_with_the_flower.mp3'],
-      images: ['CriticalTrials/1stList/CTrial14/dog_flower.png',
-        'CriticalTrials/1stList/CTrial14/flower.png',
-        'CriticalTrials/1stList/CTrial14/leopard_pencil.png',
-        'CriticalTrials/1stList/CTrial14/pencil.png'],
-      verb: 'pat', compatibility: 'equibiased'
+      images: ['<img id = "dog" src = "CriticalTrials/1stList/CTrial14/dog_flower.png"></img>',
+        '<img id = "flower" src = "CriticalTrials/1stList/CTrial14/flower.png"></img>',
+        '<img id = "leopard" src = "CriticalTrials/1stList/CTrial14/leopard_pencil.png"></img>',
+        '<img id = "pencil" src = "CriticalTrials/1stList/CTrial14/pencil.png"></img>'],
+      verb: 'pat', compatibility: 'equibiased',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#dog', '#flower', '#leopard', '#pencil']
+          }
+        }
+      ]
     },
 
     {
@@ -961,11 +1045,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial15/locate_the_penguin_with_the_tube.mp3'],
-      images: ['CriticalTrials/1stList/CTrial15/camel_straw.png',
-        'CriticalTrials/1stList/CTrial15/straw.png',
-        'CriticalTrials/1stList/CTrial15/penguin_tube.png',
-        'CriticalTrials/1stList/CTrial15/tube.png'],
-      verb: 'locate', compatibility: 'equibiased'
+      images: ['<img id = "camel" src = "CriticalTrials/1stList/CTrial15/camel_straw.png"></img>',
+        '<img id = "straw" src = "CriticalTrials/1stList/CTrial15/straw.png"></img>',
+        '<img id = "penguin" src = "CriticalTrials/1stList/CTrial15/penguin_tube.png"></img>',
+        '<img id = "tube" src = "CriticalTrials/1stList/CTrial15/tube.png"></img>'],
+      verb: 'locate', compatibility: 'equibiased',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#camel', '#straw', '#penguin', '#tube']
+          }
+        }
+      ]
     },
 
     {
@@ -989,11 +1079,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial16/feel_the_leopard_with_the_pen.mp3'],
-      images: ['CriticalTrials/1stList/CTrial16/bear_candle.png',
-        'CriticalTrials/1stList/CTrial16/candle.png',
-        'CriticalTrials/1stList/CTrial16/leopard_pen.png',
-        'CriticalTrials/1stList/CTrial16/pen.png'],
-      verb: 'feel', compatibility: 'equibiased'
+      images: ['<img id = "candle" src = "CriticalTrials/1stList/CTrial16/candle.png"></img>',
+        '<img id = "leopard" src = "CriticalTrials/1stList/CTrial16/leopard_pen.png"></img>',
+        '<img id = "bear" src = "CriticalTrials/1stList/CTrial16/bear_candle.png"></img>',
+        '<img id = "pen" src = "CriticalTrials/1stList/CTrial16/pen.png"></img>'],
+      verb: 'feel', compatibility: 'equibiased',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#candle', '#leopard', '#bear', '#pen']
+          }
+        }
+      ]
     },
 
     {
@@ -1017,12 +1113,19 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial17/spot_the_lion_with_the_straw.mp3'],
-      images: ['CriticalTrials/1stList/CTrial17/bird_pencil.png',
-        'CriticalTrials/1stList/CTrial17/pencil.png',
-        'CriticalTrials/1stList/CTrial17/lion_straw.png',
-        'CriticalTrials/1stList/CTrial17/straw.png'],
-      verb: 'spot', compatibility: 'equibiased'
+      images: ['<img id = "pencil" src = "CriticalTrials/1stList/CTrial17/pencil.png"></img>',
+        '<img id = "bird" src = "CriticalTrials/1stList/CTrial17/bird_pencil.png"></img>',
+        '<img id = "lion" src = "CriticalTrials/1stList/CTrial17/lion_straw.png"></img>',
+        '<img id = "straw" src = "CriticalTrials/1stList/CTrial17/straw.png"></img>'],
+      verb: 'spot', compatibility: 'equibiased',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#pencil', '#bird', '#lion', '#straw']
+          }
+        }
+      ]
     },
+
 
     {
       audio: [
@@ -1046,11 +1149,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial18/point_to_the_penguin_with_the_leaf.mp3'],
-      images: ['CriticalTrials/1stList/CTrial18/fish_funnel.png',
-        'CriticalTrials/1stList/CTrial18/funnel.png',
-        'CriticalTrials/1stList/CTrial18/penguin_leaf.png',
-        'CriticalTrials/1stList/CTrial18/leaf.png'],
-      verb: 'point', compatibility: 'equibiased'
+      images: ['<img id = "fish" src = "CriticalTrials/1stList/CTrial18/fish_funnel.png"></img>',
+        '<img id = "funnel" src = "CriticalTrials/1stList/CTrial18/funnel.png"></img>',
+        '<img id = "penguin" src = "CriticalTrials/1stList/CTrial18/penguin_leaf.png"></img>',
+        '<img id = "leaf" src = "CriticalTrials/1stList/CTrial18/leaf.png"></img>'],
+      verb: 'point', compatibility: 'equibiased',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#fish', '#funnel', '#penguin', '#leaf']
+          }
+        }
+      ]
     },
 
     {
@@ -1073,11 +1182,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial19/pet_the_lion_with_the_tongs.mp3'],
-      images: ['CriticalTrials/1stList/CTrial19/dolphin_sponge.png',
-        'CriticalTrials/1stList/CTrial19/sponge.png',
-        'CriticalTrials/1stList/CTrial19/lion_tongs.png',
-        'CriticalTrials/1stList/CTrial19/tongs.png'],
-      verb: 'pet', compatibility: 'modifier'
+      images: ['<img id = "dolphin" src = "CriticalTrials/1stList/CTrial19/dolphin_sponge.png"></img>',
+        '<img id = "sponge" src = "CriticalTrials/1stList/CTrial19/sponge.png"></img>',
+        '<img id = "lion" src = "CriticalTrials/1stList/CTrial19/lion_tongs.png"></img>',
+        '<img id = "tongs" src = "CriticalTrials/1stList/CTrial19/tongs.png"></img>'],
+      verb: 'pet', compatibility: 'modifier',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#dolphin', '#sponge', '#lion', '#tongs']
+          }
+        }
+      ]
     },
 
     {
@@ -1100,11 +1215,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial20/look_at_the_chicken_with_the_leaf.mp3'],
-      images: ['CriticalTrials/1stList/CTrial20/chicken_leaf.png',
-        'CriticalTrials/1stList/CTrial20/leaf.png',
-        'CriticalTrials/1stList/CTrial20/horse_spoon.png',
-        'CriticalTrials/1stList/CTrial20/spoon.png'],
-      verb: 'look', compatibility: 'modifier'
+      images: ['<img id = "chicken" src = "CriticalTrials/1stList/CTrial20/chicken_leaf.png"></img>',
+        '<img id = "leaf" src = "CriticalTrials/1stList/CTrial20/leaf.png"></img>',
+        '<img id = "horse" src = "CriticalTrials/1stList/CTrial20/horse_spoon.png"></img>',
+        '<img id = "spoon" src = "CriticalTrials/1stList/CTrial20/spoon.png"></img>'],
+      verb: 'look', compatibility: 'modifier',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#chicken', '#leaf', '#horse', '#spoon']
+          }
+        }
+      ]
     },
 
     {
@@ -1127,11 +1248,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial21/squeeze_the_bunny_with_the_hat.mp3'],
-      images: ['CriticalTrials/1stList/CTrial21/bunny_hat.png',
-        'CriticalTrials/1stList/CTrial21/hat.png',
-        'CriticalTrials/1stList/CTrial21/zebra_microphone.png',
-        'CriticalTrials/1stList/CTrial21/microphone.png'],
-      verb: 'squeeze', compatibility: 'modifier'
+      images: ['<img id = "bunny" src = "CriticalTrials/1stList/CTrial21/bunny_hat.png"></img>',
+        '<img id = "hat" src = "CriticalTrials/1stList/CTrial21/hat.png"></img>',
+        '<img id = "zebra" src = "CriticalTrials/1stList/CTrial21/zebra_microphone.png"></img>',
+        '<img id = "microphone" src = "CriticalTrials/1stList/CTrial21/microphone.png"></img>'],
+      verb: 'squeeze', compatibility: 'modifier',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#bunny', '#hat', '#zebra', '#microphone']
+          }
+        }
+      ]
     },
 
     {
@@ -1155,11 +1282,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial22/pick_out_the_ladybug_with_a_straw.mp3'],
-      images: ['CriticalTrials/1stList/CTrial22/duckling_net.png',
-        'CriticalTrials/1stList/CTrial22/net.png',
-        'CriticalTrials/1stList/CTrial22/ladybug_straw.png',
-        'CriticalTrials/1stList/CTrial22/straw.png'],
-      verb: 'pickout', compatibility: 'modifier'
+      images: ['<img id = "duckling" src = "CriticalTrials/1stList/CTrial22/duckling_net.png"></img>',
+        '<img id = "net" src = "CriticalTrials/1stList/CTrial22/net.png"></img>',
+        '<img id = "ladybug" src = "CriticalTrials/1stList/CTrial22/ladybug_straw.png"></img>',
+        '<img id = "straw" src = "CriticalTrials/1stList/CTrial22/straw.png"></img>'],
+      verb: 'pickout', compatibility: 'modifier',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#duckling', '#net', '#ladybug', '#straw']
+          }
+        }
+      ]
     },
 
     {
@@ -1182,11 +1315,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial23/cuddle_the_whale_with_the_pen.mp3'],
-      images: ['CriticalTrials/1stList/CTrial23/dolphin_microphone.png',
-        'CriticalTrials/1stList/CTrial23/microphone.png',
-        'CriticalTrials/1stList/CTrial23/whale_pen.png',
-        'CriticalTrials/1stList/CTrial23/pen.png'],
-      verb: 'cuddle', compatibility: 'modifier'
+      images: ['<img id = "dolphin" src = "CriticalTrials/1stList/CTrial23/dolphin_microphone.png"></img>',
+        '<img id = "microphone" src = "CriticalTrials/1stList/CTrial23/microphone.png"></img>',
+        '<img id = "whale" src = "CriticalTrials/1stList/CTrial23/whale_pen.png"></img>',
+        '<img id = "pen" src = "CriticalTrials/1stList/CTrial23/pen.png"></img>'],
+      verb: 'cuddle', compatibility: 'modifier',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#dolphin', '#microphone', '#whale', '#pen']
+          }
+        }
+      ]
     },
 
     {
@@ -1209,11 +1348,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial24/find_the_bird_with_the_mitten.mp3'],
-      images: ['CriticalTrials/1stList/CTrial24/bird_mitten.png',
-        'CriticalTrials/1stList/CTrial24/mitten.png',
-        'CriticalTrials/1stList/CTrial24/lion_towel.png',
-        'CriticalTrials/1stList/CTrial24/towel.png'],
-      verb: 'find', compatibility: 'modifier'
+      images: ['<img id = "bird" src = "CriticalTrials/1stList/CTrial24/bird_mitten.png"></img>',
+        '<img id = "mitten" src = "CriticalTrials/1stList/CTrial24/mitten.png"></img>',
+        '<img id = "lion" src = "CriticalTrials/1stList/CTrial24/lion_towel.png"></img>',
+        '<img id = "towel" src = "CriticalTrials/1stList/CTrial24/towel.png"></img>'],
+      verb: 'find', compatibility: 'modifier',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#bird', '#mitten', '#lion', '#towel']
+          }
+        }
+      ]
     },
 
     {
@@ -1237,11 +1382,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial25/hug_the_panda_with_the_umbrella.mp3'],
-      images: ['CriticalTrials/1stList/CTrial25/giraffe_partyhat.png',
-        'CriticalTrials/1stList/CTrial25/partyhat.png',
-        'CriticalTrials/1stList/CTrial25/panda_umbrella.png',
-        'CriticalTrials/1stList/CTrial25/umbrella.png'],
-      verb: 'hug', compatibility: 'modifier'
+      images: ['<img id = "giraffe" src = "CriticalTrials/1stList/CTrial25/giraffe_partyhat.png"></img>',
+        '<img id = "partyhat" src = "CriticalTrials/1stList/CTrial25/partyhat.png"></img>',
+        '<img id = "panda" src = "CriticalTrials/1stList/CTrial25/panda_umbrella.png"></img>',
+        '<img id = "umbrella" src = "CriticalTrials/1stList/CTrial25/umbrella.png"></img>'],
+      verb: 'hug', compatibility: 'modifier',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#giraffe', '#partyhat', '#panda', '#umbrella']
+          }
+        }
+      ]
     },
 
     {
@@ -1265,11 +1416,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial26/select_the_squirrel_with_the_partyhat.mp3'],
-      images: ['CriticalTrials/1stList/CTrial26/squirrel_partyhat.png',
-        'CriticalTrials/1stList/CTrial26/partyhat.png',
-        'CriticalTrials/1stList/CTrial26/zebra_towel.png',
-        'CriticalTrials/1stList/CTrial26/towel.png'],
-      verb: 'select', compatibility: 'modifier'
+      images: ['<img id = "squirrel" src = "CriticalTrials/1stList/CTrial26/squirrel_partyhat.png"></img>',
+        '<img id = "partyhat" src = "CriticalTrials/1stList/CTrial26/partyhat.png"></img>',
+        '<img id = "zebra" src = "CriticalTrials/1stList/CTrial26/zebra_towel.png"></img>',
+        '<img id = "towel" src = "CriticalTrials/1stList/CTrial26/towel.png"></img>'],
+      verb: 'select', compatibility: 'modifier',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#squirrel', '#partyhat', '#zebra', '#towel']
+          }
+        }
+      ]
     },
 
     {
@@ -1292,11 +1449,17 @@ timeline.push(audio_loop, audiocheck, stop_audio)
     {
       audio: [
         'CriticalTrials/1stList/CTrial27/choose_the_cow_with_the_barrette.mp3'],
-      images: ['CriticalTrials/1stList/CTrial27/cow_barrette.png',
-        'CriticalTrials/1stList/CTrial27/barrette.png',
-        'CriticalTrials/1stList/CTrial27/squirrel_pen.png',
-        'CriticalTrials/1stList/CTrial27/pen.png'],
-      verb: 'choose', compatibility: 'modifier'
+      images: ['<img id = "cow" src = "CriticalTrials/1stList/CTrial27/cow_barrette.png"></img>',
+        '<img id = "barette" src = "CriticalTrials/1stList/CTrial27/barrette.png"></img>',
+        '<img id = "squirrel" src = "CriticalTrials/1stList/CTrial27/squirrel_pen.png"></img>',
+        '<img id = "pen" src = "CriticalTrials/1stList/CTrial27/pen.png"></img>'],
+      verb: 'choose', compatibility: 'modifier',
+      extensions: [{type: 'webgazer', 
+      params: {
+        targets: ['#cow', '#barette', '#squirrel', '#pen']
+          }
+        }
+      ]
     },
 
     {
