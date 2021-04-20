@@ -1,39 +1,50 @@
 var practice_trials = [
   {
     audio: 'img/111_sentence1.mp3',
-    images: ['img/fish.png', 'img/funnel.png', 'img/giraffe.png',
-      'img/lollipop.png'], compatibility: 'practice'
+    images: [
+      'img/fish.png', 
+      'img/funnel.png', 
+      'img/giraffe.png',
+      'img/lollipop.png'
+    ], 
+    compatibility: 'practice'
   },
 
   {
     audio: 'img/110_sentence1.mp3',
-    images: ['img/clip.png', 'img/elephant.png', 'img/pen.png',
-      'img/whale.png'], compatibility: 'practice'
+    images: [
+      'img/clip.png', 
+      'img/elephant.png', 
+      'img/pen.png',
+      'img/whale.png'
+    ], 
+    compatibility: 'practice'
   },
 
   {
     audio: 'img/109_sentence1.mp3',
-    images: ['img/bear.png', 'img/dolphin.png', 'img/fork.png',
-      'img/microphone.png'], compatibility: 'practice'
+    images: [
+      'img/bear.png', 
+      'img/dolphin.png', 
+      'img/fork.png',
+      'img/microphone.png'
+    ], 
+    compatibility: 'practice'
   }
 ]
 
 var trials1 = [
   /* Trial 1 */
   {
-    audio: ['CriticalTrials/1stList/CTrial1/strike_the_bear_with_the_necklace.mp3'],
-    images: ['<img id = "necklace" src = "CriticalTrials/1stList/CTrial1/necklace.png"></img>',
-      '<img id = "necklace" src = "CriticalTrials/1stList/CTrial1/necklace.png"></img>',
-      '<img id = "umbrella" src = "CriticalTrials/1stList/CTrial1/umbrella.png"></img>',
-      '<img id = "elephant" src = "CriticalTrials/1stList/CTrial1/elephant_umbrella.png"></img>'],
-    verb: 'strike', compatibility: 'instrument',
-    extensions: [{
-      type: 'webgazer',
-      params: {
-        targets: ['#necklace', '#umbrella', '#bear', '#elephant']
-      }
-    }
-    ]
+    audio: 'CriticalTrials/1stList/CTrial1/strike_the_bear_with_the_necklace.mp3',
+    images: [
+      "CriticalTrials/1stList/CTrial1/necklace.png",
+      "CriticalTrials/1stList/CTrial1/necklace.png",
+      "CriticalTrials/1stList/CTrial1/umbrella.png",
+      "CriticalTrials/1stList/CTrial1/elephant_umbrella.png"
+    ],
+    verb: 'strike', 
+    compatibility: 'instrument'
   },
 
   {

@@ -443,20 +443,12 @@
     'CriticalTrials/2ndList/CTrial27/choose_the_squirrel_with_the_barrette.mp3'
   ];
 
-  var start = {
-    type: "html-button-response",
-    stimulus: '<p>Please wait while we load the experiment.</p>' +
-      '<p>The experiment will start as soon as the loading is complete.</p>',
-    choices: ['Continue'],
-    margin_vertical: '20px'
-  }
-
-  timeline.push(start);
-
   var preload = {
     type: 'preload',
     images: image,
-    audio: audio
+    audio: audio,
+    message: '<p>Please wait while we load the experiment.</p>' +
+      '<p>The experiment will start as soon as the loading is complete.</p>',
   }
 
   timeline.push(preload);
@@ -484,8 +476,8 @@
 
   var audiocheck = {
     type: 'html-keyboard-response',
-    stimulus: ` <p>First, we must perform an audio check</p>
-                <p>Adjust your volume until you can clearly hear the audio prompt.
+    stimulus: ` <p>To complete this experiment you need to be able to listen to audio.
+                <p>Adjust your volume to a comfortable level.</p>
                 <p>Once you can clearly hear the audio, press the spacebar to continue.</p>
               `,
     choices: [' '] // <-- change this to whatever instruction your audio prompt says to follow
@@ -559,7 +551,7 @@
   }
 
   timeline.push(begin);
-  
+
   var sort_trial = {
     type: 'eye-track-image-sort',
     images: jsPsych.timelineVariable('images'),
@@ -567,14 +559,26 @@
     image_height: 200,
     audio: jsPsych.timelineVariable('audio'),
     data: {
-      verb: jsPsych.timelineVariable('verb_type'),
-      compatibility: jsPsych.timelineVariable('compatibility_type')
-    }
+      verb: jsPsych.timelineVariable('verb'),
+      compatibility: jsPsych.timelineVariable('compatibility')
+    },
+    extensions: [
+      {
+        type: 'webgazer', 
+        params: { 
+          targets: [
+            '#jspsych-free-sort-draggable-0', 
+            '#jspsych-free-sort-draggable-1', 
+            '#jspsych-free-sort-draggable-2', 
+            '#jspsych-free-sort-draggable-3'
+          ] 
+        }
+      }
+    ]
   };
 
   var button_click_trial = {
     type: 'html-button-response',
-    prompt: "",
     stimulus: "",
     choices: ['Click Here']
   }
