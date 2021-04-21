@@ -38,7 +38,7 @@ var trials1 = [
   {
     audio: 'CriticalTrials/1stList/CTrial1/strike_the_bear_with_the_necklace.mp3',
     images: [
-      "CriticalTrials/1stList/CTrial1/necklace.png",
+      "CriticalTrials/1stList/CTrial1/bear_necklace.png",
       "CriticalTrials/1stList/CTrial1/necklace.png",
       "CriticalTrials/1stList/CTrial1/umbrella.png",
       "CriticalTrials/1stList/CTrial1/elephant_umbrella.png"
