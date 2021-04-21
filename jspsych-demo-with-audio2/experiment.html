@@ -453,6 +453,9 @@
 
   timeline.push(preload);
 
+  /* initial calibration */
+  timeline.push(initial_calibration_timeline);
+
   /* audio check */
 
   var audio = null;
@@ -484,9 +487,6 @@
   }
 
   timeline.push(audio_loop, audiocheck, stop_audio)
-
-  /* initial calibration */
-  timeline.push(initial_calibration_timeline);
 
   /* instructions */
   var basic = {
