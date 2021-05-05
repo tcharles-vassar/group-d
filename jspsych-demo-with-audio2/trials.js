@@ -44,7 +44,9 @@ var trials1 = [
       "CriticalTrials/1stList/CTrial1/elephant_umbrella.png"
     ],
     verb: 'strike',
-    compatibility: 'instrument'
+    compatibility: 'instrument',
+    target_animal: '#jspsych-free-sort-draggable-0',
+    target_object: '#jspsych-free-sort-draggable-1',
   },
 
       {
@@ -53,7 +55,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial1/umbrella.png',
           'CriticalTrials/1stList/CTrial1/bear_necklace.png',
           'CriticalTrials/1stList/CTrial1/elephant_umbrella.png'],
-        verb: 'strike', compatibility: 'instrument'
+        verb: 'strike', compatibility: 'instrument', target_animal: '#jspsych-free-sort-draggable-3',
+        target_object: '#jspsych-free-sort-draggable-2'
       },
 
       /* Trial 2 */
@@ -63,7 +66,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial2/pencil.png',
           'CriticalTrials/1stList/CTrial2/fan.png',
           'CriticalTrials/1stList/CTrial2/ladybug_fan.png'],
-        verb: 'whack', compatibility: 'instrument'
+        verb: 'whack', compatibility: 'instrument', target_animal: '#jspsych-free-sort-draggable-3',
+        target_object: '#jspsych-free-sort-draggable-2'
       },
 
       {
@@ -72,7 +76,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial2/pencil.png',
           'CriticalTrials/1stList/CTrial2/fan.png',
           'CriticalTrials/1stList/CTrial2/ladybug_fan.png'],
-        verb: 'whack', compatibility: 'instrument'
+        verb: 'whack', compatibility: 'instrument', target_animal: '#jspsych-free-sort-draggable-0',
+        target_object: '#jspsych-free-sort-draggable-1'
       },
 
       /* Trial 3 */
@@ -83,7 +88,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial3/mouse_cup.png',
           'CriticalTrials/1stList/CTrial3/frog_tube.png',
           'CriticalTrials/1stList/CTrial3/tube.png'],
-        verb: 'hit', compatibility: 'instrument'
+        verb: 'hit', compatibility: 'instrument', target_animal: '#jspsych-free-sort-draggable-1',
+        target_object: '#jspsych-free-sort-draggable-0'
       },
 
       {
@@ -93,18 +99,20 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial3/mouse_cup.png',
           'CriticalTrials/1stList/CTrial3/frog_tube.png',
           'CriticalTrials/1stList/CTrial3/tube.png'],
-        verb: 'hit', compatibility: 'instrument'
+        verb: 'hit', compatibility: 'instrument', target_animal: '#jspsych-free-sort-draggable-2',
+        target_object: '#jspsych-free-sort-draggable-3'
       },
 
       /* Trial 4 */
       {
         audio: [
           'CriticalTrials/1stList/CTrial4/rub_the_butterfly_with_the_violin.mp3'],
-        images: ['CriticalTrials/1stList/CTrial4/butterfly_violin.png',
+        images: ['CriticalTrials/1stList/CTrial4/crayon.png',
+          'CriticalTrials/1stList/CTrial4/butterfly_violin.png',
           'CriticalTrials/1stList/CTrial4/violin.png',
-          'CriticalTrials/1stList/CTrial4/crayon.png',
           'CriticalTrials/1stList/CTrial4/panda_crayon.png'],
-        verb: 'rub', compatibility: 'instrument'
+        verb: 'rub', compatibility: 'instrument', target_animal: '#jspsych-free-sort-draggable-1',
+        target_object: '#jspsych-free-sort-draggable-2'
       },
 
       {
@@ -114,7 +122,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial4/violin.png',
           'CriticalTrials/1stList/CTrial4/crayon.png',
           'CriticalTrials/1stList/CTrial4/panda_crayon.png'],
-        verb: 'rub', compatibility: 'instrument'
+        verb: 'rub', compatibility: 'instrument', target_animal: '#jspsych-free-sort-draggable-3',
+        target_object: '#jspsych-free-sort-draggable-2'
       },
 
       /* Trial 5 */
@@ -125,7 +134,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial5/spoon.png',
           'CriticalTrials/1stList/CTrial5/pig_violin.png',
           'CriticalTrials/1stList/CTrial5/violin.png'],
-        verb: 'poke', compatibility: 'instrument'
+        verb: 'poke', compatibility: 'instrument', target_animal: '#jspsych-free-sort-draggable-2',
+        target_object: '#jspsych-free-sort-draggable-3'
       },
 
       {
@@ -135,7 +145,8 @@ var trials1 = [
            'CriticalTrials/1stList/CTrial5/violin.png' ,
           'CriticalTrials/1stList/CTrial5/pig_violin.png',
           'CriticalTrials/1stList/CTrial5/spoon.png'],
-        verb: 'poke', compatibility: 'instrument'
+        verb: 'poke', compatibility: 'instrument', target_animal: '#jspsych-free-sort-draggable-0',
+        target_object: '#jspsych-free-sort-draggable-3'
       },
 
       /* Trial 6 */
@@ -146,7 +157,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial6/napkin.png',
           'CriticalTrials/1stList/CTrial6/panda_spoon.png',
           'CriticalTrials/1stList/CTrial6/spoon.png'],
-        verb: 'bop', compatibility: 'instrument'
+        verb: 'bop', compatibility: 'instrument', target_animal: '#jspsych-free-sort-draggable-2',
+        target_object: '#jspsych-free-sort-draggable-3'
       },
 
       {
@@ -156,7 +168,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial6/panda_spoon.png',
           'CriticalTrials/1stList/CTrial6/napkin.png',
           'CriticalTrials/1stList/CTrial6/spoon.png'],
-        verb: 'bop', compatibility: 'instrument'
+        verb: 'bop', compatibility: 'instrument', target_animal: '#jspsych-free-sort-draggable-0',
+        target_object: '#jspsych-free-sort-draggable-2'
       },
 
       /* Trial 7 */
@@ -167,7 +180,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial7/hat.png',
           'CriticalTrials/1stList/CTrial7/flute.png',
           'CriticalTrials/1stList/CTrial7/leopard_flute.png'],
-        verb: 'smack', compatibility: 'instrument'
+        verb: 'smack', compatibility: 'instrument', target_animal: '#jspsych-free-sort-draggable-0',
+        target_object: '#jspsych-free-sort-draggable-1'
       },
 
       {
@@ -177,7 +191,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial7/flute.png',
           'CriticalTrials/1stList/CTrial7/dog_hat.png',
           'CriticalTrials/1stList/CTrial7/leopard_flute.png'],
-        verb: 'smack', compatibility: 'instrument'
+        verb: 'smack', compatibility: 'instrument', target_animal: '#jspsych-free-sort-draggable-3',
+        target_object: '#jspsych-free-sort-draggable-1'
       },
 
       /* Trial 8 */
@@ -188,7 +203,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial8/violin.png',
           'CriticalTrials/1stList/CTrial8/turtle_leaf.png',
           'CriticalTrials/1stList/CTrial8/leaf.png'],
-        verb: 'clean', compatibility: 'instrument'
+        verb: 'clean', compatibility: 'instrument', target_animal: '#jspsych-free-sort-draggable-2',
+        target_object: '#jspsych-free-sort-draggable-3'
       },
 
       {
@@ -198,7 +214,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial8/violin.png',
           'CriticalTrials/1stList/CTrial8/turtle_leaf.png',
           'CriticalTrials/1stList/CTrial8/leaf.png'],
-        verb: 'clean', compatibility: 'instrument'
+        verb: 'clean', compatibility: 'instrument', target_animal: '#jspsych-free-sort-draggable-0',
+        target_object: '#jspsych-free-sort-draggable-0'
       },
 
       /* Trial 9 */
@@ -209,7 +226,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial9/lollipop.png',
           'CriticalTrials/1stList/CTrial9/leopard_crayon.png',
           'CriticalTrials/1stList/CTrial9/crayon.png'],
-        verb: 'tease', compatibility: 'instrument'
+        verb: 'tease', compatibility: 'instrument', target_animal: '#jspsych-free-sort-draggable-2',
+        target_object: '#jspsych-free-sort-draggable-3'
       },
 
       {
@@ -219,7 +237,8 @@ var trials1 = [
         'CriticalTrials/1stList/CTrial9/dog_lollipop.png',
           'CriticalTrials/1stList/CTrial9/leopard_crayon.png',
           'CriticalTrials/1stList/CTrial9/lollipop.png'],
-        verb: 'tease', compatibility: 'instrument'
+        verb: 'tease', compatibility: 'instrument', target_animal: '#jspsych-free-sort-draggable-1',
+        target_object: '#jspsych-free-sort-draggable-3'
       },
 
       /* Trial 10 */
@@ -230,7 +249,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial10/book.png',
           'CriticalTrials/1stList/CTrial10/zebra_lollipop.png',
           'CriticalTrials/1stList/CTrial10/lollipop.png'],
-        verb: 'feed', compatibility: 'equibiased'
+        verb: 'feed', compatibility: 'equibiased', target_animal: '#jspsych-free-sort-draggable-0',
+        target_object: '#jspsych-free-sort-draggable-1'
       },
 
       {
@@ -241,7 +261,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial10/zebra_lollipop.png',
           'CriticalTrials/1stList/CTrial10/duckling_book.png',
           'CriticalTrials/1stList/CTrial10/lollipop.png'],
-        verb: 'feed', compatibility: 'equibiased'
+        verb: 'feed', compatibility: 'equibiased', target_animal: '#jspsych-free-sort-draggable-1',
+        target_object: '#jspsych-free-sort-draggable-3'
       },
 
       /* Trial 11 */
@@ -252,7 +273,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial11/cup.png',
           'CriticalTrials/1stList/CTrial11/pig_flower.png',
           'CriticalTrials/1stList/CTrial11/flower.png'],
-        verb: 'scuff', compatibility: 'equibiased'
+        verb: 'scuff', compatibility: 'equibiased', target_animal: '#jspsych-free-sort-draggable-2',
+        target_object: '#jspsych-free-sort-draggable-3'
       },
 
       {
@@ -262,7 +284,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial11/pig_flower.png',
           'CriticalTrials/1stList/CTrial11/cup.png',
           'CriticalTrials/1stList/CTrial11/flower.png'],
-        verb: 'scuff', compatibility: 'equibiased'
+        verb: 'scuff', compatibility: 'equibiased', target_animal: '#jspsych-free-sort-draggable-0',
+        target_object: '#jspsych-free-sort-draggable-2'
       },
 
       /* Trial 12 */
@@ -273,7 +296,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial12/hat.png',
           'CriticalTrials/1stList/CTrial12/panda_toothbrush.png',
           'CriticalTrials/1stList/CTrial12/toothbrush.png'],
-        verb: 'pinch', compatibility: 'equibiased'
+        verb: 'pinch', compatibility: 'equibiased', target_animal: '#jspsych-free-sort-draggable-0',
+        target_object: '#jspsych-free-sort-draggable-1'
       },
 
       {
@@ -284,7 +308,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial12/leopard_hat.png',
           'CriticalTrials/1stList/CTrial12/panda_toothbrush.png',
           'CriticalTrials/1stList/CTrial12/toothbrush.png'],
-        verb: 'pinch', compatibility: 'equibiased'
+        verb: 'pinch', compatibility: 'equibiased', target_animal: '#jspsych-free-sort-draggable-2',
+        target_object: '#jspsych-free-sort-draggable-3'
       },
 
       /* Trial 13 */
@@ -295,7 +320,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial13/feather.png',
           'CriticalTrials/1stList/CTrial13/sponge.png',
           'CriticalTrials/1stList/CTrial13/frog_sponge.png'],
-        verb: 'knockon', compatibility: 'equibiased'
+        verb: 'knockon', compatibility: 'equibiased', target_animal: '#jspsych-free-sort-draggable-3',
+        target_object: '#jspsych-free-sort-draggable-2'
       },
 
       {
@@ -305,7 +331,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial13/feather.png',
           'CriticalTrials/1stList/CTrial13/sponge.png',
           'CriticalTrials/1stList/CTrial13/frog_sponge.png'],
-        verb: 'knockon', compatibility: 'equibiased'
+        verb: 'knockon', compatibility: 'equibiased', target_animal: '#jspsych-free-sort-draggable-0',
+        target_object: '#jspsych-free-sort-draggable-1'
       },
 
       /* Trial 14 */
@@ -316,7 +343,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial14/flower.png',
           'CriticalTrials/1stList/CTrial14/leopard_pencil.png',
           'CriticalTrials/1stList/CTrial14/pencil.png'],
-        verb: 'pat', compatibility: 'equibiased'
+        verb: 'pat', compatibility: 'equibiased', target_animal: '#jspsych-free-sort-draggable-0', 
+        target_object: '#jspsych-free-sort-draggable-1'
       },
 
       {
@@ -326,7 +354,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial14/flower.png',
           'CriticalTrials/1stList/CTrial14/leopard_pencil.png',
           'CriticalTrials/1stList/CTrial14/pencil.png'],
-        verb: 'pat', compatibility: 'equibiased'
+        verb: 'pat', compatibility: 'equibiased', target_animal: '#jspsych-free-sort-draggable-2',
+        target_object: '#jspsych-free-sort-draggable-3'
       },
 
       /* Trial 15 */
@@ -337,7 +366,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial15/straw.png',
           'CriticalTrials/1stList/CTrial15/penguin_tube.png',
           'CriticalTrials/1stList/CTrial15/tube.png'],
-        verb: 'locate', compatibility: 'equibiased'
+        verb: 'locate', compatibility: 'equibiased', target_animal: '#jspsych-free-sort-draggable-2',
+        target_object: '#jspsych-free-sort-draggable-3'
       },
 
       {
@@ -347,7 +377,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial15/straw.png',
           'CriticalTrials/1stList/CTrial15/penguin_tube.png',
           'CriticalTrials/1stList/CTrial15/tube.png'],
-        verb: 'locate', compatibility: 'equibiased'
+        verb: 'locate', compatibility: 'equibiased', target_animal: '#jspsych-free-sort-draggable-0',
+        target_object: '#jspsych-free-sort-draggable-2'
       },
 
 
@@ -359,7 +390,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial16/candle.png',
           'CriticalTrials/1stList/CTrial16/leopard_pen.png',
           'CriticalTrials/1stList/CTrial16/pen.png'],
-        verb: 'feel', compatibility: 'equibiased'
+        verb: 'feel', compatibility: 'equibiased', target_animal: '#jspsych-free-sort-draggable-2',
+        target_object: '#jspsych-free-sort-draggable-3'
       },
 
       {
@@ -370,7 +402,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial16/leopard_pen.png',
          'CriticalTrials/1stList/CTrial16/bear_candle.png',
           'CriticalTrials/1stList/CTrial16/pen.png'],
-        verb: 'feel', compatibility: 'equibiased'
+        verb: 'feel', compatibility: 'equibiased',
+        target_animal: '#jspsych-free-sort-draggable-2', target_object: '#jspsych-free-sort-draggable-3'
       },
 
       /* Trial 17 */
@@ -379,9 +412,11 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial17/spot_the_lion_with_the_straw.mp3'],
         images: ['CriticalTrials/1stList/CTrial17/bird_pencil.png',
           'CriticalTrials/1stList/CTrial17/pencil.png',
-          'CriticalTrials/1stList/CTrial17/lion_straw.png',
-          'CriticalTrials/1stList/CTrial17/straw.png'],
-        verb: 'spot', compatibility: 'equibiased'
+          'CriticalTrials/1stList/CTrial17/straw.png',
+          'CriticalTrials/1stList/CTrial17/lion_straw.png'
+          ],
+        verb: 'spot', compatibility: 'equibiased', target_animal: 'lion',
+        target_object: 'straw'
       },
 
       {
@@ -392,7 +427,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial17/bird_pencil.png',
           'CriticalTrials/1stList/CTrial17/lion_straw.png',
           'CriticalTrials/1stList/CTrial17/straw.png'],
-        verb: 'spot', compatibility: 'equibiased'
+        verb: 'spot', compatibility: 'equibiased', target_animal: '#jspsych-free-sort-draggable-1',
+        target_object: '#jspsych-free-sort-draggable-0'
       },
 
 
@@ -404,7 +440,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial18/funnel.png',
           'CriticalTrials/1stList/CTrial18/penguin_leaf.png',
           'CriticalTrials/1stList/CTrial18/leaf.png'],
-        verb: 'point', compatibility: 'equibiased'
+        verb: 'point', compatibility: 'equibiased', target_animal: '#jspsych-free-sort-draggable-2',
+        target_object: '#jspsych-free-sort-draggable-3'
       },
 
       {
@@ -414,7 +451,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial18/funnel.png',
           'CriticalTrials/1stList/CTrial18/penguin_leaf.png',
           'CriticalTrials/1stList/CTrial18/leaf.png'],
-        verb: 'point', compatibility: 'equibiased'
+        verb: 'point', compatibility: 'equibiased', target_animal: '#jspsych-free-sort-draggable-0',
+        target_object: '#jspsych-free-sort-draggable-1'
       },
 
       /* Trial 19 */
@@ -425,17 +463,19 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial19/sponge.png',
           'CriticalTrials/1stList/CTrial19/lion_tongs.png',
           'CriticalTrials/1stList/CTrial19/tongs.png'],
-        verb: 'pet', compatibility: 'modifier'
+        verb: 'pet', compatibility: 'modifier', target_animal: '#jspsych-free-sort-draggable-2',
+        target_object: '#jspsych-free-sort-draggable-3'
       },
 
       {
         audio: [
           'CriticalTrials/1stList/CTrial19/pet_the_dolphin_with_the_sponge.mp3'],
-        images: ['CriticalTrials/1stList/CTrial19/dolphin_sponge.png',
+        images: ['CriticalTrials/1stList/CTrial19/lion_tongs.png',
           'CriticalTrials/1stList/CTrial19/sponge.png',
-          'CriticalTrials/1stList/CTrial19/lion_tongs.png',
+          'CriticalTrials/1stList/CTrial19/dolphin_sponge.png',
           'CriticalTrials/1stList/CTrial19/tongs.png'],
-        verb: 'pet', compatibility: 'modifier'
+        verb: 'pet', compatibility: 'modifier', target_animal: '#jspsych-free-sort-draggable-2',
+        target_object: '#jspsych-free-sort-draggable-1'
       },
 
       /* Trial 20 */
@@ -446,17 +486,19 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial20/leaf.png',
           'CriticalTrials/1stList/CTrial20/horse_spoon.png',
           'CriticalTrials/1stList/CTrial20/spoon.png'],
-        verb: 'look', compatibility: 'modifier'
+        verb: 'look', compatibility: 'modifier', target_animal: '#jspsych-free-sort-draggable-0',
+        target_object: '#jspsych-free-sort-draggable-1'
       },
 
       {
         audio: [
           'CriticalTrials/1stList/CTrial20/look_at_the_horse_with_the_spoon.mp3'],
         images: ['CriticalTrials/1stList/CTrial20/chicken_leaf.png',
-          'CriticalTrials/1stList/CTrial20/leaf.png',
+          'CriticalTrials/1stList/CTrial20/spoon.png',
           'CriticalTrials/1stList/CTrial20/horse_spoon.png',
-          'CriticalTrials/1stList/CTrial20/spoon.png'],
-        verb: 'look', compatibility: 'modifier'
+          'CriticalTrials/1stList/CTrial20/leaf.png'],
+        verb: 'look', compatibility: 'modifier', target_animal: '#jspsych-free-sort-draggable-2',
+        target_object: '#jspsych-free-sort-draggable-1'
       },
 
       /* Trial 21 */
@@ -467,7 +509,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial21/hat.png',
           'CriticalTrials/1stList/CTrial21/zebra_microphone.png',
           'CriticalTrials/1stList/CTrial21/microphone.png'],
-        verb: 'squeeze', compatibility: 'modifier'
+        verb: 'squeeze', compatibility: 'modifier', target_animal: '#jspsych-free-sort-draggable-0',
+        target_object: '#jspsych-free-sort-draggable-1'
       },
 
       {
@@ -477,7 +520,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial21/hat.png',
           'CriticalTrials/1stList/CTrial21/zebra_microphone.png',
           'CriticalTrials/1stList/CTrial21/microphone.png'],
-        verb: 'squeeze', compatibility: 'modifier'
+        verb: 'squeeze', compatibility: 'modifier', target_animal: '#jspsych-free-sort-draggable-2',
+        target_object: '#jspsych-free-sort-draggable-3'
       },
 
 
@@ -489,7 +533,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial22/net.png',
           'CriticalTrials/1stList/CTrial22/ladybug_straw.png',
           'CriticalTrials/1stList/CTrial22/straw.png'],
-        verb: 'pickout', compatibility: 'modifier'
+        verb: 'pickout', compatibility: 'modifier', target_animal: '#jspsych-free-sort-draggable-2',
+        target_object: '#jspsych-free-sort-draggable-3'
       },
 
       {
@@ -499,7 +544,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial22/net.png',
           'CriticalTrials/1stList/CTrial22/ladybug_straw.png',
           'CriticalTrials/1stList/CTrial22/straw.png'],
-        verb: 'pickout', compatibility: 'modifier'
+        verb: 'pickout', compatibility: 'modifier', target_animal: '#jspsych-free-sort-draggable-0',
+        target_object: '#jspsych-free-sort-draggable-1'
       },
 
       /* Trial 23 */
@@ -510,7 +556,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial23/microphone.png',
           'CriticalTrials/1stList/CTrial23/whale_pen.png',
           'CriticalTrials/1stList/CTrial23/pen.png'],
-        verb: 'cuddle', compatibility: 'modifier'
+        verb: 'cuddle', compatibility: 'modifier', target_animal: '#jspsych-free-sort-draggable-2',
+        target_object: '#jspsych-free-sort-draggable-3'
       },
 
       {
@@ -520,7 +567,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial23/microphone.png',
           'CriticalTrials/1stList/CTrial23/whale_pen.png',
           'CriticalTrials/1stList/CTrial23/pen.png'],
-        verb: 'cuddle', compatibility: 'modifier'
+        verb: 'cuddle', compatibility: 'modifier', target_animal: '#jspsych-free-sort-draggable-0',
+        target_object: '#jspsych-free-sort-draggable-0'
       },
 
       /* Trial 24 */
@@ -531,7 +579,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial24/mitten.png',
           'CriticalTrials/1stList/CTrial24/lion_towel.png',
           'CriticalTrials/1stList/CTrial24/towel.png'],
-        verb: 'find', compatibility: 'modifier'
+        verb: 'find', compatibility: 'modifier', target_animal: '#jspsych-free-sort-draggable-0',
+        target_object: '#jspsych-free-sort-draggable-1'
       },
 
       {
@@ -541,7 +590,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial24/mitten.png',
           'CriticalTrials/1stList/CTrial24/lion_towel.png',
           'CriticalTrials/1stList/CTrial24/towel.png'],
-        verb: 'find', compatibility: 'modifier'
+        verb: 'find', compatibility: 'modifier', target_animal: '#jspsych-free-sort-draggable-2',
+        target_object: '#jspsych-free-sort-draggable-3'
       },
 
 
@@ -553,7 +603,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial25/partyhat.png',
           'CriticalTrials/1stList/CTrial25/panda_umbrella.png',
           'CriticalTrials/1stList/CTrial25/umbrella.png'],
-        verb: 'hug', compatibility: 'modifier'
+        verb: 'hug', compatibility: 'modifier', target_animal: '#jspsych-free-sort-draggable-2',
+        target_object: '#jspsych-free-sort-draggable-3'
       },
 
       {
@@ -563,7 +614,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial25/partyhat.png',
           'CriticalTrials/1stList/CTrial25/panda_umbrella.png',
           'CriticalTrials/1stList/CTrial25/umbrella.png'],
-        verb: 'hug', compatibility: 'modifier'
+        verb: 'hug', compatibility: 'modifier', target_animal: '#jspsych-free-sort-draggable-0',
+        target_object: '#jspsych-free-sort-draggable-1'
       },
 
 
@@ -575,7 +627,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial26/partyhat.png',
           'CriticalTrials/1stList/CTrial26/zebra_towel.png',
           'CriticalTrials/1stList/CTrial26/towel.png'],
-        verb: 'select', compatibility: 'modifier'
+        verb: 'select', compatibility: 'modifier', target_animal: '#jspsych-free-sort-draggable-0',
+        target_object: '#jspsych-free-sort-draggable-1'
       },
 
       {
@@ -585,7 +638,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial26/partyhat.png',
           'CriticalTrials/1stList/CTrial26/zebra_towel.png',
           'CriticalTrials/1stList/CTrial26/towel.png'],
-        verb: 'select', compatibility: 'modifier'
+        verb: 'select', compatibility: 'modifier', target_animal: '#jspsych-free-sort-draggable-2',
+        target_object: '#jspsych-free-sort-draggable-3'
       },
 
       /* Trial 27 */
@@ -596,7 +650,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial27/barrette.png',
           'CriticalTrials/1stList/CTrial27/squirrel_pen.png',
           'CriticalTrials/1stList/CTrial27/pen.png'],
-        verb: 'choose', compatibility: 'modifier'
+        verb: 'choose', compatibility: 'modifier', target_animal: '#jspsych-free-sort-draggable-0',
+        target_object: '#jspsych-free-sort-draggable-1'
       },
 
       {
@@ -606,7 +661,8 @@ var trials1 = [
           'CriticalTrials/1stList/CTrial27/barrette.png',
           'CriticalTrials/1stList/CTrial27/squirrel_pen.png',
           'CriticalTrials/1stList/CTrial27/pen.png'],
-        verb: 'choose', compatibility: 'modifier'
+        verb: 'choose', compatibility: 'modifier', target_animal: '#jspsych-free-sort-draggable-2',
+        target_object: '#jspsych-free-sort-draggable-3'
       },
 
       /*Filler Trials */
@@ -776,7 +832,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial1/umbrella.png',
           'CriticalTrials/2ndList/CTrial1/necklace.png',
           'CriticalTrials/2ndList/CTrial1/elephant_necklace.png'],
-        verb: 'strike', compatibility: 'instrument'
+        verb: 'strike', compatibility: 'instrument', target_animal: '#jsPsych-freesort_draggble-0',
+        target_object: '#jsPsych-freesort_draggble-1'
       },
 
       {
@@ -786,7 +843,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial1/umbrella.png',
           'CriticalTrials/2ndList/CTrial1/necklace.png',
           'CriticalTrials/2ndList/CTrial1/elephant_necklace.png'],
-        verb: 'strike', compatibility: 'instrument'
+        verb: 'strike', compatibility: 'instrument', target_animal: '#jsPsych-freesort_draggble-3',
+        target_object: '#jsPsych-freesort_draggble-2'
       },
 
       /* Trial 2 */
@@ -795,9 +853,11 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial2/wack_the_cow_with_the_fan.mp3'],
         images: ['CriticalTrials/2ndList/CTrial2/cow_fan.png',
           'CriticalTrials/2ndList/CTrial2/pencil.png',
-          'CriticalTrials/2ndList/CTrial2/fan.png',
-          'CriticalTrials/2ndList/CTrial2/ladybug_pencil.png'],
-        verb: 'whack', compatibility: 'instrument'
+          'CriticalTrials/2ndList/CTrial2/ladybug_pencil.png',
+          'CriticalTrials/2ndList/CTrial2/fan.png'
+          ],
+        verb: 'whack', compatibility: 'instrument', target_animal: '#jsPsych-freesort_draggble-0',
+        target_object: '#jsPsych-freesort_draggble-3'
       },
 
       {
@@ -807,7 +867,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial2/pencil.png',
           'CriticalTrials/2ndList/CTrial2/fan.png',
           'CriticalTrials/2ndList/CTrial2/ladybug_pencil.png'],
-        verb: 'whack', compatibility: 'instrument'
+        verb: 'whack', compatibility: 'instrument', target_animal: '#jsPsych-freesort_draggble-3',
+        target_object: '#jsPsych-freesort_draggble-1'
       },
 
       /* Trial 3 */
@@ -818,17 +879,19 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial3/mouse_tube.png',
           'CriticalTrials/2ndList/CTrial3/frog_cup.png',
           'CriticalTrials/2ndList/CTrial3/tube.png'],
-        verb: 'hit', compatibility: 'instrument'
+        verb: 'hit', compatibility: 'instrument', target_animal: '#jsPsych-freesort_draggble-2',
+        target_object: '#jsPsych-freesort_draggble-0'
       },
 
       {
         audio: [
           'CriticalTrials/2ndList/CTrial3/hit_the_mouse_with_the_tube.mp3'],
         images: ['CriticalTrials/2ndList/CTrial3/cup.png',
-          'CriticalTrials/2ndList/CTrial3/mouse_tube.png',
           'CriticalTrials/2ndList/CTrial3/frog_cup.png',
+          'CriticalTrials/2ndList/CTrial3/mouse_tube.png',
           'CriticalTrials/2ndList/CTrial3/tube.png'],
-        verb: 'hit', compatibility: 'instrument'
+        verb: 'hit', compatibility: 'instrument', target_animal: '#jsPsych-freesort_draggble-2',
+        target_object: '#jsPsych-freesort_draggble-3'
       },
 
       /* Trial 4 */
@@ -839,7 +902,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial4/violin.png',
           'CriticalTrials/2ndList/CTrial4/crayon.png',
           'CriticalTrials/2ndList/CTrial4/panda_violin.png'],
-        verb: 'rub', compatibility: 'instrument'
+        verb: 'rub', compatibility: 'instrument', target_animal: '#jsPsych-freesort_draggble-0',
+        target_object: '#jsPsych-freesort_draggble-2'
       },
 
       {
@@ -849,7 +913,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial4/violin.png',
           'CriticalTrials/2ndList/CTrial4/crayon.png',
           'CriticalTrials/2ndList/CTrial4/panda_violin.png'],
-        verb: 'rub', compatibility: 'instrument'
+        verb: 'rub', compatibility: 'instrument', target_animal: '#jsPsych-freesort_draggble-3',
+        target_object: '#jsPsych-freesort_draggble-1'
       },
 
 
@@ -861,7 +926,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial5/spoon.png',
           'CriticalTrials/2ndList/CTrial5/pig_spoon.png',
           'CriticalTrials/2ndList/CTrial5/violin.png'],
-        verb: 'poke', compatibility: 'instrument'
+        verb: 'poke', compatibility: 'instrument', target_animal: '#jsPsych-freesort_draggble-2',
+        target_object: '#jsPsych-freesort_draggble-1'
       },
 
       {
@@ -871,7 +937,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial5/spoon.png',
           'CriticalTrials/2ndList/CTrial5/pig_spoon.png',
           'CriticalTrials/2ndList/CTrial5/violin.png'],
-        verb: 'poke', compatibility: 'instrument'
+        verb: 'poke', compatibility: 'instrument', target_animal: '#jsPsych-freesort_draggble-0',
+        target_object: '#jsPsych-freesort_draggble-3'
       },
 
       /* Trial 6 */
@@ -882,7 +949,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial6/napkin.png',
           'CriticalTrials/2ndList/CTrial6/panda_napkin.png',
           'CriticalTrials/2ndList/CTrial6/spoon.png'],
-        verb: 'bop', compatibility: 'instrument'
+        verb: 'bop', compatibility: 'instrument', target_animal: '#jsPsych-freesort_draggble-2',
+        target_object: '#jsPsych-freesort_draggble-1'
       },
 
       {
@@ -892,7 +960,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial6/napkin.png',
           'CriticalTrials/2ndList/CTrial6/panda_napkin.png',
           'CriticalTrials/2ndList/CTrial6/spoon.png'],
-        verb: 'bop', compatibility: 'instrument'
+        verb: 'bop', compatibility: 'instrument', target_animal: '#jsPsych-freesort_draggble-0',
+        target_object: '#jsPsych-freesort_draggble-3'
       },
 
       /* Trial 7 */
@@ -903,7 +972,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial7/hat.png',
           'CriticalTrials/2ndList/CTrial7/flute.png',
           'CriticalTrials/2ndList/CTrial7/leopard_hat.png'],
-        verb: 'smack', compatibility: 'instrument'
+        verb: 'smack', compatibility: 'instrument', target_animal: '#jsPsych-freesort_draggble-0',
+        target_object: '#jsPsych-freesort_draggble-2'
       },
 
       {
@@ -913,7 +983,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial7/hat.png',
           'CriticalTrials/2ndList/CTrial7/flute.png',
           'CriticalTrials/2ndList/CTrial7/leopard_hat.png'],
-        verb: 'smack', compatibility: 'instrument'
+        verb: 'smack', compatibility: 'instrument', target_animal: '#jsPsych-freesort_draggble-3',
+        target_object: '#jsPsych-freesort_draggble-1'
       },
 
       /* Trial 8 */
@@ -924,7 +995,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial8/violin.png',
           'CriticalTrials/2ndList/CTrial8/turtle_violin.png',
           'CriticalTrials/2ndList/CTrial8/leaf.png'],
-        verb: 'clean', compatibility: 'instrument'
+        verb: 'clean', compatibility: 'instrument', target_animal: '#jsPsych-freesort_draggble-2',
+        target_object: '#jsPsych-freesort_draggble-1'
       },
 
       {
@@ -934,7 +1006,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial8/violin.png',
           'CriticalTrials/2ndList/CTrial8/turtle_violin.png',
           'CriticalTrials/2ndList/CTrial8/leaf.png'],
-        verb: 'clean', compatibility: 'instrument'
+        verb: 'clean', compatibility: 'instrument', target_animal: '#jsPsych-freesort_draggble-0',
+        target_object: '#jsPsych-freesort_draggble-3'
       },
 
       /* Trial 9 */
@@ -945,7 +1018,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial9/lollipop.png',
           'CriticalTrials/2ndList/CTrial9/leopard_lollipop.png',
           'CriticalTrials/2ndList/CTrial9/crayon.png'],
-        verb: 'tease', compatibility: 'instrument'
+        verb: 'tease', compatibility: 'instrument', target_animal: '#jsPsych-freesort_draggble-2',
+        target_object: '#jsPsych-freesort_draggble-1'
       },
 
       {
@@ -955,7 +1029,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial9/lollipop.png',
           'CriticalTrials/2ndList/CTrial9/leopard_lollipop.png',
           'CriticalTrials/2ndList/CTrial9/crayon.png'],
-        verb: 'tease', compatibility: 'instrument'
+        verb: 'tease', compatibility: 'instrument', target_animal: '#jsPsych-freesort_draggble-0',
+        target_object: '#jsPsych-freesort_draggble-3'
       },
 
 
@@ -967,7 +1042,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial10/book.png',
           'CriticalTrials/2ndList/CTrial10/zebra_book.png',
           'CriticalTrials/2ndList/CTrial10/lollipop.png'],
-        verb: 'feed', compatibility: 'equibiased'
+        verb: 'feed', compatibility: 'equibiased', target_animal: '#jsPsych-freesort_draggble-2',
+        target_object: '#jsPsych-freesort_draggble-1'
       },
 
       {
@@ -977,7 +1053,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial10/book.png',
           'CriticalTrials/2ndList/CTrial10/zebra_book.png',
           'CriticalTrials/2ndList/CTrial10/lollipop.png'],
-        verb: 'feed', compatibility: 'equibiased'
+        verb: 'feed', compatibility: 'equibiased', target_animal: '#jsPsych-freesort_draggble-0',
+        target_object: '#jsPsych-freesort_draggble-3'
       },
 
       /* Trial 11 */
@@ -988,7 +1065,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial11/cup.png',
           'CriticalTrials/2ndList/CTrial11/pig_cup.png',
           'CriticalTrials/2ndList/CTrial11/flower.png'],
-        verb: 'scuff', compatibility: 'equibiased'
+        verb: 'scuff', compatibility: 'equibiased', target_animal: '#jsPsych-freesort_draggble-2',
+        target_object: '#jsPsych-freesort_draggble-1'
       },
 
       {
@@ -998,7 +1076,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial11/cup.png',
           'CriticalTrials/2ndList/CTrial11/pig_cup.png',
           'CriticalTrials/2ndList/CTrial11/flower.png'],
-        verb: 'scuff', compatibility: 'equibiased'
+        verb: 'scuff', compatibility: 'equibiased', target_animal: '#jsPsych-freesort_draggble-0',
+        target_object: '#jsPsych-freesort_draggble-3'
       },
 
       /* Trial 12 */
@@ -1009,7 +1088,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial12/hat.png',
           'CriticalTrials/2ndList/CTrial12/panda_hat.png',
           'CriticalTrials/2ndList/CTrial12/toothbrush.png'],
-        verb: 'pinch', compatibility: 'equibiased'
+        verb: 'pinch', compatibility: 'equibiased', target_animal: '#jsPsych-freesort_draggble-2',
+        target_object: '#jsPsych-freesort_draggble-1'
       },
 
       {
@@ -1019,7 +1099,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial12/hat.png',
           'CriticalTrials/2ndList/CTrial12/panda_hat.png',
           'CriticalTrials/2ndList/CTrial12/toothbrush.png'],
-        verb: 'pinch', compatibility: 'equibiased'
+        verb: 'pinch', compatibility: 'equibiased', target_animal: '#jsPsych-freesort_draggble-1',
+        target_object: '#jsPsych-freesort_draggble-3'
       },
 
       /* Trial 13 */
@@ -1030,7 +1111,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial13/feather.png',
           'CriticalTrials/2ndList/CTrial13/sponge.png',
           'CriticalTrials/2ndList/CTrial13/frog_feather.png'],
-        verb: 'knockon', compatibility: 'equibiased'
+        verb: 'knockon', compatibility: 'equibiased', target_animal: '#jsPsych-freesort_draggble-0',
+        target_object: '#jsPsych-freesort_draggble-2'
       },
 
       {
@@ -1040,7 +1122,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial13/feather.png',
           'CriticalTrials/2ndList/CTrial13/sponge.png',
           'CriticalTrials/2ndList/CTrial13/frog_feather.png'],
-        verb: 'knockon', compatibility: 'equibiased'
+        verb: 'knockon', compatibility: 'equibiased', target_animal: '#jsPsych-freesort_draggble-3',
+        target_object: '#jsPsych-freesort_draggble-1'
       },
 
       /* Trial 14 */
@@ -1051,7 +1134,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial14/flower.png',
           'CriticalTrials/2ndList/CTrial14/leopard_flower.png',
           'CriticalTrials/2ndList/CTrial14/pencil.png'],
-        verb: 'pat', compatibility: 'equibiased'
+        verb: 'pat', compatibility: 'equibiased', target_animal: '#jsPsych-freesort_draggble-2',
+        target_object: '#jsPsych-freesort_draggble-1'
       },
 
       {
@@ -1061,7 +1145,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial14/flower.png',
           'CriticalTrials/2ndList/CTrial14/leopard_flower.png',
           'CriticalTrials/2ndList/CTrial14/pencil.png'],
-        verb: 'pat', compatibility: 'equibiased'
+        verb: 'pat', compatibility: 'equibiased', target_animal: '#jsPsych-freesort_draggble-0',
+        target_object: '#jsPsych-freesort_draggble-3'
       },
 
       /* Trial 15 */
@@ -1072,7 +1157,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial15/straw.png',
           'CriticalTrials/2ndList/CTrial15/penguin_straw.png',
           'CriticalTrials/2ndList/CTrial15/tube.png'],
-        verb: 'locate', compatibility: 'equibiased'
+        verb: 'locate', compatibility: 'equibiased', target_animal: '#jsPsych-freesort_draggble-0',
+        target_object: '#jsPsych-freesort_draggble-3'
       },
 
       {
@@ -1082,7 +1168,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial15/straw.png',
           'CriticalTrials/2ndList/CTrial15/penguin_straw.png',
           'CriticalTrials/2ndList/CTrial15/tube.png'],
-        verb: 'locate', compatibility: 'equibiased'
+        verb: 'locate', compatibility: 'equibiased', target_animal: '#jsPsych-freesort_draggble-2',
+        target_object: '#jsPsych-freesort_draggble-1'
       },
 
       /* Trial 16 */
@@ -1093,7 +1180,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial16/candle.png',
           'CriticalTrials/2ndList/CTrial16/leopard_candle.png',
           'CriticalTrials/2ndList/CTrial16/pen.png'],
-        verb: 'feel', compatibility: 'equibiased'
+        verb: 'feel', compatibility: 'equibiased', target_animal: '#jsPsych-freesort_draggble-0',
+        target_object: '#jsPsych-freesort_draggble-3'
       },
 
       {
@@ -1103,7 +1191,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial16/candle.png',
           'CriticalTrials/2ndList/CTrial16/leopard_candle.png',
           'CriticalTrials/2ndList/CTrial16/pen.png'],
-        verb: 'feel', compatibility: 'equibiased'
+        verb: 'feel', compatibility: 'equibiased', target_animal: '#jsPsych-freesort_draggble-2',
+        target_object: '#jsPsych-freesort_draggble-1'
       },
 
       /* Trial 17 */
@@ -1114,7 +1203,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial17/pencil.png',
           'CriticalTrials/2ndList/CTrial17/lion_pencil.png',
           'CriticalTrials/2ndList/CTrial17/straw.png'],
-        verb: 'spot', compatibility: 'equibiased'
+        verb: 'spot', compatibility: 'equibiased', target_animal: '#jsPsych-freesort_draggble-0',
+        target_object: '#jsPsych-freesort_draggble-3'
       },
 
       {
@@ -1124,7 +1214,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial17/pencil.png',
           'CriticalTrials/2ndList/CTrial17/lion_pencil.png',
           'CriticalTrials/2ndList/CTrial17/straw.png'],
-        verb: 'spot', compatibility: 'equibiased'
+        verb: 'spot', compatibility: 'equibiased', target_animal: '#jsPsych-freesort_draggble-2',
+        target_object: '#jsPsych-freesort_draggble-1'
       },
 
 
@@ -1136,7 +1227,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial18/funnel.png',
           'CriticalTrials/2ndList/CTrial18/penguin_funnel.png',
           'CriticalTrials/2ndList/CTrial18/leaf.png'],
-        verb: 'point', compatibility: 'equibiased'
+        verb: 'point', compatibility: 'equibiased', target_animal: '#jsPsych-freesort_draggble-2',
+        target_object: '#jsPsych-freesort_draggble-1'
       },
 
       {
@@ -1146,7 +1238,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial18/funnel.png',
           'CriticalTrials/2ndList/CTrial18/penguin_funnel.png',
           'CriticalTrials/2ndList/CTrial18/leaf.png'],
-        verb: 'point', compatibility: 'equibiased'
+        verb: 'point', compatibility: 'equibiased', target_animal: '#jsPsych-freesort_draggble-0',
+        target_object: '#jsPsych-freesort_draggble-3'
       },
 
       /* Trial 19 */
@@ -1154,10 +1247,11 @@ var trials1 = [
         audio: [
           'CriticalTrials/2ndList/CTrial19/pet_the_lion_with_the_sponge.mp3'],
         images: ['CriticalTrials/2ndList/CTrial19/dolphin_tongs.png',
-          'CriticalTrials/2ndList/CTrial19/sponge.png',
+          'CriticalTrials/2ndList/CTrial19/tongs.png',
           'CriticalTrials/2ndList/CTrial19/lion_sponge.png',
-          'CriticalTrials/2ndList/CTrial19/tongs.png'],
-        verb: 'pet', compatibility: 'modifier'
+          'CriticalTrials/2ndList/CTrial19/sponge.png'],
+        verb: 'pet', compatibility: 'modifier', target_animal: '#jsPsych-freesort_draggble-2',
+        target_object: '#jsPsych-freesort_draggble-3'
       },
 
       {
@@ -1167,7 +1261,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial19/sponge.png',
           'CriticalTrials/2ndList/CTrial19/lion_sponge.png',
           'CriticalTrials/2ndList/CTrial19/tongs.png'],
-        verb: 'pet', compatibility: 'modifier'
+        verb: 'pet', compatibility: 'modifier', target_animal: '#jsPsych-freesort_draggble-0',
+        target_object: '#jsPsych-freesort_draggble-3'
       },
 
       /* Trial 20 */
@@ -1178,7 +1273,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial20/leaf.png',
           'CriticalTrials/2ndList/CTrial20/horse_leaf.png',
           'CriticalTrials/2ndList/CTrial20/spoon.png'],
-        verb: 'look', compatibility: 'modifier'
+        verb: 'look', compatibility: 'modifier', target_animal: '#jsPsych-freesort_draggble-0',
+        target_object: '#jsPsych-freesort_draggble-3'
       },
 
       {
@@ -1188,7 +1284,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial20/leaf.png',
           'CriticalTrials/2ndList/CTrial20/horse_leaf.png',
           'CriticalTrials/2ndList/CTrial20/spoon.png'],
-        verb: 'look', compatibility: 'modifier'
+        verb: 'look', compatibility: 'modifier', target_animal: '#jsPsych-freesort_draggble-2',
+        target_object: '#jsPsych-freesort_draggble-1'
       },
 
       /* Trial 21 */
@@ -1199,7 +1296,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial21/hat.png',
           'CriticalTrials/2ndList/CTrial21/zebra_hat.png',
           'CriticalTrials/2ndList/CTrial21/microphone.png'],
-        verb: 'squeeze', compatibility: 'modifier'
+        verb: 'squeeze', compatibility: 'modifier', target_animal: '#jsPsych-freesort_draggble-2',
+        target_object: '#jsPsych-freesort_draggble-1'
       },
 
       {
@@ -1209,7 +1307,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial21/hat.png',
           'CriticalTrials/2ndList/CTrial21/zebra_hat.png',
           'CriticalTrials/2ndList/CTrial21/microphone.png'],
-        verb: 'squeeze', compatibility: 'modifier'
+        verb: 'squeeze', compatibility: 'modifier', target_animal: '#jsPsych-freesort_draggble-0',
+        target_object: '#jsPsych-freesort_draggble-3'
       },
 
 
@@ -1221,7 +1320,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial22/net.png',
           'CriticalTrials/2ndList/CTrial22/ladybug_net.png',
           'CriticalTrials/2ndList/CTrial22/straw.png'],
-        verb: 'pickout', compatibility: 'modifier'
+        verb: 'pickout', compatibility: 'modifier', target_animal: '#jsPsych-freesort_draggble-0',
+        target_object: '#jsPsych-freesort_draggble-3'
       },
 
       {
@@ -1231,7 +1331,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial22/net.png',
           'CriticalTrials/2ndList/CTrial22/ladybug_net.png',
           'CriticalTrials/2ndList/CTrial22/straw.png'],
-        verb: 'pickout', compatibility: 'modifier'
+        verb: 'pickout', compatibility: 'modifier', target_animal: '#jsPsych-freesort_draggble-2',
+        target_object: '#jsPsych-freesort_draggble-1'
       },
 
 
@@ -1243,7 +1344,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial23/microphone.png',
           'CriticalTrials/2ndList/CTrial23/whale_microphone.png',
           'CriticalTrials/2ndList/CTrial23/pen.png'],
-        verb: 'cuddle', compatibility: 'modifier'
+        verb: 'cuddle', compatibility: 'modifier', target_animal: '#jsPsych-freesort_draggble-0',
+        target_object: '#jsPsych-freesort_draggble-3'
       },
 
       {
@@ -1253,7 +1355,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial23/microphone.png',
           'CriticalTrials/2ndList/CTrial23/whale_microphone.png',
           'CriticalTrials/2ndList/CTrial23/pen.png'],
-        verb: 'cuddle', compatibility: 'modifier'
+        verb: 'cuddle', compatibility: 'modifier', target_animal: '#jsPsych-freesort_draggble-2',
+        target_object: '#jsPsych-freesort_draggble-1'
       },
 
 
@@ -1265,7 +1368,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial24/mitten.png',
           'CriticalTrials/2ndList/CTrial24/lion_mitten.png',
           'CriticalTrials/2ndList/CTrial24/towel.png'],
-        verb: 'find', compatibility: 'modifier'
+        verb: 'find', compatibility: 'modifier', target_animal: '#jsPsych-freesort_draggble-0',
+        target_object: '#jsPsych-freesort_draggble-3'
       },
 
       {
@@ -1275,7 +1379,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial24/mitten.png',
           'CriticalTrials/2ndList/CTrial24/lion_mitten.png',
           'CriticalTrials/2ndList/CTrial24/towel.png'],
-        verb: 'find', compatibility: 'modifier'
+        verb: 'find', compatibility: 'modifier', target_animal: '#jsPsych-freesort_draggble-2',
+        target_object: '#jsPsych-freesort_draggble-1'
       },
 
 
@@ -1287,7 +1392,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial25/partyhat.png',
           'CriticalTrials/2ndList/CTrial25/panda_partyhat.png',
           'CriticalTrials/2ndList/CTrial25/umbrella.png'],
-        verb: 'hug', compatibility: 'modifier'
+        verb: 'hug', compatibility: 'modifier', target_animal: '#jsPsych-freesort_draggble-0',
+        target_object: '#jsPsych-freesort_draggble-3'
       },
 
       {
@@ -1297,7 +1403,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial25/partyhat.png',
           'CriticalTrials/2ndList/CTrial25/panda_partyhat.png',
           'CriticalTrials/2ndList/CTrial25/umbrella.png'],
-        verb: 'hug', compatibility: 'modifier'
+        verb: 'hug', compatibility: 'modifier', target_animal: '#jsPsych-freesort_draggble-2',
+        target_object: '#jsPsych-freesort_draggble-1'
       },
 
       /* Trial 26 */
@@ -1306,9 +1413,11 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial26/select_the_zebra_with_the_partyhat.mp3'],
         images: ['CriticalTrials/2ndList/CTrial26/squirrel_towel.png',
           'CriticalTrials/2ndList/CTrial26/partyhat.png',
-          'CriticalTrials/2ndList/CTrial26/zebra_partyhat.png',
-          'CriticalTrials/2ndList/CTrial26/towel.png'],
-        verb: 'select', compatibility: 'modifier'
+          'CriticalTrials/2ndList/CTrial26/towel.png',
+          'CriticalTrials/2ndList/CTrial26/zebra_partyhat.png'
+          ],
+        verb: 'select', compatibility: 'modifier', target_animal: '#jsPsych-freesort_draggble-3',
+        target_object: '#jsPsych-freesort_draggble-1'
       },
 
       {
@@ -1318,7 +1427,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial26/partyhat.png',
           'CriticalTrials/2ndList/CTrial26/zebra_partyhat.png',
           'CriticalTrials/2ndList/CTrial26/towel.png'],
-        verb: 'select', compatibility: 'modifier'
+        verb: 'select', compatibility: 'modifier', target_animal: '#jsPsych-freesort_draggble-0',
+        target_object: '#jsPsych-freesort_draggble-3'
       },
 
       /* Trial 27 */
@@ -1329,7 +1439,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial27/barrette.png',
           'CriticalTrials/2ndList/CTrial27/squirrel_barrette.png',
           'CriticalTrials/2ndList/CTrial27/pen.png'],
-        verb: 'choose', compatibility: 'modifier'
+        verb: 'choose', compatibility: 'modifier', target_animal: '#jsPsych-freesort_draggble-0',
+        target_object: '#jsPsych-freesort_draggble-3'
       },
 
       {
@@ -1339,7 +1450,8 @@ var trials1 = [
           'CriticalTrials/2ndList/CTrial27/barrette.png',
           'CriticalTrials/2ndList/CTrial27/squirrel_barrette.png',
           'CriticalTrials/2ndList/CTrial27/pen.png'],
-        verb: 'choose', compatibility: 'modifier'
+        verb: 'choose', compatibility: 'modifier', target_animal: '#jsPsych-freesort_draggble-2',
+        target_object: '#jsPsych-freesort_draggble-1'
       },
 
       /* Filler trials */
