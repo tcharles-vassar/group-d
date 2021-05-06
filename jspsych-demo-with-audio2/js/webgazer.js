@@ -87598,14 +87598,14 @@ var ridgeRegThreaded_trailDataWindow = 10;
  * this object allow to perform threaded ridge regression
  * @constructor
  */
-ridgeRegThreaded_reg.RidgeRegThreaded = function() {
-    this.init();
+ridgeRegThreaded_reg.RidgeRegThreaded = function(workerScriptURL) {
+    this.init(workerScriptURL);
 };
 
 /**
  * Initialize new arrays and initialize Kalman filter.
  */
-ridgeRegThreaded_reg.RidgeRegThreaded.prototype.init = function() {
+ridgeRegThreaded_reg.RidgeRegThreaded.prototype.init = function(workerScriptURL) {
     this.screenXClicksArray = new src_util.DataWindow(ridgeRegThreaded_dataWindow);
     this.screenYClicksArray = new src_util.DataWindow(ridgeRegThreaded_dataWindow);
     this.eyeFeaturesClicks = new src_util.DataWindow(ridgeRegThreaded_dataWindow);
@@ -87619,7 +87619,8 @@ ridgeRegThreaded_reg.RidgeRegThreaded.prototype.init = function() {
 
     // Place the src/ridgeworker.js file into the same directory as your html file.
     if (!this.worker) {
-        this.worker = new Worker('ridgeWorker.mjs'); // [20200708] TODO: Figure out how to make this inline
+        //this.worker = new Worker('ridgeWorker.mjs'); // [20200708] TODO: Figure out how to make this inline
+        this.worker = new Worker(workerScriptURL);
         this.worker.onerror = function(err) { console.log(err.message); };
         this.worker.onmessage = function(evt) {
             weights.X = evt.data.X;
@@ -87775,6 +87776,7 @@ src_webgazer.reg.RidgeWeightedReg = ridgeWeightedReg.RidgeWeightedReg;
 src_webgazer.reg.RidgeRegThreaded = ridgeRegThreaded.RidgeRegThreaded;
 src_webgazer.util = src_util;
 src_webgazer.params = src_params;
+src_webgazer.workerScriptURL = 'ridgeWorker.mjs';
 
 //PRIVATE VARIABLES
 
@@ -87823,7 +87825,7 @@ var curTrackerMap = {
 var regressionMap = {
   'ridge': function() { return new src_webgazer.reg.RidgeReg(); },
   'weightedRidge': function() { return new src_webgazer.reg.RidgeWeightedReg(); },
-  'threadedRidge': function() { return new src_webgazer.reg.RidgeRegThreaded(); },
+  'threadedRidge': function() { return new src_webgazer.reg.RidgeRegThreaded(src_webgazer.workerScriptURL); },
 };
 
 //localstorage name
@@ -87836,7 +87838,6 @@ var defaults = {
   'data': [],
   'settings': {}
 };
-
 
 //PRIVATE FUNCTIONS
 
@@ -87987,6 +87988,13 @@ function paintCurrentFrame(canvas, width, height) {
  * @returns {*}
  */
 async function getPrediction(regModelIndex) {
+  // this allows getPrediction to work even when webgazer is paused, since the only necessary
+  // component for getPrediction in loop() is paintCurrentFrame().
+  if(paused){
+    paintCurrentFrame(videoElementCanvas, videoElementCanvas.width, videoElementCanvas.height);
+  }
+  var time = performance.now();
+
   var predictions = [];
   // [20200617 xk] TODO: this call should be made async somehow. will take some work.
   latestEyeFeatures = await getPupilFeatures(videoElementCanvas, videoElementCanvas.width, videoElementCanvas.height);
@@ -88002,14 +88010,16 @@ async function getPrediction(regModelIndex) {
     return predictions[regModelIndex] === null ? null : {
       'x' : predictions[regModelIndex].x,
       'y' : predictions[regModelIndex].y,
-      'eyeFeatures': latestEyeFeatures
+      'eyeFeatures': latestEyeFeatures,
+      't' : time
     };
   } else {
     return predictions.length === 0 || predictions[0] === null ? null : {
       'x' : predictions[0].x,
       'y' : predictions[0].y,
       'eyeFeatures': latestEyeFeatures,
-      'all' : predictions
+      'all' : predictions,
+      't' : time
     };
   }
 }

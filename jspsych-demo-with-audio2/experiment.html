@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Ryskin demo</title>
+  <title>Eyetracking Experiment</title>
   <script src="jspsych-6.3.1/jspsych.js"></script>
   <script src="js/webgazer.js"></script>
   <script src="jspsych-6.3.1/plugins/jspsych-html-keyboard-response.js"></script>
@@ -12,12 +12,12 @@
   <script src="jspsych-6.3.1/plugins/jspsych-webgazer-init-camera.js"></script>
   <script src="jspsych-6.3.1/plugins/jspsych-webgazer-calibrate.js"></script>
   <script src="jspsych-6.3.1/plugins/jspsych-webgazer-validate.js"></script>
+  <script src="jspsych-6.3.1/plugins/jspsych-call-function.js"></script>
   <script src="jspsych-6.3.1/extensions/jspsych-ext-webgazer.js"></script>
   <script src="eye-track-image-sort.js"></script>
   <script src="calibration-config.js"></script>
   <script src="initial-calibration-timeline.js"></script>
   <script src="calibration-booster-timeline.js"></script>
-  <script src="jspsych-6.3.1/plugins/jspsych-call-function.js"></script>
   <script src="trials.js"></script>
   <link rel="stylesheet" href="jspsych-6.3.1/css/jspsych.css">
   <style>
@@ -543,7 +543,7 @@
     stimulus: '<p>We will now begin the experiment.</p>' +
       '<p>Remember to <b>stay as still as possible</b> and act out the instructions with your cursor.</p>' +
       '<p>Make sure to press the spacebar once you have completed the prompt.</p>' +
-      '</p> After each trial, you will be asked to press a button to proceed to the next trial<p>' +
+      '<p>After each trial, you will be asked to press a button to proceed to the next trial</p>' +
       '<p>Press the spacebar to begin.',
     choices: [" "]
   }

@@ -3,7 +3,7 @@
  * Josh de Leeuw
  **/
 
-jsPsych.plugins["webgazer-init-camera"] = (function () {
+ jsPsych.plugins["webgazer-init-camera"] = (function () {
 
   var plugin = {};
 
@@ -28,6 +28,11 @@ jsPsych.plugins["webgazer-init-camera"] = (function () {
 
   plugin.trial = function (display_element, trial) {
 
+    var start_time = performance.now();
+    var load_time;
+
+    display_element.innerHTML = '<p>Initializing camera...</p>';
+
     if (!jsPsych.extensions.webgazer.isInitialized()) {
       jsPsych.extensions.webgazer.start().then(function () {
         showTrial();
@@ -41,9 +46,11 @@ jsPsych.plugins["webgazer-init-camera"] = (function () {
 
     function showTrial() {
 
+      load_time = Math.round(performance.now() - start_time);
+
       var style = `
         <style id="webgazer-center-style">
-          #webgazerVideoContainer { left: calc(50% - 160px) !important;}
+          #webgazerVideoContainer { top: 20px !important; left: calc(50% - 160px) !important;}
         </style>
       `
       document.querySelector('head').insertAdjacentHTML('beforeend', style);
@@ -61,7 +68,7 @@ jsPsych.plugins["webgazer-init-camera"] = (function () {
 
 
       wg_container.innerHTML = `
-        <div style='position: absolute; top: 260px; left: calc(50% - 400px); width:800px;'>
+        <div style='position: absolute; top: max(260px, 40%); left: calc(50% - 400px); width:800px;'>
         ${trial.instructions}
         <button id='jspsych-wg-cont' class='jspsych-btn' disabled>${trial.button_text}</button>
         </div>`
@@ -116,7 +123,7 @@ jsPsych.plugins["webgazer-init-camera"] = (function () {
 
       // gather the data to store for the trial
       var trial_data = {
-
+        load_time: load_time
       };
 
       // clear the display
